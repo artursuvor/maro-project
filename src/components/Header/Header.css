@@ -6,27 +6,116 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1vw;
     box-sizing: border-box;
-    z-index: 1000;
+    z-index: 1001;
+    
 }
 
-.logo {
-    font-size: 1.5rem;
+.sticky-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #F6F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    box-sizing: border-box;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+  }
+
+.main-logo {
+    max-width: 10vw;
+    height: auto;
+    padding-left: 1vw;
 }
 
-.Main-logo {
-    padding-left: 80px;
+.main-logo img{
+    width: 8vw;
+    height: auto;
 }
 
 .menu-controls {
-    padding-right: 80px;
+    padding-right: 0.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.sticky-menu-controls{
+    padding-right: 0.5vw;
     display: flex;
     align-items: center;
 }
 
 .phone-number {
-    margin-right: 10px;
+    text-decoration: none;
+    border: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    height: 3vw;
+    padding: 0px 1.5vw;
+    border-radius: 100px;
+    color: #FFFFFF;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 1vw;
+}
+.sticky-phone-number{
+    text-decoration: none;
+    border: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3vw;
+    padding: 0px 2vw;
+    border-radius: 100px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5vw;
+}
+
+.phone-number:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.phone-icon {
+    padding-right: 1vw;
+    height: 1.5vw;
+    width: auto;
+}
+
+.phone-number a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.sticky-phone-number a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.phone-number a:hover {
+    text-decoration: none;
+}
+
+.sticky-phone-number:hover{
+    background-color: rgba(194, 194, 194, 0.4);
 }
 
 .menu-button {
@@ -34,8 +123,19 @@
     border: none;
     cursor: pointer;
     position: relative;
-    width: 64px;
-    height: 64px;    
+    width: 4vw;
+    height: 4vw;    
+    border-radius: 50%;
+    transition: background-color 0.3s ease; 
+}
+
+.sticky-menu-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 4vw;
+    height: 4vw;    
     border-radius: 50%;
     transition: background-color 0.3s ease; 
 }
@@ -46,81 +146,115 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 64px;
-    height: 64px;
+    width: 4vw;
+    height: 4vw;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sticky-menu-button::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    transition: background-color 0.3s ease; 
 }
 
 .menu-button:hover{
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.sticky-menu-button:hover{
+    content: '';
+    background-color: rgba(194, 194, 194, 0.4);
+}
+
+
 .menu-icon {
+    text-decoration: none;
+    border: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 32px;
-    height: 32px;
-}
-
-.phone-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.2);
-    height: 48px;
-    padding: 0px 24px;
-    border-radius: 100px;
-    color: #FFFFFF;
-    font-family: "Gothic A1", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0;
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.phone-number:hover{
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.phone-icon {
-    padding-right: 8px;
-}
-
-.phone-number a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.phone-number a:hover {
-    text-decoration: none;
+    width: 2vw;
+    height: 2vw;
 }
 
 .menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 52%;
     height: 100%;
-    background-color: #333;
-    z-index: 100;
+    background-color: #F6F4F4;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: auto;
 }
 
 .menu ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  text-align: center;
+  
+  color: #000;
 }
 
 .menu ul li {
-    padding: 1rem;
+  padding: 1vw;
+  position: relative;
+  cursor: pointer;
+
 }
 
+.menu ul li:hover::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 100%;
+    height: 1px; 
+    background-color: #000; 
+    display: block;
+  }
+
 .menu ul li a {
-    color: #fff;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
     text-decoration: none;
+    color: #000;
 }
+
+.additional-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+  }
+  
+  .additional-content a {
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 1vw;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: left;
+    margin: 5px 20px;
+    letter-spacing: 0em;
+    text-decoration: none;
+    color: #828282;
+    transition: color 0.3s ease;
+  }
+  .additional-content a:hover {
+    color: #3c3c3c;
+  }
