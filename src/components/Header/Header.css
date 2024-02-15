@@ -1,0 +1,126 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.Main-logo {
+    padding-left: 80px;
+}
+
+.menu-controls {
+    padding-right: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.phone-number {
+    margin-right: 10px;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 64px;
+    height: 64px;    
+    border-radius: 50%;
+    transition: background-color 0.3s ease; 
+}
+
+.menu-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu-button:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+}
+
+.phone-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    height: 48px;
+    padding: 0px 24px;
+    border-radius: 100px;
+    color: #FFFFFF;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.phone-number:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.phone-icon {
+    padding-right: 8px;
+}
+
+.phone-number a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.phone-number a:hover {
+    text-decoration: none;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    z-index: 100;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 1rem;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
