@@ -9,7 +9,6 @@
     padding: 1vw;
     box-sizing: border-box;
     z-index: 1001;
-    
 }
 
 .sticky-header {
@@ -29,7 +28,7 @@
 .main-logo {
     max-width: 10vw;
     height: auto;
-    padding-left: 1vw;
+    padding-left: 3vw;
 }
 
 .main-logo img{

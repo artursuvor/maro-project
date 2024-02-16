@@ -7,7 +7,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-        setSticky(window.scrollY > 110);
+        setSticky(window.scrollY > 1);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -29,7 +29,7 @@ function Header() {
               <a href="#">О нас</a>
             </li>
             <li>
-              <a href="#">Портфолио</a>
+              <a href="/portfolio">Портфолио</a>
             </li>
             <li>
               <a href="#">Услуги</a>
@@ -51,9 +51,11 @@ function Header() {
       )}
 
       <div className={isSticky ? 'sticky-header' : 'header'}>
-        <div className="main-logo">
-          <img src="./img/logo.svg" alt="logo-on-main-page" />
-        </div>
+        <a href="/">
+          <div className="main-logo">
+            <img src="./img/logo.svg" alt="logo-on-main-page" />
+          </div>
+        </a>
         <div className={isSticky ? "sticky-menu-controls" : "menu-controls"}>
           <span className={isSticky ? "sticky-phone-number" : "phone-number"}>
             <img src= {isSticky ? "./img/black-phone.svg" : "./img/phone.svg" }alt="phone" className='phone-icon' />

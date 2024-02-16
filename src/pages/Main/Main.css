@@ -1,7 +1,6 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-size: 16px;
 }
 
 .hero {
@@ -26,8 +25,7 @@ body, html {
 }
 
 .hero-content img {
-  width: 10%; /* Adjust as needed */
-  max-width: 250px;
+  width: 20vw;
   height: auto;
 }
 
@@ -153,7 +151,7 @@ body, html {
 }
 
 .about-us{
-  padding: 2vw 4vw;
+  padding: 3vw 4vw;
   display: grid;
   place-items: center; 
   text-align: center;
@@ -179,41 +177,269 @@ body, html {
   margin: 10px; 
 }
 
-.about-us-text-container {
-  width: 60%;
-  float: left;
+.about-us-heading { grid-area: about; }
+.about-us-text-container { grid-area: first; }
+.about-us-text-container-scnd { grid-area: main; }
+.about-image-section { grid-area: right; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'about about about about right'
+    'first first main main right'
+    'first first main main right';
+  padding: 1vw;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #F6F4F4;
+  padding-bottom: 5vw;
 }
 
-.about-image-section {
-  width: 40%;
-  float: left;
+.grid-container > div {
+  gap: 10px;
 }
 
-.about-image-section img {
-  max-width: 100%;
+.about-us-heading{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  padding-left: 3vw;
+  padding-top: 5vw;
+}
+
+.about-us-text-container,
+.about-us-text-container-scnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+}
+
+.about-us-text-container div,
+.about-us-text-container-scnd div {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: 3vw;
+  
+}
+
+.about-us-text-container-scnd div{
+  margin-bottom: 6.5vw;
+  padding-right: 5vw;
+}
+
+.large-digit-in-about-section{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 7vw;
+  font-weight: 400;
+  white-space: normal;
+  letter-spacing: 0em;
+}
+
+.grid-container div p{
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  line-height: 1.5vw;
+  letter-spacing: 0em;
+  padding-left: 1vw;
+}
+
+.about-image-section{
+  padding-left: 2vw;
+}
+
+.about-image-section img{
+  width: 26vw;
+  height: 36vw;
+}
+
+.cover-all-questions {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.portfolio-section{
+  padding-top: 1vw;
+  padding-left: 4vw;
+  padding-bottom: 4vw;
+  background-color: #E7E3E3;
+}
+
+.portfolio-heading{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 3vw;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.rolling-gallery {
+  overflow: hidden;
+}
+
+.apartment-details,
+.villa-details,
+.commercial-details{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  padding-right: 4vw;
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img{
+  width: 36vw;
   height: auto;
 }
 
-.large-digit-in-about-section {
-  font-size: 1.5em; /* Adjust the font size as needed */
-  display: inline-block; /* Ensure numbers are in the same line as paragraphs */
-  margin-right: 5px; /* Add spacing between numbers and paragraphs */
-  font-weight: bold; /* Make the numbers bold if desired */
+.text-overlay {
+  position: absolute;
+  top: 85%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  color: #F6F4F4;
 }
 
-.about-us-heading {
-  font-size: 1.5em; /* Adjust the font size as needed */
-  display: inline-block; /* Ensure "О НАС" is in the same line as paragraphs */
-  margin-right: 5px; /* Add spacing between "О НАС" and paragraphs */
-  font-weight: bold; /* Make the heading bold if desired */
+.text-overlay p {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
-@media screen and (min-width: 1440px) {
-  .hero-content img {
-    width: 250px;
-  }
+.button-container {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end;
+  margin-right: 4vw;
+  text-decoration: none;
+}
 
-  .left-side {
-    padding: 20px;
-  }
+.button-image-portfolio{
+  width: 4vw;
+}
+
+.watch-all-text{
+  padding: 1vw;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.6vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+
+.services-section{
+  padding: 1vw 4vw;
+  background-color: #F6F4F4;
+}
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.services-header p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+
+.selection-section {
+  padding-top: 1vw;
+  padding-left: 4vw;
+  padding-bottom: 5vw;
+  background-color: #E7E3E3;
+}
+
+.selection-head {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 3vw;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.selection-image {
+  position: relative;
+}
+
+.selection-image p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 1.5vw;
+  position: absolute;
+  width: 20vw;
+  top: 15%;
+  left: 55%;
+  text-align: left;
+}
+
+.selection-container {
+  display: flex;
+}
+
+.selection-text-after-image {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 25vw;
+  padding-bottom: 10%;
+  padding-left: 2vw;
+  align-self: flex-end; 
+}
+
+.selection-right {
+  margin-left: auto; 
+  padding-left: 5vw;
+}
+
+.selection-right p {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 1.5vw;
+  text-align: left;
+  width: 25vw;
+}
+
+.selection-suppliers {
+  position: relative;
+}
+
+.button-supp {
+  position: absolute;
+  background: #00000033;
+  padding: 1vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 100%;
+  bottom: 2vw; /* Регулируйте в зависимости от вашего дизайна */
+  right: 3vw; /* Регулируйте в зависимости от вашего дизайна */
+  cursor: pointer;
 }

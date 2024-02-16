@@ -1,0 +1,99 @@
+/* styles.css */
+
+.drop-down-menu::after {
+  content: '';
+  display: block;
+  height: 0.5px;
+  width: 202%;
+  background-color: black; 
+  margin: 1vw 0; 
+  box-sizing: border-box;
+}
+
+.drop-down-menu {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 45% 5%;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 1vw;
+}
+
+.drop-down-menu p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+
+.drop-down-menu .animated-arrow {
+  width: 4vw;
+  justify-self: end; 
+  transition: transform 0.3s ease; 
+}
+
+.drop-down-menu.open .animated-arrow {
+  transform: rotate(-90deg);
+}
+
+.dropdown-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  position: relative; 
+  padding-left: 3vw;
+}
+
+.dropdown-content ul {
+  list-style: none; 
+  padding: 0;
+}
+
+.dropdown-content ul li {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 30vw;
+  padding: 1vw;
+}
+/* 
+.dropdown-content li::before {
+  content: '\2022'; 
+  position: absolute;
+  left: 1.2vw;
+  margin-top: -2vw;
+  border-radius: 50%;
+  color: #C4C4C4; 
+  font-size: 5rem;
+} */
+
+
+.lines {
+  position: absolute;
+  left: 2.35vw;
+  top: 2.6vw;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: #C4C4C4; /* Цвет линий */
+  height: 87%;
+  z-index: 1;
+}
+
+.dropdown-content img {
+  height: 40vw;
+  justify-self: end; 
+  width: auto;
+}
+
+.drop-down-menu.open + .dropdown-content {
+  max-height: 100vw; /* Или любая другая подходящая высота */
+}
+
