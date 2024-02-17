@@ -5,10 +5,10 @@ function Footer() {
   return (
     <footer>
       <div className="footer-content">
-        <a href="#">Социальная ответственность</a>
-        <a href="#">Гарантии</a>
-        <a href="#">FAQ</a>
-        <a href="#">Сотрудничество</a>
+        <a href="/social-responsibility">Социальная ответственность</a>
+        <a href="/guarantees">Гарантии</a>
+        <a href="/FAQ">FAQ</a>
+        <a href="/cooperation">Сотрудничество</a>
       </div>
       <img src="./img/logo.svg" alt="logo-on-footer-page" />
       <div className='footer-space-around-text'>

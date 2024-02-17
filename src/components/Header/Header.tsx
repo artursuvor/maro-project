@@ -26,26 +26,26 @@ function Header() {
         <div className="menu">
           <ul>
             <li>
-              <a href="#">О нас</a>
+              <a href="/#about">О нас</a>
             </li>
             <li>
-              <a href="/portfolio">Портфолио</a>
+              <a href="/#portfolio">Портфолио</a>
             </li>
             <li>
-              <a href="#">Услуги</a>
+              <a href="/#services">Услуги</a>
             </li>
             <li>
-              <a href="#">Подбор мебели</a>
+              <a href="/#selection">Подбор мебели</a>
             </li>
             <li>
-              <a href="#">Контакты</a>
+              <a href="/#contacts">Контакты</a>
             </li>
           </ul>
           <div className="additional-content">
-            <a href="#">Социальная ответственность</a>
-            <a href="#">Гарантии</a>
-            <a href="#">FAQ</a>
-            <a href="#">Сотрудничество</a>
+            <a href="/social-responsibility">Социальная ответственность</a>
+            <a href="/guarantees">Гарантии</a>
+            <a href="/FAQ">FAQ</a>
+            <a href="/cooperation">Сотрудничество</a>
           </div>
         </div>
       )}

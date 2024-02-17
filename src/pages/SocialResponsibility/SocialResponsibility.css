@@ -1,0 +1,53 @@
+.header {
+    width: 100%;
+    top: 0;
+    background: #F6F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+.socialresponsibility-section{
+    padding-top: 6vw;
+    padding-left: 4vw;
+    padding-bottom: 5vw;
+    background-color: #F6F4F4;
+}
+
+.socialresponsibility-head{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 3vw;
+    font-weight: 400;
+    line-height: 4vw;
+    text-align: left;
+}
+
+.socialresponsibility-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 48vw;
+}
+
+.socialresponsibility-digit{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2vw;
+    font-weight: 400;
+    padding: 1vw;
+    line-height: 2.4vw;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.socialresponsibility-text{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.4vw;
+    font-weight: 400;
+    line-height: 1.7vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0B0A09;
+}

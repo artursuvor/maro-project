@@ -1,0 +1,63 @@
+.header {
+    width: 100%;
+    top: 0;
+    background: #F6F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+.faq-section{
+    padding-top: 6vw;
+    padding-left: 4vw;
+    padding-bottom: 5vw;
+    background-color: #F6F4F4;
+}
+
+.faq-head{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 3vw;
+    font-weight: 400;
+    line-height: 41px;
+    text-align: left;
+}
+
+.faq-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: "Ubuntu",sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 1vw;
+    
+}
+.animated-arrow-to-up{
+    transition: transform 0.3s ease; 
+}
+.animated-arrow-to-up.rotate {
+    transform: rotate(-90deg); 
+}
+.faq-answer{
+    width: 26vw;
+    height: 2vw;
+    padding-right: 20vw;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: left;
+}
+
+

@@ -14,13 +14,17 @@ footer {
   
   .footer-content a {
     text-decoration: none;
-    color: black;
+    color: #0B0A09;
     font-family: "Gothic A1", sans-serif;
     font-size: 1.5vw;
     font-weight: 400;
     line-height: 2vw;
     letter-spacing: 0em;
+    cursor: pointer;
+  }
 
+  .footer-content a:hover {
+    color:rgb(112, 112, 112)
   }
   
   footer::before {

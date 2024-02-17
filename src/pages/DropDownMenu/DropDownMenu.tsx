@@ -1,4 +1,3 @@
-// DropDownMenu.tsx
 import React, { useState } from 'react';
 import './DropDownMenu.css';
 
@@ -7,9 +6,10 @@ interface DropDownMenuProps {
   content: string[];
   menuStates: boolean[];
   setMenuStates: React.Dispatch<React.SetStateAction<boolean[]>>;
+  price: string;
 }
 
-const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates, setMenuStates }) => {
+const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates, setMenuStates, price }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,7 +22,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates,
     <div className="drop-down-wrapper">
       <div className={`drop-down-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <p>{title}</p>
-        <p>ОТ 500 €/М²</p>
+        <p>{price}</p>
         <img src="./img/arrow_down.png" alt="arrow" className='animated-arrow'/>
       </div>
       <div className={`dropdown-content ${isOpen ? 'open' : ''}`}>
@@ -33,7 +33,6 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates,
           ))}
         </ul>
         <img src="./img/services.jpg" alt="services-drop-down" />
-        
       </div>
     </div>
   );
