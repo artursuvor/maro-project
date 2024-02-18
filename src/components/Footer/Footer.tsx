@@ -10,7 +10,7 @@ function Footer() {
         <a href="/FAQ">FAQ</a>
         <a href="/cooperation">Сотрудничество</a>
       </div>
-      <img src="./img/logo.svg" alt="logo-on-footer-page" />
+      <img src="/img/logo.svg" alt="logo-on-footer-page" />
       <div className='footer-space-around-text'>
         <p>ВСЕ ПРАВА ЗАЩИЩЕНЫ</p>
         <p>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</p>

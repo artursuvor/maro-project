@@ -1,0 +1,196 @@
+.header {
+    width: 100%;
+    top: 0;
+    background: #F6F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+.portfolio-page-section{
+    padding-top: 6vw;
+    padding-bottom: 1vw;
+    background-color: #F6F4F4;
+    position: relative;
+}
+  
+  .portfolio-page-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .portfolio-page-background {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.6);
+  }
+  
+  .portfolio-page-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .portfolio-page-text-overlay {
+    position: absolute;
+    top: 60%;
+    left: 28%;
+    width: 46vw;
+    transform: translate(-50%, -50%);
+    color: #F6F4F4;
+    text-align: left;
+    z-index: 1;
+  }
+  
+  .portfolio-page-heading {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 1vw;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  
+  .portfolio-page-text {
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.4vw;
+    font-weight: 300;
+    line-height: 1.4vw;
+    letter-spacing: 0em;
+    text-align: left;    
+  }
+  
+  .portfolio-page-switcher-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4vw;
+  }
+  
+  .portfolio-page-switcher-container button {
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1vw;
+    cursor: pointer;
+    margin: 0 1vw;
+    text-decoration: none;
+    color: #0B0A09; 
+    outline: none;
+    border-bottom: 0.2vw solid transparent;
+  }
+  
+  .portfolio-page-switcher-container button.selected {
+    border-bottom: 0.2vw solid #0B0A09;
+  }
+  
+  .portfolio-page-image-renderComponent{
+    width: 30vw;
+    height: 36vw;
+  }
+
+  .portfolio-page-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5vw; 
+    padding: 4vw;
+  }
+  
+  .portfolio-page-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .portfolio-page-text-renderComponent {
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .portfolio-page-item:hover .portfolio-page-text-renderComponent {
+    opacity: 1;
+    width: 30vw;
+    z-index: 1002;
+  }
+
+  .portfolio-page-item:hover .portfolio-page-image-renderComponent {
+    filter: brightness(0.6);
+  } 
+  
+  .portfolio-page-residentialComplex{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 1vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+  
+    
+  .portfolio-page-address{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    line-height: 2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 20vw;
+    color: white;
+  }
+    
+  .portfolio-page-sizeSquareMeters{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.3vw;
+    font-weight: 200;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+
+  .portfolio-page-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .portfolio-page-read-more {
+    position: absolute;
+    bottom: 2vw;
+    right: 1vw;
+    padding: 1vw;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .portfolio-page-item:hover .portfolio-page-read-more {
+    opacity: 1;
+  }
+  
+  .read-more-link {
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    line-height: 2vw;
+    padding: 1vw;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+  }
+  
+  

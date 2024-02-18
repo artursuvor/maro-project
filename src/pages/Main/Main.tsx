@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import myCommercial from '../Portfolio/Commercial/Commercial.tsx';
-import myApartment from '../Portfolio/Apartment/Apartment.tsx';
-import myVilla from '../Portfolio/Villa/Villa.tsx';
+import commercialData from '../Portfolio/Commercial/Commercial.tsx';
+import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
+import villaData from '../Portfolio/Villa/Villa.tsx';
 import Supplier from '../Suppliers.tsx';
 import HousingDetails from '../HousingDetails.tsx';
 import DropDownMenu from '../DropDownMenu/DropDownMenu.tsx';
@@ -79,6 +79,7 @@ function Main() {
       sliderRef.current.slickNext();
     }
   };
+
   return (
     <div>
       <div className={`hero ${showHero ? '' : 'fade-out'}`}>
@@ -145,9 +146,9 @@ function Main() {
         <p className='portfolio-heading'>ПОРТФОЛИО</p>
         <div className='rolling-gallery'>
           <Slider {...settings}>
-            <HousingDetails type="apartment" data={[myApartment, myApartment]} />
-            <HousingDetails type="villa" data={[myVilla, myVilla]} />
-            <HousingDetails type="commercial" data={[myCommercial, myCommercial]} />
+            <HousingDetails type="apartment" data={apartmentData} />
+            <HousingDetails type="villa" data={villaData} />
+            <HousingDetails type="commercial" data={commercialData} />
           </Slider>
         </div>
         <a href="/portfolio" className="button-container">

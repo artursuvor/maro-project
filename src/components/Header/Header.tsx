@@ -53,12 +53,12 @@ function Header() {
       <div className={isSticky ? 'sticky-header' : 'header'}>
         <a href="/">
           <div className="main-logo">
-            <img src="./img/logo.svg" alt="logo-on-main-page" />
+            <img src="/img/logo.svg" alt="logo-on-main-page" />
           </div>
         </a>
         <div className={isSticky ? "sticky-menu-controls" : "menu-controls"}>
           <span className={isSticky ? "sticky-phone-number" : "phone-number"}>
-            <img src= {isSticky ? "./img/black-phone.svg" : "./img/phone.svg" }alt="phone" className='phone-icon' />
+            <img src= {isSticky ? "/img/black-phone.svg" : "/img/phone.svg" }alt="phone" className='phone-icon' />
             <a href="tel:3826977200">382 69 772-002</a>
           </span>
           <button className={isSticky ? "sticky-menu-button" : 'menu-button' } onClick={toggleMenu}>

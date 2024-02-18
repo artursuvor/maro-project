@@ -7,6 +7,7 @@ import SocialResponsibility from '../../pages/SocialResponsibility/SocialRespons
 import Guarantees from '../../pages/Guarantees/Guarantees.tsx';
 import FAQ from '../../pages/FAQ/FAQ.tsx';
 import Cooperation from '../../pages/Cooperation/Cooperation.tsx';
+import RealEstateDetails from '../../pages/RealEstateDetails/RealEstateDetails.tsx'; 
 
 
 function App(): JSX.Element {
@@ -15,7 +16,8 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
-          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="portfolio/*" element={<Portfolio />} />
+          <Route path="portfolio/:type/:id" element={<RealEstateDetails />} />
           <Route path="social-responsibility" element={<SocialResponsibility />} />
           <Route path="guarantees" element={<Guarantees />} />
           <Route path="FAQ" element={<FAQ />} />

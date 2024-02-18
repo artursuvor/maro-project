@@ -292,13 +292,13 @@ body, html {
   justify-content: space-between;
 }
 
-.image-container {
+.portfolio-section-image-container {
   padding-right: 4vw;
   position: relative;
   display: inline-block;
 }
 
-.image-container img{
+.portfolio-section-image-container img{
   width: 36vw;
   height: auto;
 }
