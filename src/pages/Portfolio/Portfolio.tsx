@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Portfolio.css';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
+import { useLanguage } from '../../components/Language.tsx'; 
+import './Portfolio.css';
 
 interface RealEstateItem {
   residentialComplex: string;
@@ -13,6 +14,7 @@ interface RealEstateItem {
 }
 
 const Portfolio: React.FC = () => {
+  const { language } = useLanguage(); 
   const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
   const [apartmentDataState] = useState<RealEstateItem[]>(apartmentData);
   const [villaDataState] = useState<RealEstateItem[]>(villaData);
@@ -61,9 +63,9 @@ const Portfolio: React.FC = () => {
             
             <div className="portfolio-page-read-more">
               <Link to={`/portfolio/${selectedComponent}/${index}`} className="read-more-link">
-                Подробнее
+                {language === 'ru' ? 'Подробнее' : 'Details'} 
               </Link>
-              <img src='./img/white-arrow-up.png' alt='white-arrow-up' className= "portfolio-page-white-arrow-up"/>
+              <img src='/img/white-arrow-up.png' alt='white-arrow-up' className= "portfolio-page-white-arrow-up"/>
             </div>
           </>
         )}
@@ -88,13 +90,11 @@ const Portfolio: React.FC = () => {
   return (
     <div className="portfolio-page-section">
       <div className="portfolio-page-container">
-        <img src="./img/portfolio-page-1.png" alt="page-background" className='portfolio-page-background' />
+        <img src="/img/portfolio-page-1.png" alt="page-background" className='portfolio-page-background' />
         <div className="portfolio-page-text-overlay">
-          <p className='portfolio-page-heading'>ПОРТФОЛИО</p>
+          <p className='portfolio-page-heading'>{language === 'ru' ? 'ПОРТФОЛИО' : 'Portfolio'}</p>
           <p className='portfolio-page-text'>
-            Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. 
-            Клиент доверяет нам ключи от «голой» квартиры,<br/>
-            а приезжает уже в полностью готовую к проживанию.
+            {language === 'ru' ? 'Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию.' : 'We can completely take care of all the client\'s questions regarding real estate arrangement. The client trusts us with the keys to the "bare" apartment, and arrives already in a fully prepared living space.'}
           </p>
         </div>
       </div>
@@ -103,19 +103,19 @@ const Portfolio: React.FC = () => {
           onClick={() => setSelectedComponent('apartment')}
           className={selectedComponent === 'apartment' ? 'selected' : ''}
         >
-          Квартиры
+          {language === 'ru' ? 'Квартиры' : 'Apartments'}
         </button>
         <button
           onClick={() => setSelectedComponent('villa')}
           className={selectedComponent === 'villa' ? 'selected' : ''}
         >
-          Виллы
+          {language === 'ru' ? 'Виллы' : 'Villas'}
         </button>
         <button
           onClick={() => setSelectedComponent('commercial')}
           className={selectedComponent === 'commercial' ? 'selected' : ''}
         >
-          Коммерческая недвижимость
+          {language === 'ru' ? 'Коммерческая недвижимость' : 'Commercial real estate'}
         </button>
       </div>
         <div className='portfolio-page-grid-container'>{renderSelectedComponent()}</div>
@@ -123,4 +123,4 @@ const Portfolio: React.FC = () => {
   );
 };
 
-  export default Portfolio;
+export default Portfolio;

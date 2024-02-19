@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../Language.tsx';
 import './Header.css';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,26 +28,26 @@ function Header() {
         <div className="menu">
           <ul>
             <li>
-              <a href="/#about">О нас</a>
+              <a href="/#about">{language === 'ru' ? 'О нас' : 'About us'}</a>
             </li>
             <li>
-              <a href="/#portfolio">Портфолио</a>
+              <a href="/#portfolio">{language === 'ru' ? 'Портфолио' : 'Portfolio'}</a>
             </li>
             <li>
-              <a href="/#services">Услуги</a>
+              <a href="/#services">{language === 'ru' ? 'Услуги' : 'Services'}</a>
             </li>
             <li>
-              <a href="/#selection">Подбор мебели</a>
+              <a href="/#selection">{language === 'ru' ? 'Подбор мебели' : 'Furniture selection'}</a>
             </li>
             <li>
-              <a href="/#contacts">Контакты</a>
+              <a href="/#contacts">{language === 'ru' ? 'Контакты' : 'Contacts'}</a>
             </li>
           </ul>
           <div className="additional-content">
-            <a href="/social-responsibility">Социальная ответственность</a>
-            <a href="/guarantees">Гарантии</a>
+            <a href="/social-responsibility">{language === 'ru' ? 'Социальная ответственность' : 'Social Responsibility'}</a>
+            <a href="/guarantees">{language === 'ru' ? 'Гарантии' : 'Guarantees'}</a>
             <a href="/FAQ">FAQ</a>
-            <a href="/cooperation">Сотрудничество</a>
+            <a href="/cooperation">{language === 'ru' ? 'Сотрудничество' : 'Cooperation'}</a>
           </div>
         </div>
       )}

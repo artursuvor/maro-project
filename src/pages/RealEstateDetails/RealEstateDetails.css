@@ -309,3 +309,99 @@
     letter-spacing: 0em;
     text-align: left;
   }
+
+    
+  .real-estate-page-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .real-estate-page-text-renderComponent {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .real-estate-page-image-renderComponent{
+    height: 30vw;
+    width: auto;
+  }
+
+  .real-estate-page-item:hover .real-estate-page-text-renderComponent {
+    opacity: 1;
+    width: 25vw;
+    z-index: 1002;
+  }
+
+  .real-estate-page-item:hover .real-estate-page-image-renderComponent {
+    filter: brightness(0.6);
+  } 
+  
+  .real-estate-page-residentialComplex{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 1vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+  
+    
+  .real-estate-page-address{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    line-height: 2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 20vw;
+    color: white;
+  }
+    
+  .real-estate-page-sizeSquareMeters{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.3vw;
+    font-weight: 200;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+  .real-estate-page-read-more {
+    position: absolute;
+    bottom: 2vw;
+    right: 1vw;
+    padding: 1vw;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+  
+  .real-estate-page-item:hover .real-estate-page-read-more {
+    opacity: 1;
+  }
+  
+  .real-estate-page-white-arrow-up{
+    width: 1vw;
+    height: 1vw;
+    padding: 0.5vw 1vw;
+  }
+
+  .real-estate-page-more-link {
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    line-height: 2vw;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+  }
+  
+  
