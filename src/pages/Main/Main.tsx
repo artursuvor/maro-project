@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../../components/Language.tsx';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
@@ -6,7 +7,6 @@ import Supplier from '../Suppliers.tsx';
 import HousingDetails from '../HousingDetails.tsx';
 import DropDownMenu from '../DropDownMenu/DropDownMenu.tsx';
 import Slider from 'react-slick';
-import { useLanguage } from '../../components/Language.tsx';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Main.css'; 

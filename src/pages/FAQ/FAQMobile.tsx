@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../components/Language.tsx';
-import './FAQ.css';
 
-const FAQ: React.FC = () => {
+import './FAQMobile.css';
+
+const FAQMobile: React.FC = () => {
     const { language } = useLanguage();
     const faqData = [
         {
@@ -26,17 +27,17 @@ const FAQ: React.FC = () => {
     };
 
     return (
-        <div className='faq-section'>
-            <p className='faq-head'>FAQ</p>
-            <div className='faq-drop-menu'>
+        <div className='faq-section-mobile'>
+            <p className='faq-head-mobile'>FAQ</p>
+            <div className='faq-drop-menu-mobile'>
                 {faqData.map((faq, index) => (
-                    <div key={index} className='faq-item'>
-                        <div className='faq-question' onClick={() => toggleFAQ(index)}>
+                    <div key={index} className={`faq-item-mobile ${openIndex === index ? 'open' : ''}`}>
+                        <div className='faq-question-mobile' onClick={() => toggleFAQ(index)}>
                             {faq.question}
                             <img src="./img/arrow_down.png" alt="arrow-down" className={`animated-arrow-to-up ${openIndex === index ? 'rotate' : ''}`} />
                         </div>
                         {openIndex === index && (
-                            <div className='faq-answer' dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                            <div className='faq-answer-mobile' dangerouslySetInnerHTML={{ __html: faq.answer }} />
                         )}
                     </div>
                 ))}
@@ -45,4 +46,4 @@ const FAQ: React.FC = () => {
     );
 };
 
-export default FAQ;
+export default FAQMobile;

@@ -1,0 +1,65 @@
+.header-mobile {
+    width: 100%;
+    top: 0;
+    background: #F6F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 3vw;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+.cooperation-section-mobile{
+    padding-top: 16vw;
+    padding-left: 4vw;
+    padding-bottom: 15vw;
+    background-color: #F6F4F4;
+}
+
+.cooperation-container-text-btn-mobile-mobile {
+    display: flex;
+    justify-content: space-between; 
+    align-items:baseline;
+}
+
+.cooperation-container-text-mobile {
+    width: 90vw;
+    text-align: left;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 4vw;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.cooperation-head-mobile{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 8vw;
+    font-weight: 400;
+    line-height: 41px;
+    text-align: left;
+}
+
+.button-container-cooperation-mobile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 55vw;
+}
+
+.button-image-cooperation-mobile{
+    width: 8vw; 
+}
+
+.button-container-cooperation-text-mobile{
+    font-family: "Ubuntu", sans-serif;
+    padding-right: 1vw;
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: black;
+}

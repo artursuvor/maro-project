@@ -1,0 +1,114 @@
+.drop-down-menu-mobile::after {
+  content: '';
+  display: block;
+  height: 0.5px;
+  width: 100%;
+  background-color: black; 
+  margin: 1vw 0; 
+  box-sizing: border-box;
+}
+
+.drop-down-menu-mobile {
+  position: relative;
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 4vw 1vw;
+}
+
+.drop-down-menu-mobile p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+  line-height: 8vw;
+  width: 80vw;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+
+.drop-down-menu-price-mobile{
+  padding-left: 5vw;
+}
+
+.drop-down-menu-mobile .animated-arrow-mobile {
+  position: absolute;
+  width: 12vw;
+  justify-self: end; 
+  transition: transform 0.3s ease; 
+}
+
+.drop-down-menu-mobile.open .animated-arrow-mobile {
+  transform: rotate(-90deg);
+}
+
+.dropdown-content-mobile {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr 1fr; 
+  position: relative; 
+  padding-left: 3vw;
+}
+
+.dropdown-content-mobile ul {
+  list-style: none; 
+  padding: 0;
+}
+
+.dropdown-content-mobile ul li {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 80vw;
+  padding-bottom: 4vw;
+  padding-left: 1vw;
+}
+/* 
+.dropdown-content li::before {
+  content: '\2022'; 
+  position: absolute;
+  left: 1.2vw;
+  margin-top: -2vw;
+  border-radius: 50%;
+  color: #C4C4C4; 
+  font-size: 5rem;
+} */
+
+
+.lines-mobile {
+  position: absolute;
+  left: 2.35vw;
+  top: 2.6vw;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: #C4C4C4;
+  height: 52%;
+  z-index: 1;
+}
+
+.drop-down-menu-picture-1 {
+  order: 1;
+  width: 60vw;
+  justify-self: end;
+  height: auto;
+  position: relative;
+}
+
+.drop-down-menu-picture-2 {
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  bottom: 10%;
+  left: 65%;
+  z-index: 100;
+}
+.drop-down-menu-mobile.open + .dropdown-content-mobile {
+  max-height: 250vw;
+}
+

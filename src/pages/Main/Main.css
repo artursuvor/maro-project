@@ -446,11 +446,6 @@ body, html {
   overflow: hidden;
 }
 
-.supplier-image{
-  width: 15vw; 
-  height: 9vw;
-}
-
 .button-supp {
   position: absolute;
   background: #00000033;

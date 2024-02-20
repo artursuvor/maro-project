@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../../components/Language.tsx';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
 import Supplier from '../Suppliers.tsx';
-import HousingDetails from '../HousingDetails.tsx';
-import DropDownMenu from '../DropDownMenu/DropDownMenu.tsx';
+import HousingDetailsMobile from '../HousingDetailsMobile.tsx';
+import DropDownMenuMobile from '../DropDownMenu/DropDownMenuMobile.tsx';
 import Slider from 'react-slick';
-import { useLanguage } from '../../components/Language.tsx';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './MainMobile.css'; 
@@ -51,25 +51,8 @@ function MainMobile() {
     return () => clearTimeout(timeout);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000, 
-  };
-
   const settingsSupplier = {
-    slidesToShow: 6,
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
     arrows: false, 
@@ -138,27 +121,34 @@ function MainMobile() {
           <h5 className='cover-all-questions-mobile'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ ВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ' : 'WE COVER ALL REAL ESTATE RELATED QUESTIONS'}</h5>
         </div>
       </div>
-      <div className="portfolio-section" id='portfolio'>
-      <p className='portfolio-heading-mobile'>{language === 'ru' ? 'ПОРТФОЛИО' : 'PORTFOLIO'}</p>
-        <div className='rolling-gallery'>
-          <Slider {...settings}>
-            <HousingDetails type="apartment" data={apartmentData} />
-            <HousingDetails type="villa" data={villaData} />
-            <HousingDetails type="commercial" data={commercialData} />
-          </Slider>
+      <div className="portfolio-section-mobile" id='portfolio'>
+        <div className='rolling-gallery-mobile'>
+          <p className='portfolio-heading-mobile'>{language === 'ru' ? 'КВАРТИРЫ' : 'APARTMENTS'}</p>
+          <HousingDetailsMobile type="apartment" data={apartmentData} />
+          <a href="/portfolio" className="button-container-mobile">
+            <p className="watch-all-text-mobile">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
+            <img src="./img/Button_circle.png" alt="button_circle" className="button-image-portfolio-mobile" />
+          </a>
+          <p className='portfolio-heading-mobile'>{language === 'ru' ? 'ВИЛЛЫ' : 'VILLAS'}</p>
+          <HousingDetailsMobile type="villa" data={villaData} />
+          <a href="/portfolio" className="button-container-mobile">
+            <p className="watch-all-text-mobile">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
+            <img src="./img/Button_circle.png" alt="button_circle" className="button-image-portfolio-mobile" />
+          </a>
+          <p className='portfolio-heading-mobile'>{language === 'ru' ? 'КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ' : 'COMMERCIAL REAL ESTATE'}</p>
+          <HousingDetailsMobile type="commercial" data={commercialData} />
+          <a href="/portfolio" className="button-container-mobile">
+            <p className="watch-all-text-mobile">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
+            <img src="./img/Button_circle.png" alt="button_circle" className="button-image-portfolio-mobile" />
+          </a>
         </div>
-        <a href="/portfolio" className="button-container">
-        <p className="watch-all-text">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
-          <img src="./img/Button_circle.png" alt="button_circle" className="button-image-portfolio" />
-        </a>
       </div>
-      <div className="services-section" id='services'>
-        <div className="services-header">
+      <div className="services-section-mobile" id='services'>
+        <div className="services-header-mobile">
           <p>{language === 'ru' ? 'УСЛУГИ' : 'SERVICES'}</p>
-          <img src="./img/buttuon_up.png" alt="button_circle_up" onClick={scrollToTop} className='sevices-button-up'/>
         </div>
         <>
-          <DropDownMenu
+          <DropDownMenuMobile
             title={language === 'ru' ? '01  ДИЗАЙН-ПРОЕКТИРОВАНИЕ' : '01  DESIGN AND PLANNING'}
             content={[
               language === 'ru' ? 
@@ -190,7 +180,7 @@ function MainMobile() {
             setMenuStates={setMenuStates}
             price={language === 'ru' ? `От 500 €/М²` : `From 500 €/M²`}
           />
-          <DropDownMenu
+          <DropDownMenuMobile
             title={language === 'ru' ? `02  РЕМОНТНО-СТРОИТЕЛЬНЫЕ РАБОТЫ` : `02  CONSTRUCTION AND RENOVATION WORKS`}
             content={[
               language === 'ru' ? 
@@ -222,7 +212,7 @@ function MainMobile() {
             setMenuStates={setMenuStates}
             price={language === 'ru' ? `От 500 €/М²` : `From 500 €/M²`}
           />
-          <DropDownMenu
+          <DropDownMenuMobile
             title={language === 'ru' ? `03  ПОДБОР И ПОСТАВКА МЕБЕЛИ` : `03  FURNITURE SELECTION AND DELIVERY`}
             content={[
               language === 'ru' ? 
@@ -256,21 +246,21 @@ function MainMobile() {
           />
         </>
       </div>
-      <div className='selection-section' id='selection'>
-        <p className='selection-head'>{language === 'ru' ? `ПОДБОР МЕБЕЛИ` : `FURNITURE SELECTION`}</p>
-        <div className='selection-container'>
-          <div className="selection-image">
-            <img src="./img/furnuture-selection.png" alt="furnuture-selection" className="furnuture-selection-image" />
-            <p className='selection-text'>{language === 'ru' ? `МЫ ПЕРЕКРЫВАЕМ\nВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ` : `WE COVER\nALL REAL ESTATE RELATED QUESTIONS`}</p>
+      <div className='selection-section-mobile' id='selection'>
+        <p className='selection-head-mobile'>{language === 'ru' ? `ПОДБОР МЕБЕЛИ` : `FURNITURE SELECTION`}</p>
+        <div className='selection-container-mobile'>
+          <div className="selection-image-mobile">
+            <img src="./img/furnuture-selection.png" alt="furnuture-selection" className="furnuture-selection-image-mobile" />
+            <p className='selection-text-mobile'>{language === 'ru' ? `МЫ ПЕРЕКРЫВАЕМ\nВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ` : `WE COVER\nALL REAL ESTATE RELATED QUESTIONS`}</p>
           </div>
-          <p className='selection-text-after-image'>{language === 'ru' ? `Подбор и доставка мебели из Европы. Подбор и доставка мебели из ЕвропыПодбор и доставка мебели из Европы` : `Selection and delivery of furniture from Europe. Selection and delivery of furniture from EuropeSelection and delivery of furniture from Europe`}</p>
-          <div className='selection-right'>
-            <img src="./img/furnuture-selection-scnd.png" alt="furnuture-selection-scnd" className="furnuture-selection-scnd" />
+          <p className='selection-text-after-image-mobile'>{language === 'ru' ? `Подбор и доставка мебели из Европы. Подбор и доставка мебели из ЕвропыПодбор и доставка мебели из Европы` : `Selection and delivery of furniture from Europe. Selection and delivery of furniture from EuropeSelection and delivery of furniture from Europe`}</p>
+          <div className='selection-right-mobile'>
+            <img src="./img/real-estate.png" alt="furnuture-selection-scnd" className="furnuture-selection-scnd-mobile" />
             <p>{language === 'ru' ? `Составление сметы проекта с учетом подключенных подрядчиков. Составление сметы проекта с учетом подключенных подрядчиков. Составление сметы проекта с учетом подключенных подрядчиков.` : `Compilation of project estimate taking into account connected contractors. Compilation of project estimate taking into account connected contractors. Compilation of project estimate taking into account connected contractors.`}</p>
           </div>
         </div>
-        <div className='selection-suppliers'>
-          <p className='selection-head'>{language === 'ru' ? 'НАШИ ПОСТАВЩИКИ' : 'OUR SUPPLIERS'}</p>
+        <div className='selection-suppliers-mobile'>
+          <p className='selection-head-mobile'>{language === 'ru' ? 'НАШИ ПОСТАВЩИКИ' : 'OUR SUPPLIERS'}</p>
           <Slider {...settingsSupplier} ref={sliderRef}>
             <Supplier id={1} photoUrl="/img/supplier.png" />
             <Supplier id={2} photoUrl="/img/supplier1.png" />
@@ -284,13 +274,12 @@ function MainMobile() {
             <Supplier id={10} photoUrl="/img/supplier.png" />
             <Supplier id={11} photoUrl="/img/supplier.png" />
           </Slider>
-          <img src="./img/button-supp.png" alt="button-supp" className='button-supp' onClick={handleNext}/>
         </div>
       </div>
-      <div className='contacts-section' id='contacts'>
-        <p className='contacts-head'>{language === 'ru' ? 'КОНТАКТЫ' : 'CONTACTS'}</p>
-        <div className='studio-toggle-container'>
-          <div className='studio-toggle'>
+      <div className='contacts-section-mobile' id='contacts'>
+        <p className='contacts-head-mobile'>{language === 'ru' ? 'КОНТАКТЫ' : 'CONTACTS'}</p>
+        <div className='studio-toggle-container-mobile'>
+          <div className='studio-toggle-mobile'>
             <button
               className={activeStudio === 'budva' ? 'active' : ''}
               onClick={() => handleStudioToggle('budva')}
@@ -304,37 +293,66 @@ function MainMobile() {
               {language === 'ru' ? 'Студия в Москве' : 'Studio in Moscow'}
             </button>
           </div>
-          <div className='logo-container'>
-            <img src="./img/logo-contacts.png" alt="logo-contacts" className='logo-contacts'/>
-          </div>
         </div>
         {activeStudio === 'budva' && (
-          <div className='contacts-budva'>
-            <div className='first-string'>
+          <div className='contacts-budva-mobile'>
+            <div className='first-string-mobile'>
               <div>
-                <img src="./img/skype-contacts.png" alt="skype-contacts" className='img-contacts-svg'/>
+                <img src="./img/skype-contacts.png" alt="skype-contacts" className='img-contacts-svg-mobile'/>
                 <p>maro-budva</p>
               </div>
               <div>
-                <img src="./img/phone-contacts.png" alt="phone-contacts" className='img-contacts-svg'/>
+                <img src="./img/phone-contacts.png" alt="phone-contacts" className='img-contacts-svg-mobile'/>
                 <p>382 69 772-002</p>
               </div>
               <div>
-                <img src="./img/house-contacts.png" alt="house-contacts" className='img-contacts-svg'/>
+                <img src="./img/house-contacts.png" alt="house-contacts" className='img-contacts-svg-mobile'/>
                 <p>{language === 'ru' ? '85310, Черногория, Будва, район «Яз»' : '85310, Montenegro, Budva, district "Yaz"'}</p>
               </div>
-            </div>
-            <div className='second-string'>
               <div>
-                <img src="./img/clock-contacts.png" alt="clock-contacts" className='img-contacts-svg'/>
+                <img src="./img/clock-contacts.png" alt="clock-contacts" className='img-contacts-svg-mobile'/>
                 <p>{language === 'ru' ? 'ПН-СБ: 10.00-19.00' : 'MN-ST: 10.00-19.00'}</p>
               </div>
               <div>
-                <img src="./img/mail-contacts.png" alt="mail-contacts" className='img-contacts-svg'/>
+                <img src="./img/mail-contacts.png" alt="mail-contacts" className='img-contacts-svg-mobile'/>
                 <p>info@maro-mebel.ru</p>
               </div>
             </div>
-            <div className='map-container'>
+            <div className='map-container-mobile'>
+              <iframe
+                title="Yandex Map"
+                src="https://yandex.ru/maps/org/salon_maro/136805901235/?ll=37.568071%2C55.789197&mode=search&sctx=ZAAAAAgBEAAaKAoSCd9vtOOGs05AEUDdQIF3lEtAEhIJ4nMn2H8d5z8ReIAnLVxWzT8iBgABAgMEBSgKOABAmJIHSABqAnJ1nQHNzEw9oAEAqAEAvQH1CI%2B0wgEGs8eR0v0D6gEA8gEA%2BAEAggIKc2Fsb24gbWFyb4oCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=37.568071%2C55.789197&sspn=0.006133%2C0.001915&text=salonmaro&z=17.88"
+                frameBorder="0"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        )}
+        {activeStudio === 'moscow' && (
+          <div className='contacts-moscow-mobile'>
+            <div className='first-string-mobile'>
+              <div>
+                <img src="./img/skype-contacts.png" alt="skype-contacts" className='img-contacts-svg-mobile'/>
+                <p>maro-budva</p>
+              </div>
+              <div>
+                <img src="./img/phone-contacts.png" alt="phone-contacts" className='img-contacts-svg-mobile'/>
+                <p>382 69 772-002</p>
+              </div>
+              <div>
+                <img src="./img/house-contacts.png" alt="house-contacts" className='img-contacts-svg-mobile'/>
+                <p>85310, Россия, Москва, район «Яз»</p>
+              </div>
+              <div>
+                <img src="./img/clock-contacts.png" alt="clock-contacts" className='img-contacts-svg-mobile'/>
+                <p>ПН-СБ: 10.00-19.00</p>
+              </div>
+              <div>
+                <img src="./img/mail-contacts.png" alt="mail-contacts" className='img-contacts-svg-mobile'/>
+                <p>info@maro-mebel.ru</p>
+              </div>
+            </div>
+            <div className='map-container-mobile'>
               <iframe
                 title="Yandex Map"
                 src="https://yandex.ru/maps/org/salon_maro/136805901235/?ll=37.568071%2C55.789197&mode=search&sctx=ZAAAAAgBEAAaKAoSCd9vtOOGs05AEUDdQIF3lEtAEhIJ4nMn2H8d5z8ReIAnLVxWzT8iBgABAgMEBSgKOABAmJIHSABqAnJ1nQHNzEw9oAEAqAEAvQH1CI%2B0wgEGs8eR0v0D6gEA8gEA%2BAEAggIKc2Fsb24gbWFyb4oCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=37.568071%2C55.789197&sspn=0.006133%2C0.001915&text=salonmaro&z=17.88"
@@ -345,83 +363,43 @@ function MainMobile() {
             </div>
           </div>
         )}
-        {activeStudio === 'moscow' && (
-        <div className='contacts-moscow'>
-          <div className='first-string'>
-            <div>
-              <img src="./img/skype-contacts.png" alt="skype-contacts" className='img-contacts-svg'/>
-              <p>maro-budva</p>
-            </div>
-            <div>
-              <img src="./img/phone-contacts.png" alt="phone-contacts" className='img-contacts-svg'/>
-              <p>382 69 772-002</p>
-            </div>
-            <div>
-              <img src="./img/house-contacts.png" alt="house-contacts" className='img-contacts-svg'/>
-              <p>85310, Россия, Москва, район «Яз»</p>
+        <div className='contacts-container-button-and-links-mobile'>
+          <div className='contacts-container-links-mobile'>
+            <div className='contacts-a-links-mobile'>
+              <a href="https://wa.link/yourwhatsapplink" className="contacts-wa-mobile">WhatsAPP</a>
+              <a href="https://t.me/yourtelegramusername" className="contacts-tg-mobile">TELEGRAM</a>
+              <a href="https://www.instagram.com/yourinstagramusername/" className="contacts-in-mobile">INSTAGRAM*</a>
+              <a href="viber://chat?number=+123456789" className="contacts-vi-mobile">VIBER</a>
             </div>
           </div>
-          <div className='second-string'>
-            <div>
-              <img src="./img/clock-contacts.png" alt="clock-contacts" className='img-contacts-svg'/>
-              <p>ПН-СБ: 10.00-19.00</p>
-            </div>
-            <div>
-              <img src="./img/mail-contacts.png" alt="mail-contacts" className='img-contacts-svg'/>
-              <p>info@maro-mebel.ru</p>
-            </div>
-          </div>
-          <div className='map-container'>
-            <iframe
-              title="Yandex Map"
-              src="https://yandex.ru/maps/org/salon_maro/136805901235/?ll=37.568071%2C55.789197&mode=search&sctx=ZAAAAAgBEAAaKAoSCd9vtOOGs05AEUDdQIF3lEtAEhIJ4nMn2H8d5z8ReIAnLVxWzT8iBgABAgMEBSgKOABAmJIHSABqAnJ1nQHNzEw9oAEAqAEAvQH1CI%2B0wgEGs8eR0v0D6gEA8gEA%2BAEAggIKc2Fsb24gbWFyb4oCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=37.568071%2C55.789197&sspn=0.006133%2C0.001915&text=salonmaro&z=17.88"
-              width="100%"
-              frameBorder="0"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
-        <div className='contacts-container-button-and-links'>
-          <div className='contacts-container-links'>
-            <div className="button-container-contacts" onClick={handleButtonClick}>
-              <p className="button-container-contacts-text">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
+          <div className="button-container-contacts-mobile" onClick={handleButtonClick}>
+              <p className="button-container-contacts-text-mobile">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
               <img
                 src="./img/Button_circle.png"
                 alt="button_circle"
-                className="button-image-contacts"
+                className="button-image-contacts-mobile"
               />
-            </div>
-            <div className='contacts-a-links'>
-              <a href="https://wa.link/yourwhatsapplink" className="contacts-wa">WhatsAPP</a>
-              <a href="https://t.me/yourtelegramusername" className="contacts-tg">TELEGRAM</a>
-              <a href="https://www.instagram.com/yourinstagramusername/" className="contacts-in">INSTAGRAM*</a>
-              <a href="viber://chat?number=+123456789" className="contacts-vi">VIBER</a>
-            </div>
           </div>
-          
           {isPopupVisible && (
-            <div className="popup-overlay" onClick={handlePopupClose}>
-              <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                <p className="popup-overlay-text">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
+            <div className="popup-overlay-mobile" onClick={handlePopupClose}>
+              <div className="popup-content-mobile" onClick={(e) => e.stopPropagation()}>
+                <p className="popup-overlay-text-mobile">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
                 <img
                   src="./img/close-button.png"
                   alt="close-button-overlay"
-                  className="close-button"
+                  className="close-button-mobile"
                   onClick={handlePopupClose}
                 />
                 <form>
-                  <div className='popup-mail-phone'>
+                  <div className='popup-mail-phone-mobile'>
                     <div>
                       <p>{language === 'ru' ? 'Ваша почта' : 'Your email'}</p>
                       <label>
-                      <input type="email" name="email" placeholder={language === 'ru' ? 'На эту почту придет ответ' : 'The answer will be sent to this email'} className='input-mail'/>
+                      <input type="email" name="email" placeholder={language === 'ru' ? 'На эту почту придет ответ' : 'The answer will be sent to this email'} className='input-mail-mobile'/>
                       </label>
-                    </div>
-                    <div>
                       <p>{language === 'ru' ? 'Ваш телефон' : 'Your phone number'}</p>
                       <label>
-                        <input type="tel" name="phone" className='input-phone'/>
+                        <input type="tel" name="phone" className='input-phone-mobile'/>
                       </label>
                     </div>
                   </div>
@@ -431,11 +409,11 @@ function MainMobile() {
                       name="message"
                       value={message}
                       onChange={handleChange}
-                      maxLength={500}
+                      maxLength={225}
                       placeholder={language === 'ru' ? 'Опишите в нескольких предложениях ваш вопрос..' : 'Describe your question in a few sentences..'} 
-                      className='input-message'
+                      className='input-message-mobile'
                     />
-                    <span className="char-count">{message.length}/500</span>
+                    <span className="char-count-mobile">{message.length}/225</span>
                   </label>
                   <button type="submit">{language === 'ru' ? 'Отправить' : 'Send'}</button>
                 </form>

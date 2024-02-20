@@ -7,10 +7,15 @@ import LayoutMobile from '../Layout/LayoutMobile.tsx';
 import Main from '../../pages/Main/Main.tsx';
 import MainMobile from '../../pages/Main/MainMobile.tsx';
 import Portfolio from '../../pages/Portfolio/Portfolio.tsx';
+import PortfolioMobile from '../../pages/Portfolio/PortfolioMobile.tsx';
 import SocialResponsibility from '../../pages/SocialResponsibility/SocialResponsibility.tsx';
+import SocialResponsibilityMobile from '../../pages/SocialResponsibility/SocialResponsibilityMobile.tsx';
 import Guarantees from '../../pages/Guarantees/Guarantees.tsx';
+import GuaranteesMobile from '../../pages/Guarantees/GuaranteesMobile.tsx';
 import FAQ from '../../pages/FAQ/FAQ.tsx';
+import FAQMobile from '../../pages/FAQ/FAQMobile.tsx';
 import Cooperation from '../../pages/Cooperation/Cooperation.tsx';
+import CooperationMobile from '../../pages/Cooperation/CooperationMobile.tsx';
 import RealEstateDetails from '../../pages/RealEstateDetails/RealEstateDetails.tsx'; 
 
 function DesktopApp(): JSX.Element {
@@ -40,11 +45,11 @@ function MobileApp(): JSX.Element {
         <Routes>
           <Route path="/" element={<LayoutMobile />}>
             <Route index element={<MainMobile />} />
-            <Route path="portfolio/" element={<Portfolio />} />
-            <Route path="social-responsibility" element={<SocialResponsibility />} />
-            <Route path="guarantees" element={<Guarantees />} />
-            <Route path="FAQ" element={<FAQ />} />
-            <Route path="cooperation" element={<Cooperation />} />
+            <Route path="portfolio/" element={<PortfolioMobile />} />
+            <Route path="social-responsibility" element={<SocialResponsibilityMobile />} />
+            <Route path="guarantees" element={<GuaranteesMobile />} />
+            <Route path="FAQ" element={<FAQMobile />} />
+            <Route path="cooperation" element={<CooperationMobile />} />
           </Route>
         </Routes>
       </LanguageProvider>
