@@ -14,7 +14,7 @@ class Apartment {
   }
 }
 
-const myApartment1 = new Apartment(1, "Вишневый сад", "Apart, Москва, ЖК Вишневый сад", "125м2", "/img/room.png");
+const myApartment1 = new Apartment(1, `${"Вишневый сад"}`, "Apart, Москва, ЖК Вишневый сад", "125м2", "/img/room.png");
 const myApartment2 = new Apartment(2, "Кленовый сад", "Apart, Москва, ЖК Кленовый сад", "120м2", "/img/room.png");
 const myApartment3 = new Apartment(3, "Красивый сад", "Apart, Москва, ЖК Красивый сад", "130м2", "/img/room.png");
 const myApartment4 = new Apartment(4, "Дубовый сад", "Apart, Москва, ЖК Дубовый сад", "110м2", "/img/room.png");
