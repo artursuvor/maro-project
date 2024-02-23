@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
@@ -18,6 +18,25 @@ const PortfolioMobile: React.FC = () => {
   const [apartmentDataState] = useState<RealEstateItem[]>(apartmentData);
   const [villaDataState] = useState<RealEstateItem[]>(villaData);
   const [commercialDataState] = useState<RealEstateItem[]>(commercialData);
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 700);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   
   const handleChange = (event) => {
     setSelectedComponent(event.target.value);
@@ -61,6 +80,12 @@ const PortfolioMobile: React.FC = () => {
   };
   return (
     <div className="portfolio-page-section-mobile">
+      <img 
+        src="./img/buttuon_up.png" 
+        alt="button_circle_up" 
+        onClick={scrollToTop} 
+        className={isSticky ? 'button-up-mobile' : "button-up-hide-mobile"}
+      />
       <div className="portfolio-page-container-mobile">
         <img src="/img/portfolio-page-1.png" alt="page-background" className='portfolio-page-background-mobile' />
         <div className="portfolio-page-text-overlay-mobile">

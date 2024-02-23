@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
@@ -15,12 +15,32 @@ interface RealEstateItem {
 
 const Portfolio: React.FC = () => {
   const { language } = useLanguage(); 
-  const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
+  // const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
+  const [selectedComponent, setSelectedComponent] = useState<'apartment' | 'villa'>('apartment');
   const [apartmentDataState] = useState<RealEstateItem[]>(apartmentData);
   const [villaDataState] = useState<RealEstateItem[]>(villaData);
   const [commercialDataState] = useState<RealEstateItem[]>(commercialData);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isSticky, setSticky] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 1000);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+  
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
   };
@@ -28,6 +48,28 @@ const Portfolio: React.FC = () => {
   const handleMouseLeave = () => {
     setHoveredIndex(null);
   };
+
+  useEffect(() => {
+    const updateTextColor = () => {
+        const elements = document.querySelectorAll('.para');
+        elements.forEach((element: HTMLElement) => {
+            const rect = element.getBoundingClientRect();
+            const isElementVisible = rect.bottom <= 720;
+            
+            if (isElementVisible) {
+              element.classList.add('visible');
+            } else {
+              element.classList.remove('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateTextColor);
+
+      return () => {
+          window.removeEventListener('scroll', updateTextColor);
+      };
+  }, []);
 
   const renderComponent = (data: RealEstateItem[]) => {
     return data.map((item, index) => (
@@ -81,14 +123,20 @@ const Portfolio: React.FC = () => {
         return renderComponent(apartmentDataState);
       case 'villa':
         return renderComponent(villaDataState);
-      case 'commercial':
-        return renderComponent(commercialDataState);
+      // case 'commercial':
+      //   return renderComponent(commercialDataState);
       default:
         return null;
     }
   };
   return (
     <div className="portfolio-page-section">
+      <img 
+        src="./img/buttuon_up.png" 
+        alt="button_circle_up" 
+        onClick={scrollToTop} 
+        className={isSticky ? 'button-up' : "button-up-hide"}
+      />
       <div className="portfolio-page-container">
         <img src="/img/portfolio-page-1.png" alt="page-background" className='portfolio-page-background' />
         <div className="portfolio-page-text-overlay">
@@ -111,12 +159,12 @@ const Portfolio: React.FC = () => {
         >
           {language === 'ru' ? 'Виллы' : 'Villas'}
         </button>
-        <button
+        {/* <button
           onClick={() => setSelectedComponent('commercial')}
           className={selectedComponent === 'commercial' ? 'selected' : ''}
         >
           {language === 'ru' ? 'Коммерческая недвижимость' : 'Commercial real estate'}
-        </button>
+        </button> */}
       </div>
         <div className='portfolio-page-grid-container'>{renderSelectedComponent()}</div>
     </div>

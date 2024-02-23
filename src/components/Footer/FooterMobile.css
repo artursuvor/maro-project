@@ -1,4 +1,5 @@
 .footer-mobile {
+    padding-top: 2vw;
     background-color: #f2f2f2;
     text-align: center;
     position: relative;
@@ -59,7 +60,7 @@
   
   .footer-space-around-text-mobile p {
     font-family: "Gothic A1", sans-serif;
-    font-size: 3.3vw;
+    font-size: 4vw;
     font-weight: 300;
     line-height: 8vw;
     letter-spacing: 0em;
@@ -77,6 +78,7 @@
     letter-spacing: 0em;
     color: #828282;
   }
+  
 .footer-developer-text-mobile p { display: inline; margin: 0; }
 .footer-developer-text-mobile a { 
     color: #828282; 

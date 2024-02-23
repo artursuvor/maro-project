@@ -1,15 +1,3 @@
-.header-mobile {
-    width: 100%;
-    top: 0;
-    background: #F6F4F4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1vw 3vw;
-    box-sizing: border-box;
-    z-index: 1001;
-}
-
 .guarantees-section-mobile{
     padding-top: 16vw;
     padding-left: 4vw;

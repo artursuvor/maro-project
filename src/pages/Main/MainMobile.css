@@ -3,6 +3,19 @@ body, html {
   padding: 0;
 }
 
+.button-up-mobile{
+  position: fixed;
+  width: 10vw;
+  top: 4vw;
+  right: 2.5vw;
+  cursor: pointer;
+  z-index: 1030;
+}
+
+.button-up-hide-mobile{
+  display: none;
+}
+
 .hero {
   position: fixed;
   top: 0;
@@ -53,24 +66,28 @@ body, html {
 
 .interior-text-mobile {
   font-family: "Ubuntu", sans-serif;
-  font-size: 6.5vw;
+  font-size: 8vw;
   font-weight: 500;
-  line-height: 6vw;
-  width: 54vw;
+  line-height: 10vw;
+  width: 62vw;
   letter-spacing: 0em;
+  white-space: pre-line;
   text-align: left;
   color: #F6F4F4;
+  padding-bottom: 1vw;
 }
 
 .interior-description-mobile {
   font-family: "Gothic A1", sans-serif;
   font-size: 4.5vw;
   font-weight: 400;
-  width: 80vw;
+  width: 85vw;
   line-height: 5.5vw;
   letter-spacing: 0em;
   text-align: left;
+  white-space: pre-line;
   color: #F6F4F4;
+  padding-bottom: 3vw;
 }
 
 .calculate-btn-mobile {
@@ -80,46 +97,20 @@ body, html {
   font-weight: 400;
   line-height: 1.5vw;
   letter-spacing: 0em;
-  padding: 4vw 8vw;
+  padding: 6vw 12vw;
   background-color: #0B0A09;
   color: white;
   border: none;
   border-radius: 100px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 6vw;
 }
 
 .calculate-btn-mobile:hover {
   background-color: #3c3c3c;
 }
 
-.language-switch-mobile {
-  background: #00000033;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  padding: 1vw 7vw;
-  border-radius: 100px;
-  backdrop-filter: blur(2px);
-  width: 10vw;
-  margin-bottom: 2vw;
-}
-
-.language-switch-mobile div {
-  color: #F6F4F4;
-  margin: 1vw;
-  font-family: "Gothic A1", sans-serif;
-  font-size: 4vw;
-  font-weight: 500;
-  line-height: 5vw;
-  text-align: left;
-  border-bottom: 2px solid transparent;
-}
-
-.language-switch-mobile .active {
-  border-color: #F6F4F4;
-}
 
 .about-us-mobile{
   padding: 4vw 4vw;
@@ -143,10 +134,11 @@ body, html {
   font-family: "Ubuntu", sans-serif;
   font-size: 5vw;
   font-weight: 400;
-  line-height: 4.5vw;
+  line-height: 6vw;
+  width: 90vw;
   letter-spacing: 0em;
   text-align: center;
-  margin: 10px; 
+  margin: 1vw; 
 }
 
 .about-us-heading-mobile { grid-area: about; }
@@ -161,11 +153,13 @@ body, html {
     'first first main main'
     'first first main main'
     'right right right right';
-  padding: 1vw;
+ 
   flex-wrap: wrap;
   gap: 10px;
   background-color: #F6F4F4;
-  padding-bottom: 5vw;
+  padding: 10vw 1vw;
+  padding-bottom: 40vw;
+
 }
 
 .grid-container-mobile > div {
@@ -197,16 +191,17 @@ body, html {
 }
 
 .about-us-text-container-scnd-mobile div{
-  margin-bottom: 30vw;
+  padding-bottom: 30vw;
   padding-right: 5vw;
 }
 
 .large-digit-in-about-section-mobile{
   font-family: "Ubuntu", sans-serif;
-  font-size: 18vw;
+  font-size: 16vw;
   font-weight: 400;
   white-space: normal;
   letter-spacing: 0em;
+  padding-top: 2vw;
 }
 
 .grid-container-mobile div p{
@@ -216,6 +211,7 @@ body, html {
   line-height: 5vw;
   width: 41vw;
   letter-spacing: 0em;
+  padding-bottom: 2vw;
   padding-left: 1vw;
 }
 
@@ -232,17 +228,17 @@ body, html {
 }
 
 .cover-all-questions-mobile {
-  position: relative;
   font-family: "Ubuntu", sans-serif;
-  font-size: 4.5vw;
+  font-size: 5vw;
   font-weight: 400;
-  white-space: normal;
-  width: 45vw;
-  transform: translateX(-75%);
+  white-space: pre-line;
+  transform: translateY(950%) translateX(5%);
+  position: absolute;
+  width: 90vw;
 }
 
 .portfolio-section-mobile{
-  padding-top: 1vw;
+  padding-top: 8vw;
   padding-left: 4vw;
   padding-bottom: 4vw;
   background-color: #E7E3E3;
@@ -267,7 +263,6 @@ body, html {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .portfolio-section-image-container-mobile {
@@ -276,10 +271,10 @@ body, html {
 }
 
 .portfolio-section-image-container-mobile img{
-  width: 86vw;
+  width: 90vw;
   height: auto;
   filter: brightness(0.8);
-  padding: 1vw;
+  padding: 2vw 0vw;
 }
 
 .text-overlay-mobile {
@@ -322,7 +317,7 @@ body, html {
 }
 
 .services-section-mobile{
-  padding: 2vw 8vw;
+  padding: 2vw 4vw;
   background-color: #F6F4F4;
 }
 
@@ -330,6 +325,7 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 8vw 0;
 }
 
 .services-header-mobile p {
@@ -344,12 +340,13 @@ body, html {
 }
 
 .selection-section-mobile {
-  padding-top: 1vw;
+  padding-top: 8vw;
   padding-bottom: 5vw;
   background-color: #E7E3E3;
 }
 
 .selection-head-mobile {
+  padding-left: 4vw;
   font-family: "Ubuntu", sans-serif;
   font-size: 6vw;
   font-weight: 400;
@@ -429,7 +426,7 @@ body, html {
 }
 
 .contacts-section-mobile{
-  padding: 2vw 4vw;
+  padding: 8vw 4vw;
   background-color: #F6F4F4;
   padding-bottom: 10vw;
 }
@@ -479,15 +476,19 @@ body, html {
   font-weight: 400;
   letter-spacing: 0em;
 }
+
 .first-string-mobile {
   display: flex;
   flex-wrap: wrap;
+  padding: 4vw 0;
 }
+
 .first-string-mobile div {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 2vw; 
+  height: 10vw;
 }
 
 .img-contacts-svg-mobile{
@@ -495,19 +496,13 @@ body, html {
   padding: 0.5vw;
 }
 
-.map-container-mobile {
-  width: 100%; 
-  height: 40vw;
-  background-color: rgb(221, 221, 221);
-}
-
 .map-container-mobile iframe {
   width: 100%; 
-  height: 10vw;
+  height: 40vw;
 }
 
 .contacts-container-button-and-links-mobile{
-  padding: 1vw;
+  padding-top: 6vw;
 }
 
 .button-container-contacts-mobile {
@@ -600,7 +595,7 @@ body, html {
   display: flex;
   flex-direction: row; 
 }
-form > p{
+.popup-content-form-mobile > p{
   font-family: "Gothic A1", sans-serif;
   font-size: 4vw;
   font-weight: 300;
@@ -610,6 +605,18 @@ form > p{
   color: #828282;
   padding-top: 1vw;
 }
+
+.popup-content-text-your-msg{
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 300;
+  line-height: 1vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+  padding-top: 1vw;
+}
+
 .popup-mail-phone-mobile > div{
   font-family: "Gothic A1", sans-serif;
   font-size: 4vw;
@@ -697,13 +704,13 @@ textarea {
   outline: none;
 }
 
-button[type="submit"] {
+.popup-content-button-mobile {
   position: absolute;
   bottom: 3vw;
   right: 2vw;
   background-color: black;
   color: white;
-  padding: 0.7vw 2.5vw; /* настройте ваши отступы по желанию */
+  padding: 0.7vw 2.5vw; 
   border: none;
   cursor: pointer;
   border-radius: 50px; 
@@ -713,5 +720,5 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #333; /* измените цвет при наведении по желанию */
+  background-color: #333; 
 }

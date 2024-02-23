@@ -67,7 +67,6 @@ const RealEstateDetails = () => {
       setHoveredIndex(null);
     };
   
-
     let data;
     switch (type) {
     case 'commercial':
@@ -83,13 +82,35 @@ const RealEstateDetails = () => {
         data = [];
     }
 
+    useEffect(() => {
+        const updateTextColor = () => {
+            const elements = document.querySelectorAll('.para');
+            elements.forEach((element: HTMLElement) => {
+                const rect = element.getBoundingClientRect();
+                const isElementVisible = rect.bottom <= 720;
+                
+                if (isElementVisible) {
+                  element.classList.add('visible');
+                } else {
+                  element.classList.remove('visible');
+                }
+            });
+        };
+    
+        window.addEventListener('scroll', updateTextColor);
+    
+          return () => {
+              window.removeEventListener('scroll', updateTextColor);
+          };
+      }, []);
+
   return (
     <div className="real-estate-page-section">
         <div className="real-estate-page">
             <img src="/img/portfolio-page-1.png" alt="real-estate-page-background" className='real-estate-page-background' />
             <div className="real-estate-page-text-overlay">
-                <p className='real-estate-page-heading'>{residentialComplex}</p>
-                <p className='real-estate-page-text'>
+                <p className='real-estate-page-heading para'>{residentialComplex}</p>
+                <p className='real-estate-page-text para'>
                     {address}, {sizeSquareMeters}
                 </p>
             </div>
@@ -97,10 +118,10 @@ const RealEstateDetails = () => {
         <div className='real-estate-page-about-design'>
             <div className='real-estate-page-about-design-text-img'>
                 <div className='real-estate-page-about-design-text'>
-                    <p className='real-estate-page-about-design-text-1'>
+                    <p className='real-estate-page-about-design-text-1 para'>
                         {language === 'ru' ? 'ГЛАВНОЙ ЗАДАЧЕЙ ПРОЕКТА ЯВЛЯЛАСЬ СОВМЕСТИТЬ НЕСОВМЕТСИМОЕ' : 'THE MAIN TASK OF THE PROJECT WAS TO COMBINE INCOMPATIBLE'}
                     </p>
-                    <p className='real-estate-page-about-design-text-2'>
+                    <p className='real-estate-page-about-design-text-2 para'>
                         {language === 'ru' ? 'Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию. Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию.' : 'We can completely solve all the client\'s questions regarding real estate improvement. The client trusts us with the keys to the "bare" apartment, and arrives in a fully prepared living space. We can completely solve all the client\'s questions regarding real estate improvement. The client trusts us with the keys to the "bare" apartment, and arrives in a fully prepared living space.'}
                     </p>
                 </div>
@@ -109,28 +130,28 @@ const RealEstateDetails = () => {
             <div className='real-estate-page-photo-section'>
                 <div className='real-estate-page-photo-section-1'>
                     <img src="/img/real-estate-page-1.png" alt="real-estate-page-ph-1" className='real-estate-page-photo-1' />
-                    <p>{language === 'ru' ? 'Гостиная' : 'Living Room'}</p>
+                    <p className='para'>{language === 'ru' ? 'Гостиная' : 'Living Room'}</p>
                 </div>
                 <div className='real-estate-page-photo-section-2'>
                     <img src="/img/real-estate-page-2.png" alt="real-estate-page-ph-2" className='real-estate-page-photo-2' />
-                    <p>{language === 'ru' ? 'Вид на лестницу' : 'Staircase View'}</p>
+                    <p className='para'>{language === 'ru' ? 'Вид на лестницу' : 'Staircase View'}</p>
                 </div>
                 <div className='real-estate-page-photo-section-3'>
                     <img src="/img/real-estate-page-3.png" alt="real-estate-page-ph-3" className='real-estate-page-photo-3' />
-                    <p>{language === 'ru' ? 'Вид на лестницу' : 'Staircase View'}</p>
+                    <p className='para'>{language === 'ru' ? 'Вид на лестницу' : 'Staircase View'}</p>
                 </div>
             </div>
         </div>
         <div className='real-estate-page-middle-text'>
-            <p className='real-estate-page-middle-text-1'>
+            <p className='real-estate-page-middle-text-1 para'>
                 {language === 'ru' ? 'Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию. Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию.' : 'We can completely solve all the client\'s questions regarding real estate improvement. The client trusts us with the keys to the "bare" apartment, and arrives in a fully prepared living space. We can completely solve all the client\'s questions regarding real estate improvement. The client trusts us with the keys to the "bare" apartment, and arrives in a fully prepared living space.'}
             </p>
-            <p className='real-estate-page-middle-text-2'>
+            <p className='real-estate-page-middle-text-2 para'>
                 {language === 'ru' ? 'Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию. Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию.' : 'We can completely solve all the client\'s questions regarding real estate improvement. The client trusts us with the keys to the "bare" apartment, and arrives in a fully prepared living space. We can completely solve all the client\'s questions regarding real estate improvement. The client trusts us with the keys to the "bare" apartment, and arrives in a fully prepared living space.'}
             </p>
         </div>
         <div className='real-estate-page-gallery'>
-            <p className='real-estate-page-gallery-head'>{language === 'ru' ? 'ГАЛЛЕРЕЯ ПРОЕКТА' : 'Project Gallery'}</p>
+            <p className='real-estate-page-gallery-head para'>{language === 'ru' ? 'ГАЛЛЕРЕЯ ПРОЕКТА' : 'Project Gallery'}</p>
             <div className='real-estate-page-slider'>
             <Slider {...settingsRealEstate} ref={sliderRef}>
                 <div className="real-estate-page-slide-wrapper">
@@ -173,15 +194,15 @@ const RealEstateDetails = () => {
         <div className='real-estate-page-container'>
           <div className="real-estate-image">
             <img src="/img/real-estate.png" alt="real-estate" className="real-estate-image" />
-            <p className='real-estate-page-text'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ\nВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ' : 'WE COVER ALL\nREAL ESTATE-RELATED QUESTIONS'}</p>
+            <p className='real-estate-page-text para'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ\nВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ' : 'WE COVER ALL\nREAL ESTATE-RELATED QUESTIONS'}</p>
           </div>
-          <p className='real-estate-text-after-image'>
+          <p className='real-estate-text-after-image para'>
             {language === 'ru' ? 'Подбор и доставка мебели из Европы. Подбор и доставка мебели из ЕвропыПодбор и доставка мебели из Европы' : 'Furniture selection and delivery from Europe. Furniture selection and delivery from EuropeFurniture selection and delivery from Europe'}
           </p>
           <div className='real-estate-right'>
             <img src="/img/real-estate-2.png" alt="furnuture-selection-scnd" className="real-estate-scnd" />
             <div className="button-container-real-estate" onClick={handleButtonClick}>
-              <p className="button-container-real-estate-text">{language === 'ru' ? 'ЗАКАЗАТЬ ПОДОБНОЕ' : 'ORDER SIMILAR'}</p>
+              <p className="button-container-real-estate-text para">{language === 'ru' ? 'ЗАКАЗАТЬ ПОДОБНОЕ' : 'ORDER SIMILAR'}</p>
               <img
                 src="/img/Button_circle.png"
                 alt="button_circle"
@@ -191,7 +212,7 @@ const RealEstateDetails = () => {
             {isPopupVisible && (
                 <div className="popup-overlay" onClick={handlePopupClose}>
                 <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                    <p className="popup-overlay-text">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
+                    <p className="popup-overlay-text para">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
                     <img
                     src="/img/close-button.png"
                     alt="close-button-overlay"
@@ -201,19 +222,19 @@ const RealEstateDetails = () => {
                     <form>
                     <div className='popup-mail-phone'>
                         <div>
-                        <p>{language === 'ru' ? 'Ваша почта' : 'Your email'}</p>
+                        <p className='para'>{language === 'ru' ? 'Ваша почта' : 'Your email'}</p>
                         <label>
                             <input type="mail" name="email" placeholder={language === 'ru' ? 'На эту почту придет ответ' : 'You will receive a response to this email'} className='input-mail'/>
                         </label>
                         </div>
                         <div>
-                        <p>{language === 'ru' ? 'Ваш телефон' : 'Your phone number'}</p>
+                        <p className='para'>{language === 'ru' ? 'Ваш телефон' : 'Your phone number'}</p>
                         <label>
                             <input type="tel" name="phone" className='input-phone'/>
                         </label>
                         </div>
                     </div>
-                    <p>{language === 'ru' ? 'Ваше сообщение' : 'Your message'}</p>
+                    <p className='para'>{language === 'ru' ? 'Ваше сообщение' : 'Your message'}</p>
                     <label className='label-container'>
                         <textarea
                             name="message"
@@ -233,6 +254,7 @@ const RealEstateDetails = () => {
           </div>
         </div>
         <div className='real-estate-page-similar-projects'>
+            <p className='real-estate-page-similar-projects-head para'>ПОХОЖИЕ ПРОЕКТЫ</p>
         <Slider {...settingsSimilarProjects} ref={sliderRef}>
             {data.map((item, index) => (
                 <div key={index} className="real-estate-page-item">

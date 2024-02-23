@@ -18,7 +18,25 @@ function MainMobile() {
   const [activeStudio, setActiveStudio] = useState<'budva' | 'moscow'>('budva');
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [message, setMessage] = useState('');
-  
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 700);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
@@ -37,10 +55,6 @@ function MainMobile() {
 
   const handleStudioToggle = (studio: 'budva' | 'moscow') => {
     setActiveStudio(studio);
-  };
-
-  const handleLanguageToggle = () => {
-    toggleLanguage(); // Вызываем функцию toggleLanguage при нажатии на кнопку
   };
 
   useEffect(() => {
@@ -67,6 +81,12 @@ function MainMobile() {
 
   return (
     <div>
+      <img 
+        src="./img/buttuon_up.png" 
+        alt="button_circle_up" 
+        onClick={scrollToTop} 
+        className={isSticky ? 'button-up-mobile' : "button-up-hide-mobile"}
+      />
       <div className={`hero ${showHero ? '' : 'fade-out'}`}>
         <div className="hero-content">
           <img src="./img/logo.svg" alt="Main-Logo" />
@@ -78,10 +98,6 @@ function MainMobile() {
           <div className="text-content-mobile">
             <p className='interior-text-mobile'>{language === 'ru' ? 'ИНТЕРЬЕРЫ ДЛЯ ЖИЗНИ \nВ ЧЕРНОГОРИИ' : 'INTERIORS FOR LIVING IN MONTENEGRO'}</p>
             <p className='interior-description-mobile'>{language === 'ru' ? 'Создаем внутренние пространства квартир и вилл. \nПодбор и доставка мебели из Европы' : 'Creating interior spaces for apartments and villas. Selection and delivery of furniture from Europe'}</p>
-            <div className="language-switch-mobile" onClick={handleLanguageToggle}>
-              <div className={language === 'ru' ? 'active' : ''}>RU</div>
-              <div className={language === 'en' ? 'active' : ''}>EN</div>
-            </div>
             <button className='calculate-btn-mobile'>{language === 'ru' ? 'Рассчитать стоимость' : 'Calculate cost'}</button>
           </div>
         </div>
@@ -118,8 +134,8 @@ function MainMobile() {
         </div>  
         <div className="about-image-section-mobile">
           <img src="./img/about-us-img.jpg" alt="about-us-img" />
-          <h5 className='cover-all-questions-mobile'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ ВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ' : 'WE COVER ALL REAL ESTATE RELATED QUESTIONS'}</h5>
         </div>
+        <p className='cover-all-questions-mobile'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ\n ВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ\n К НЕДВИЖИМОСТИ' : 'WE COVER ALL REAL ESTATE RELATED QUESTIONS'}</p>
       </div>
       <div className="portfolio-section-mobile" id='portfolio'>
         <div className='rolling-gallery-mobile'>
@@ -135,12 +151,12 @@ function MainMobile() {
             <p className="watch-all-text-mobile">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
             <img src="./img/Button_circle.png" alt="button_circle" className="button-image-portfolio-mobile" />
           </a>
-          <p className='portfolio-heading-mobile'>{language === 'ru' ? 'КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ' : 'COMMERCIAL REAL ESTATE'}</p>
+          {/* <p className='portfolio-heading-mobile'>{language === 'ru' ? 'КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ' : 'COMMERCIAL REAL ESTATE'}</p>
           <HousingDetailsMobile type="commercial" data={commercialData} />
           <a href="/portfolio" className="button-container-mobile">
             <p className="watch-all-text-mobile">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
             <img src="./img/Button_circle.png" alt="button_circle" className="button-image-portfolio-mobile" />
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="services-section-mobile" id='services'>
@@ -149,7 +165,8 @@ function MainMobile() {
         </div>
         <>
           <DropDownMenuMobile
-            title={language === 'ru' ? '01  ДИЗАЙН-ПРОЕКТИРОВАНИЕ' : '01  DESIGN AND PLANNING'}
+            digit="03"
+            title={language === 'ru' ? 'ДИЗАЙН-ПРОЕКТИРОВАНИЕ' : 'DESIGN AND PLANNING'}
             content={[
               language === 'ru' ? 
               "Встреча с клиентом. Получение исходной информации" :
@@ -181,7 +198,8 @@ function MainMobile() {
             price={language === 'ru' ? `От 500 €/М²` : `From 500 €/M²`}
           />
           <DropDownMenuMobile
-            title={language === 'ru' ? `02  РЕМОНТНО-СТРОИТЕЛЬНЫЕ РАБОТЫ` : `02  CONSTRUCTION AND RENOVATION WORKS`}
+            digit="02"
+            title={language === 'ru' ? `РЕМОНТНО-СТРОИТЕЛЬНЫЕ\n РАБОТЫ` : `CONSTRUCTION AND RENOVATION\n WORKS`}
             content={[
               language === 'ru' ? 
               "Встреча с клиентом. Получение исходной информации" :
@@ -213,7 +231,8 @@ function MainMobile() {
             price={language === 'ru' ? `От 500 €/М²` : `From 500 €/M²`}
           />
           <DropDownMenuMobile
-            title={language === 'ru' ? `03  ПОДБОР И ПОСТАВКА МЕБЕЛИ` : `03  FURNITURE SELECTION AND DELIVERY`}
+            digit="03"
+            title={language === 'ru' ? `ПОДБОР И ПОСТАВКА МЕБЕЛИ` : `FURNITURE SELECTION AND DELIVERY`}
             content={[
               language === 'ru' ? 
               "Встреча с клиентом. Получение исходной информации" :
@@ -358,6 +377,7 @@ function MainMobile() {
                 src="https://yandex.ru/maps/org/salon_maro/136805901235/?ll=37.568071%2C55.789197&mode=search&sctx=ZAAAAAgBEAAaKAoSCd9vtOOGs05AEUDdQIF3lEtAEhIJ4nMn2H8d5z8ReIAnLVxWzT8iBgABAgMEBSgKOABAmJIHSABqAnJ1nQHNzEw9oAEAqAEAvQH1CI%2B0wgEGs8eR0v0D6gEA8gEA%2BAEAggIKc2Fsb24gbWFyb4oCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=37.568071%2C55.789197&sspn=0.006133%2C0.001915&text=salonmaro&z=17.88"
                 width="100%"
                 frameBorder="0"
+                height="100%"
                 allowFullScreen
               />
             </div>
@@ -390,7 +410,7 @@ function MainMobile() {
                   className="close-button-mobile"
                   onClick={handlePopupClose}
                 />
-                <form>
+                <form className='popup-content-form-mobile'>
                   <div className='popup-mail-phone-mobile'>
                     <div>
                       <p>{language === 'ru' ? 'Ваша почта' : 'Your email'}</p>
@@ -403,7 +423,6 @@ function MainMobile() {
                       </label>
                     </div>
                   </div>
-                  <p>{language === 'ru' ? 'Ваше сообщение' : 'Your message'}</p>
                   <label className='label-container'>
                     <textarea
                       name="message"
@@ -415,7 +434,7 @@ function MainMobile() {
                     />
                     <span className="char-count-mobile">{message.length}/225</span>
                   </label>
-                  <button type="submit">{language === 'ru' ? 'Отправить' : 'Send'}</button>
+                  <button type="submit" className='popup-content-button-mobile'>{language === 'ru' ? 'Отправить' : 'Send'}</button>
                 </form>
               </div>
             </div>

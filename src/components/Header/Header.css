@@ -1,5 +1,5 @@
 .header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     background: transparent;
@@ -9,6 +9,35 @@
     padding: 1vw;
     box-sizing: border-box;
     z-index: 1001;
+}
+
+.header-not-main {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #F6F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+.x-mark{
+  cursor: pointer;
+  position: relative;
+  width: 2vw;
+  height: 2vw; 
+  top: 0.1vw;
+}
+
+.x-mark-black{
+    cursor: pointer;
+    position: relative;
+    width: 2vw;
+    height: 2vw; 
+    top: 0.1vw;
 }
 
 .sticky-header {
@@ -37,12 +66,6 @@
 }
 
 .menu-controls {
-    padding-right: 0.5vw;
-    display: flex;
-    align-items: center;
-}
-
-.sticky-menu-controls{
     padding-right: 0.5vw;
     display: flex;
     align-items: center;
@@ -127,6 +150,25 @@
     border-radius: 50%;
     transition: background-color 0.3s ease; 
 }
+
+.x-mark{
+    color: white;
+    cursor: pointer;
+    position: relative;
+    width: 2vw;
+    height: 2vw; 
+    top: 0.1vw;
+}
+
+.x-mark-black{
+    color: black;
+    cursor: pointer;
+    position: relative;
+    width: 2vw;
+    height: 2vw; 
+    top: 0.1vw;
+}
+
 
 .sticky-menu-button{
     background-color: transparent;
@@ -235,6 +277,8 @@
 }
 
 .additional-content {
+    position: absolute;
+    bottom: 2vw;
     display: flex;
     flex-direction: row; 
     align-items: center;

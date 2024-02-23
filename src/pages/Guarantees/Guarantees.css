@@ -1,15 +1,3 @@
-.header {
-    width: 100%;
-    top: 0;
-    background: #F6F4F4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1vw;
-    box-sizing: border-box;
-    z-index: 1001;
-}
-
 .guarantees-section{
     padding-top: 6vw;
     padding-left: 4vw;

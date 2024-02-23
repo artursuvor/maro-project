@@ -18,7 +18,18 @@ function Main() {
   const [activeStudio, setActiveStudio] = useState<'budva' | 'moscow'>('budva');
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [message, setMessage] = useState('');
-  
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 1000);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
@@ -40,8 +51,16 @@ function Main() {
   };
 
   const handleLanguageToggle = () => {
-    toggleLanguage(); // Вызываем функцию toggleLanguage при нажатии на кнопку
+    toggleLanguage(); 
   };
+
+  useEffect(() => {
+    const initialTimeout = setTimeout(() => {
+      setShowHero(false);
+    }, 1000);
+
+    return () => clearTimeout(initialTimeout);
+  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -49,7 +68,7 @@ function Main() {
     }, 250);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [showHero]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -82,6 +101,77 @@ function Main() {
     }
   };
 
+  useEffect(() => {
+    const img = document.querySelector('.top-to-bottom-animation');
+    if (img) {
+      img.classList.add('active');
+    }
+  }, []);
+
+  useEffect(() => {
+    const updateTextColor = () => {
+        const elements = document.querySelectorAll('.para');
+        elements.forEach((element: HTMLElement) => {
+            const rect = element.getBoundingClientRect();
+            const isElementVisible = rect.bottom <= 720;
+            
+            if (isElementVisible) {
+              element.classList.add('visible');
+            } else {
+              element.classList.remove('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateTextColor);
+
+      return () => {
+          window.removeEventListener('scroll', updateTextColor);
+      };
+  }, []);
+
+  useEffect(() => {
+    // Функция для обновления положения изображения
+    const updateImagePosition = () => {
+        // Выбираем все элементы с классом 'image-animation' или 'image-animation-2'
+        const elements = document.querySelectorAll('.image-animation, .image-animation-2');
+        elements.forEach((element: HTMLElement) => {
+            // Получаем координаты и размеры элемента
+            const rect = element.getBoundingClientRect();
+            // Проверяем, виден ли элемент на экране
+            const isElementVisible = rect.bottom <= window.innerHeight;
+            
+            // Если элемент виден, применяем стили
+            if (isElementVisible) {
+                // Применяем значение clip-path в зависимости от видимости элемента
+                element.style.clipPath = 'none';
+            } else {
+                // Если элемент не виден, вычисляем процент времени, который ему остался, пока он не выйдет с нижней границы экрана
+                const windowHeight = window.innerHeight;
+                const elementBottomOffset = rect.bottom - windowHeight;
+                const scrollPercentage = (elementBottomOffset / windowHeight) * 100;
+
+                // Применяем значение clip-path для скрытия изображения
+                let clipPathValue;
+                if (element.classList.contains('image-animation')) {
+                    clipPathValue = `inset(0 0 0 ${scrollPercentage}%)`;
+                } else if (element.classList.contains('image-animation-2')) {
+                    clipPathValue = `inset(0 ${scrollPercentage}% 0 0)`;
+                }
+                element.style.clipPath = clipPathValue;
+            }
+        });
+    };
+
+    // Добавляем обработчик события прокрутки
+    window.addEventListener('scroll', updateImagePosition);
+
+    // Убираем обработчик события прокрутки при размонтировании компонента
+    return () => {
+        window.removeEventListener('scroll', updateImagePosition);
+    };
+}, []); 
+
   return (
     <div>
       <div className={`hero ${showHero ? '' : 'fade-out'}`}>
@@ -92,7 +182,7 @@ function Main() {
       <div className={`content ${showHero ? 'content-faded' : ''}`}>
         <div className="left-side">
           <div className="centered-content">
-            <img src="./img/main-img-1.jpg" alt="left-side-img" />
+            <img src="./img/main-img-1.jpg" alt="left-side-img" className="top-to-bottom-animation"/>
           </div>
           <div className="text-content">
             <p className='interior-text'>{language === 'ru' ? 'ИНТЕРЬЕРЫ ДЛЯ ЖИЗНИ В ЧЕРНОГОРИИ' : 'INTERIORS FOR LIVING IN MONTENEGRO'}</p>
@@ -101,7 +191,7 @@ function Main() {
           </div>
         </div>
         <div className="right-side">
-          <img src="./img/main-img-2.jpg" alt="right-side-img" />
+          <img src="./img/main-img-2.jpg" alt="right-side-img" className="right-to-left-animation"/>
           <div className="language-switch" onClick={handleLanguageToggle}>
             <div className={language === 'ru' ? 'active' : ''}>RU</div>
             <div className={language === 'en' ? 'active' : ''}>EN</div>
@@ -109,58 +199,63 @@ function Main() {
         </div>
       </div>
       <div className='about-us' id="about">
-        <p className='about-us-text'>{language === 'ru' ? 'Создаем внутренние' : 'Creating interiors'}</p>
-        <p className='we-started-text'>{language === 'ru' ? 'МЫ НАЧИНАЛИ С МАЛЕНЬКОГО ОФИСА В БУДВЕ И КОМПЛЕКТАЦИИ НАБОРОМ ИТАЛЬЯНСКОЙ МЕБЕЛИ КВАРТИР ПО КАТАЛОГАМ' : 'WE STARTED WITH A SMALL OFFICE IN BUDVA AND EQUIPPED APARTMENTS WITH A SET OF ITALIAN FURNITURE FROM CATALOGS'}</p>
+        <img 
+          src="./img/buttuon_up.png" 
+          alt="button_circle_up" 
+          onClick={scrollToTop} 
+          className={isSticky ? 'button-up' : "button-up-hide"}
+        />
+        <p className='about-us-text para'>{language === 'ru' ? 'Создаем внутренние' : 'Creating interiors'}</p>
+        <p className='we-started-text para'>{language === 'ru' ? 'МЫ НАЧИНАЛИ С МАЛЕНЬКОГО ОФИСА В БУДВЕ И КОМПЛЕКТАЦИИ НАБОРОМ ИТАЛЬЯНСКОЙ МЕБЕЛИ КВАРТИР ПО КАТАЛОГАМ' : 'WE STARTED WITH A SMALL OFFICE IN BUDVA AND EQUIPPED APARTMENTS WITH A SET OF ITALIAN FURNITURE FROM CATALOGS'}</p>
       </div>
       <div className="grid-container">
-        <div className="about-us-heading">{language === 'ru' ? 'О НАС' : 'ABOUT US'}</div>
+        <div className="about-us-heading para">{language === 'ru' ? 'О НАС' : 'ABOUT US'}</div>
         <div className="about-us-text-container">
           <div>
-              <span className='large-digit-in-about-section'>15</span>
-              <p>{language === 'ru' ? 'лет опыта' : 'years of experience'}</p>
+              <span className='large-digit-in-about-section para'>15</span>
+              <p className='para'>{language === 'ru' ? 'лет опыта' : 'years of experience'}</p>
           </div>
           <div>
-            <span className='large-digit-in-about-section'>2</span>
-            <p>{language === 'ru' ? 'студии в Черногории и Москве' : 'studios in Montenegro and Moscow'}</p>
+            <span className='large-digit-in-about-section para'>2</span>
+            <p className='para'>{language === 'ru' ? 'студии в Черногории и Москве' : 'studios in Montenegro and Moscow'}</p>
           </div>
           <div>
-            <span className='large-digit-in-about-section'>200</span>
-            <p>{language === 'ru' ? 'фабрик, с которыми мы сотрудничаем' : 'factories we cooperate with'}</p>
+            <span className='large-digit-in-about-section para'>200</span>
+            <p className='para'>{language === 'ru' ? 'фабрик, с которыми мы сотрудничаем' : 'factories we cooperate with'}</p>
           </div>
         </div>
         <div className="about-us-text-container-scnd">
           <div>
-            <span className='large-digit-in-about-section'>300</span>
-            <p>{language === 'ru' ? 'дизайн-проектов' : 'design projects'}</p>
+            <span className='large-digit-in-about-section para'>300</span>
+            <p className='para'>{language === 'ru' ? 'дизайн-проектов' : 'design projects'}</p>
           </div>
           <div>
-            <span className='large-digit-in-about-section'>14</span>
-            <p>{language === 'ru' ? 'человек в команде' : 'person in the team'}</p>
+            <span className='large-digit-in-about-section para'>14</span>
+            <p className='para'>{language === 'ru' ? 'человек в команде' : 'person in the team'}</p>
           </div>
         </div>  
         <div className="about-image-section">
-          <img src="./img/about-us-img.jpg" alt="about-us-img" />
-          <h5 className='cover-all-questions'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ ВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ' : 'WE COVER ALL REAL ESTATE RELATED QUESTIONS'}</h5>
+          <img src="./img/about-us-img.jpg" alt="about-us-img" className="image-animation"/>
+          <h5 className='cover-all-questions para'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ ВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ' : 'WE COVER ALL REAL ESTATE RELATED QUESTIONS'}</h5>
         </div>
       </div>
       <div className="portfolio-section" id='portfolio'>
-      <p className='portfolio-heading'>{language === 'ru' ? 'ПОРТФОЛИО' : 'PORTFOLIO'}</p>
+      <p className='portfolio-heading para'>{language === 'ru' ? 'ПОРТФОЛИО' : 'PORTFOLIO'}</p>
         <div className='rolling-gallery'>
           <Slider {...settings}>
             <HousingDetails type="apartment" data={apartmentData} />
             <HousingDetails type="villa" data={villaData} />
-            <HousingDetails type="commercial" data={commercialData} />
+            {/* <HousingDetails type="commercial" data={commercialData} /> */}
           </Slider>
         </div>
         <a href="/portfolio" className="button-container">
-        <p className="watch-all-text">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
+          <p className="watch-all-text para">{language === 'ru' ? 'СМОТРЕТЬ ВСЕ' : 'WATCH ALL'}</p>
           <img src="./img/Button_circle.png" alt="button_circle" className="button-image-portfolio" />
         </a>
       </div>
       <div className="services-section" id='services'>
         <div className="services-header">
-          <p>{language === 'ru' ? 'УСЛУГИ' : 'SERVICES'}</p>
-          <img src="./img/buttuon_up.png" alt="button_circle_up" onClick={scrollToTop} className='sevices-button-up'/>
+          <p className='para'>{language === 'ru' ? 'УСЛУГИ' : 'SERVICES'}</p>
         </div>
         <>
           <DropDownMenu
@@ -262,20 +357,20 @@ function Main() {
         </>
       </div>
       <div className='selection-section' id='selection'>
-        <p className='selection-head'>{language === 'ru' ? `ПОДБОР МЕБЕЛИ` : `FURNITURE SELECTION`}</p>
+        <p className='selection-head para'>{language === 'ru' ? `ПОДБОР МЕБЕЛИ` : `FURNITURE SELECTION`}</p>
         <div className='selection-container'>
           <div className="selection-image">
-            <img src="./img/furnuture-selection.png" alt="furnuture-selection" className="furnuture-selection-image" />
-            <p className='selection-text'>{language === 'ru' ? `МЫ ПЕРЕКРЫВАЕМ\nВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ` : `WE COVER\nALL REAL ESTATE RELATED QUESTIONS`}</p>
+            <img src="./img/furnuture-selection.png" alt="furnuture-selection" className="furnuture-selection-image image-animation-2" />
+            <p className='selection-text para'>{language === 'ru' ? `МЫ ПЕРЕКРЫВАЕМ\nВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ` : `WE COVER\nALL REAL ESTATE RELATED QUESTIONS`}</p>
           </div>
-          <p className='selection-text-after-image'>{language === 'ru' ? `Подбор и доставка мебели из Европы. Подбор и доставка мебели из ЕвропыПодбор и доставка мебели из Европы` : `Selection and delivery of furniture from Europe. Selection and delivery of furniture from EuropeSelection and delivery of furniture from Europe`}</p>
+          <p className='selection-text-after-image para'>{language === 'ru' ? `Подбор и доставка мебели из Европы. Подбор и доставка мебели из ЕвропыПодбор и доставка мебели из Европы` : `Selection and delivery of furniture from Europe. Selection and delivery of furniture from EuropeSelection and delivery of furniture from Europe`}</p>
           <div className='selection-right'>
-            <img src="./img/furnuture-selection-scnd.png" alt="furnuture-selection-scnd" className="furnuture-selection-scnd" />
-            <p>{language === 'ru' ? `Составление сметы проекта с учетом подключенных подрядчиков. Составление сметы проекта с учетом подключенных подрядчиков. Составление сметы проекта с учетом подключенных подрядчиков.` : `Compilation of project estimate taking into account connected contractors. Compilation of project estimate taking into account connected contractors. Compilation of project estimate taking into account connected contractors.`}</p>
+            <img src="./img/furnuture-selection-scnd.png" alt="furnuture-selection-scnd" className="furnuture-selection-scnd image-animation" />
+            <p className='para'>{language === 'ru' ? `Составление сметы проекта с учетом подключенных подрядчиков. Составление сметы проекта с учетом подключенных подрядчиков. Составление сметы проекта с учетом подключенных подрядчиков.` : `Compilation of project estimate taking into account connected contractors. Compilation of project estimate taking into account connected contractors. Compilation of project estimate taking into account connected contractors.`}</p>
           </div>
         </div>
         <div className='selection-suppliers'>
-          <p className='selection-head'>{language === 'ru' ? 'НАШИ ПОСТАВЩИКИ' : 'OUR SUPPLIERS'}</p>
+          <p className='selection-head para'>{language === 'ru' ? 'НАШИ ПОСТАВЩИКИ' : 'OUR SUPPLIERS'}</p>
           <Slider {...settingsSupplier} ref={sliderRef}>
             <Supplier id={1} photoUrl="/img/supplier.png" />
             <Supplier id={2} photoUrl="/img/supplier1.png" />
@@ -293,7 +388,7 @@ function Main() {
         </div>
       </div>
       <div className='contacts-section' id='contacts'>
-        <p className='contacts-head'>{language === 'ru' ? 'КОНТАКТЫ' : 'CONTACTS'}</p>
+        <p className='contacts-head para'>{language === 'ru' ? 'КОНТАКТЫ' : 'CONTACTS'}</p>
         <div className='studio-toggle-container'>
           <div className='studio-toggle'>
             <button
@@ -318,25 +413,25 @@ function Main() {
             <div className='first-string'>
               <div>
                 <img src="./img/skype-contacts.png" alt="skype-contacts" className='img-contacts-svg'/>
-                <p>maro-budva</p>
+                <p className='para'>maro-budva</p>
               </div>
               <div>
                 <img src="./img/phone-contacts.png" alt="phone-contacts" className='img-contacts-svg'/>
-                <p>382 69 772-002</p>
+                <p className='para'>382 69 772-002</p>
               </div>
               <div>
                 <img src="./img/house-contacts.png" alt="house-contacts" className='img-contacts-svg'/>
-                <p>{language === 'ru' ? '85310, Черногория, Будва, район «Яз»' : '85310, Montenegro, Budva, district "Yaz"'}</p>
+                <p className='para'>{language === 'ru' ? '85310, Черногория, Будва, район «Яз»' : '85310, Montenegro, Budva, district "Yaz"'}</p>
               </div>
             </div>
             <div className='second-string'>
               <div>
                 <img src="./img/clock-contacts.png" alt="clock-contacts" className='img-contacts-svg'/>
-                <p>{language === 'ru' ? 'ПН-СБ: 10.00-19.00' : 'MN-ST: 10.00-19.00'}</p>
+                <p className='para'>{language === 'ru' ? 'ПН-СБ: 10.00-19.00' : 'MN-ST: 10.00-19.00'}</p>
               </div>
               <div>
                 <img src="./img/mail-contacts.png" alt="mail-contacts" className='img-contacts-svg'/>
-                <p>info@maro-mebel.ru</p>
+                <p className='para'>info@maro-mebel.ru</p>
               </div>
             </div>
             <div className='map-container'>
@@ -354,26 +449,26 @@ function Main() {
         <div className='contacts-moscow'>
           <div className='first-string'>
             <div>
-              <img src="./img/skype-contacts.png" alt="skype-contacts" className='img-contacts-svg'/>
-              <p>maro-budva</p>
+              <img src="./img/skype-contacts.png" alt="skype-contacts" className='img-contacts-svg para'/>
+              <p className='para'>maro-budva</p>
+            </div>
+            <div> 
+              <img src="./img/phone-contacts.png" alt="phone-contacts" className='img-contacts-svg para'/>
+              <p className='para'>382 69 772-002</p>
             </div>
             <div>
-              <img src="./img/phone-contacts.png" alt="phone-contacts" className='img-contacts-svg'/>
-              <p>382 69 772-002</p>
-            </div>
-            <div>
-              <img src="./img/house-contacts.png" alt="house-contacts" className='img-contacts-svg'/>
-              <p>85310, Россия, Москва, район «Яз»</p>
+              <img src="./img/house-contacts.png" alt="house-contacts" className='img-contacts-svg para'/>
+              <p className='para'>85310, Россия, Москва, район «Яз»</p>
             </div>
           </div>
           <div className='second-string'>
             <div>
-              <img src="./img/clock-contacts.png" alt="clock-contacts" className='img-contacts-svg'/>
-              <p>ПН-СБ: 10.00-19.00</p>
+              <img src="./img/clock-contacts.png" alt="clock-contacts" className='img-contacts-svg para'/>
+              <p className='para'>ПН-СБ: 10.00-19.00</p>
             </div>
             <div>
-              <img src="./img/mail-contacts.png" alt="mail-contacts" className='img-contacts-svg'/>
-              <p>info@maro-mebel.ru</p>
+              <img src="./img/mail-contacts.png" alt="mail-contacts" className='img-contacts-svg para'/>
+              <p className='para'>info@maro-mebel.ru</p>
             </div>
           </div>
           <div className='map-container'>
@@ -388,9 +483,10 @@ function Main() {
         </div>
       )}
         <div className='contacts-container-button-and-links'>
+          <br/>
           <div className='contacts-container-links'>
             <div className="button-container-contacts" onClick={handleButtonClick}>
-              <p className="button-container-contacts-text">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
+              <p className="button-container-contacts-text para">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
               <img
                 src="./img/Button_circle.png"
                 alt="button_circle"
@@ -398,10 +494,10 @@ function Main() {
               />
             </div>
             <div className='contacts-a-links'>
-              <a href="https://wa.link/yourwhatsapplink" className="contacts-wa">WhatsAPP</a>
-              <a href="https://t.me/yourtelegramusername" className="contacts-tg">TELEGRAM</a>
-              <a href="https://www.instagram.com/yourinstagramusername/" className="contacts-in">INSTAGRAM*</a>
-              <a href="viber://chat?number=+123456789" className="contacts-vi">VIBER</a>
+              <a href="https://wa.link/yourwhatsapplink" className="contacts-wa para">WhatsAPP</a>
+              <a href="https://t.me/yourtelegramusername" className="contacts-tg para">TELEGRAM</a>
+              <a href="https://www.instagram.com/yourinstagramusername/" className="contacts-in para">INSTAGRAM*</a>
+              <a href="viber://chat?number=+123456789" className="contacts-vi para">VIBER</a>
             </div>
           </div>
           
