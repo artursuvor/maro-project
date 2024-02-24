@@ -26,12 +26,12 @@ const DropDownMenuMobile: React.FC<DropDownMenuProps> = ({ digit, title, content
           <p className='para'>{digit}</p>
           <p className="drop-down-menu-title-title-mobile para">{title}</p>
         </div>
-        <p className='drop-down-menu-price-mobile'>{price}</p>
+        <p className='drop-down-menu-price-mobile para'>{price}</p>
         <img src="./img/arrow_down.png" alt="arrow" className='animated-arrow-mobile'/>
       </div>
       <div className={`dropdown-content-mobile ${isOpen ? 'open' : ''}`}>
         <ul>
-          <div className="lines-mobile para"></div>
+          <div className="lines-mobile"></div>
           {content.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

@@ -80,11 +80,12 @@ function Main() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000, 
+    speed: 6000,
+    autoplaySpeed: -1,
+    cssEase: "linear"
   };
 
   const settingsSupplier = {
@@ -111,8 +112,8 @@ function Main() {
   useEffect(() => {
     const updateTextColor = () => {
         const elements = document.querySelectorAll('.para');
-        elements.forEach((element: HTMLElement) => {
-            const rect = element.getBoundingClientRect();
+        elements.forEach((element: Element) => {
+          const rect = (element as HTMLElement).getBoundingClientRect();
             const isElementVisible = rect.bottom <= 720;
             
             if (isElementVisible) {
@@ -133,44 +134,47 @@ function Main() {
   useEffect(() => {
     // Функция для обновления положения изображения
     const updateImagePosition = () => {
-        // Выбираем все элементы с классом 'image-animation' или 'image-animation-2'
-        const elements = document.querySelectorAll('.image-animation, .image-animation-2');
-        elements.forEach((element: HTMLElement) => {
-            // Получаем координаты и размеры элемента
-            const rect = element.getBoundingClientRect();
-            // Проверяем, виден ли элемент на экране
-            const isElementVisible = rect.bottom <= window.innerHeight;
-            
-            // Если элемент виден, применяем стили
-            if (isElementVisible) {
-                // Применяем значение clip-path в зависимости от видимости элемента
-                element.style.clipPath = 'none';
-            } else {
-                // Если элемент не виден, вычисляем процент времени, который ему остался, пока он не выйдет с нижней границы экрана
-                const windowHeight = window.innerHeight;
-                const elementBottomOffset = rect.bottom - windowHeight;
-                const scrollPercentage = (elementBottomOffset / windowHeight) * 100;
-
-                // Применяем значение clip-path для скрытия изображения
-                let clipPathValue;
-                if (element.classList.contains('image-animation')) {
-                    clipPathValue = `inset(0 0 0 ${scrollPercentage}%)`;
-                } else if (element.classList.contains('image-animation-2')) {
-                    clipPathValue = `inset(0 ${scrollPercentage}% 0 0)`;
-                }
-                element.style.clipPath = clipPathValue;
-            }
-        });
+      // Выбираем все элементы с классом 'image-animation' или 'image-animation-2'
+      const elements = document.querySelectorAll('.image-animation, .image-animation-2');
+      elements.forEach((element: Element) => {
+        // Преобразуем Element к HTMLElement
+        const htmlElement = element as HTMLElement;
+  
+        const rect = htmlElement.getBoundingClientRect();
+        // Проверяем, виден ли элемент на экране
+        const isElementVisible = rect.bottom <= window.innerHeight;
+  
+        // Если элемент виден, применяем стили
+        if (isElementVisible) {
+          // Применяем значение clip-path в зависимости от видимости элемента
+          htmlElement.style.clipPath = 'none';
+        } else {
+          // Если элемент не виден, вычисляем процент времени, который ему остался, пока он не выйдет с нижней границы экрана
+          const windowHeight = window.innerHeight;
+          const elementBottomOffset = rect.bottom - windowHeight;
+          const scrollPercentage = (elementBottomOffset / windowHeight) * 100;
+  
+          // Применяем значение clip-path для скрытия изображения
+          let clipPathValue;
+          if (htmlElement.classList.contains('image-animation')) {
+            clipPathValue = `inset(0 0 0 ${scrollPercentage}%)`;
+          } else if (htmlElement.classList.contains('image-animation-2')) {
+            clipPathValue = `inset(0 ${scrollPercentage}% 0 0)`;
+          }
+          htmlElement.style.clipPath = clipPathValue;
+        }
+      });
     };
-
+  
     // Добавляем обработчик события прокрутки
     window.addEventListener('scroll', updateImagePosition);
-
+  
     // Убираем обработчик события прокрутки при размонтировании компонента
     return () => {
-        window.removeEventListener('scroll', updateImagePosition);
+      window.removeEventListener('scroll', updateImagePosition);
     };
-}, []); 
+  }, []);
+  
 
   return (
     <div>
@@ -243,8 +247,14 @@ function Main() {
       <p className='portfolio-heading para'>{language === 'ru' ? 'ПОРТФОЛИО' : 'PORTFOLIO'}</p>
         <div className='rolling-gallery'>
           <Slider {...settings}>
-            <HousingDetails type="apartment" data={apartmentData} />
-            <HousingDetails type="villa" data={villaData} />
+            <>
+              <p className='rolling-gallery-txt-1 para'>{language === 'ru' ? 'КВАРТИРЫ' : 'APARTMENTS'}</p>
+              <HousingDetails type="apartment" data={apartmentData} />
+            </>
+            <>
+              <p className='rolling-gallery-txt-2 para'>{language === 'ru' ? 'ВИЛЛЫ' : 'VILLAS'}</p>
+              <HousingDetails type="villa" data={villaData} />
+            </>
             {/* <HousingDetails type="commercial" data={commercialData} /> */}
           </Slider>
         </div>
@@ -538,7 +548,7 @@ function Main() {
                     />
                     <span className="char-count">{message.length}/500</span>
                   </label>
-                  <button type="submit">{language === 'ru' ? 'Отправить' : 'Send'}</button>
+                  <button type="submit" className='popup-content-button'>{language === 'ru' ? 'Отправить' : 'Send'}</button>
                 </form>
               </div>
             </div>

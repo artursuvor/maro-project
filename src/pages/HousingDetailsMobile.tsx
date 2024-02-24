@@ -3,7 +3,7 @@ import { useLanguage } from '../components/Language.tsx';
 
 const HousingDetailsMobile = ({ type, data }) => {
   const { language } = useLanguage();
-  const limitedData = data.slice(0, 2);
+  const limitedData = data.slice(0, 3);
 
   return (
     <div className={`${type}-details-mobile`}>

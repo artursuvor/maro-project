@@ -52,8 +52,8 @@ const Portfolio: React.FC = () => {
   useEffect(() => {
     const updateTextColor = () => {
         const elements = document.querySelectorAll('.para');
-        elements.forEach((element: HTMLElement) => {
-            const rect = element.getBoundingClientRect();
+        elements.forEach((element: Element) => {
+          const rect = (element as HTMLElement).getBoundingClientRect();
             const isElementVisible = rect.bottom <= 720;
             
             if (isElementVisible) {
@@ -70,6 +70,29 @@ const Portfolio: React.FC = () => {
           window.removeEventListener('scroll', updateTextColor);
       };
   }, []);
+
+  useEffect(() => {
+    const updateTextColor = () => {
+      const elements = document.querySelectorAll('.portfolio-page-item'); 
+      elements.forEach((element: Element) => {
+        const rect = (element as HTMLElement).getBoundingClientRect();
+        const isElementVisible = rect.bottom <= 1120;
+
+        if (isElementVisible) {
+          element.classList.add('visible');
+        } else {
+          element.classList.remove('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateTextColor);
+
+    return () => {
+      window.removeEventListener('scroll', updateTextColor);
+    };
+  }, []);
+
 
   const renderComponent = (data: RealEstateItem[]) => {
     return data.map((item, index) => (
@@ -104,7 +127,7 @@ const Portfolio: React.FC = () => {
               />
             
             <div className="portfolio-page-read-more">
-              <Link to={`/portfolio/${selectedComponent}/${index}`} className="read-more-link">
+              <Link to={``} className="read-more-link">
                 {language === 'ru' ? 'Подробнее' : 'Details'} 
               </Link>
               <img src='/img/white-arrow-up.png' alt='white-arrow-up' className= "portfolio-page-white-arrow-up"/>

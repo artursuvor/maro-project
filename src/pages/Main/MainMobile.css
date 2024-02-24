@@ -1,3 +1,23 @@
+.text-content-mobile{
+  opacity: 0;
+  animation: fadeInUp 2.5s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes revealRightToLeft {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.main-mobile-img-back{
+  animation: revealRightToLeft 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -5,11 +25,11 @@ body, html {
 
 .button-up-mobile{
   position: fixed;
-  width: 10vw;
+  width: 18vw;
   top: 4vw;
   right: 2.5vw;
   cursor: pointer;
-  z-index: 1030;
+  z-index: 100;
 }
 
 .button-up-hide-mobile{
@@ -346,7 +366,6 @@ body, html {
 }
 
 .selection-head-mobile {
-  padding-left: 4vw;
   font-family: "Ubuntu", sans-serif;
   font-size: 6vw;
   font-weight: 400;
@@ -508,47 +527,36 @@ body, html {
 .button-container-contacts-mobile {
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   cursor: pointer;
   padding-top: 4vw;
 }
 
-.button-image-contacts-mobile{
-  width: 8vw;
+.button-up-contacts-mobile{
+  width: 5vw;
 }
 
 .button-container-contacts-text-mobile{
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Gothic A1", sans-serif;
   padding: 1vw;
   font-size: 4vw;
   font-weight: 400;
   line-height: 4vw;
   letter-spacing: 0em;
   text-align: left;
-  color: black;
+  color: #828282;
 }
 
 .contacts-container-links-mobile {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
-.contacts-a-links-mobile > a{
-  text-decoration: none;
-  padding: 2vw;
-  font-family: "Gothic A1", sans-serif;
-  font-size: 4vw;
-  font-weight: 400;
-  color: #0B0A09;
-}
-
-.contacts-a-links-mobile > a:hover{
-  text-decoration: none;
-  padding: 1vw;
-  font-family: "Gothic A1", sans-serif;
-  font-size: 4vw;
-  font-weight: 400;
-  color: #828282;
+.contacts-a-links-mobile > img{
+  padding: 1vw 4vw;
 }
 
 .popup-overlay-mobile {
@@ -710,7 +718,8 @@ textarea {
   right: 2vw;
   background-color: black;
   color: white;
-  padding: 0.7vw 2.5vw; 
+  width: 93%;
+  padding: 3vw 2.5vw; 
   border: none;
   cursor: pointer;
   border-radius: 50px; 
@@ -719,6 +728,6 @@ textarea {
   font-weight: 400;
 }
 
-button[type="submit"]:hover {
+.popup-content-button-mobile :hover {
   background-color: #333; 
 }

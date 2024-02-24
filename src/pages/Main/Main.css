@@ -371,18 +371,60 @@ body, html {
   overflow: hidden;
 }
 
-.apartment-details,
-.villa-details,
-.commercial-details{
+.house-image1 {
   position: relative;
-  display: flex;
-  justify-content: space-between;
+  z-index: 1;
 }
 
-.portfolio-section-image-container {
-  padding-right: 4vw;
+.house-image2 {
   position: relative;
-  display: inline-block;
+  z-index: 3;
+}
+
+.rolling-gallery-txt-1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 10vw;
+  letter-spacing: 0em;
+  text-align: left;
+  position: absolute;
+  z-index: 2;
+  transition:transform 1s ease-in-out;
+  transform: translate(60%, 0%);
+  animation: moveAnimation2 6s ease-in-out 2s infinite alternate; 
+}
+
+@keyframes moveAnimation2 {
+  to {
+    transform: translate(-1%, 0);
+  }
+}
+
+.rolling-gallery-txt-1.hide {
+  transition: transform 5s ease-in-out;
+}
+
+.rolling-gallery-txt-2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 10vw;
+  letter-spacing: 0em;
+  text-align: left;
+  position: absolute;
+  z-index: 2;
+  opacity: 1;
+  transition:transform 1s ease-in-out;
+  transform: translate(10%, 0%);
+  animation: moveAnimation 6s ease-in-out 2s infinite alternate; 
+}
+
+@keyframes moveAnimation {
+  to {
+    transform: translate(90%, 0);
+  }
+}
+
+.rolling-gallery-txt-2.hide {
+  opacity: 1;
+  transition: transform 5s ease-in-out;
 }
 
 .portfolio-section-image-container img{
@@ -396,6 +438,7 @@ body, html {
   left: 14%;
   transform: translate(-50%, -50%);
   color: #F6F4F4;
+  z-index: 5;
 }
 
 .text-overlay p {
@@ -405,6 +448,21 @@ body, html {
   line-height: 2vw;
   letter-spacing: 0em;
   text-align: left;
+}
+
+
+.apartment-details,
+.villa-details,
+.commercial-details{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio-section-image-container {
+  padding-right: 4vw;
+  position: relative;
+  display: inline-block;
 }
 
 .button-container {
@@ -827,7 +885,7 @@ textarea {
   outline: none;
 }
 
-button[type="submit"] {
+.popup-content-button {
   position: absolute;
   bottom: 3vw;
   right: 2vw;
@@ -842,6 +900,6 @@ button[type="submit"] {
   font-weight: 400;
 }
 
-button[type="submit"]:hover {
+.popup-content-button:hover {
   background-color: #333; 
 }

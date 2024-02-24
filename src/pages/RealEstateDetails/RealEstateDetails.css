@@ -393,4 +393,15 @@
     color: white;
   }
   
+  .real-estate-page-photo-1,
+  .real-estate-page-photo-2,
+  .real-estate-page-photo-3 {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
   
+  .real-estate-page-photo-1.visible,
+  .real-estate-page-photo-2.visible,
+  .real-estate-page-photo-3.visible {
+    opacity: 1;
+  }
