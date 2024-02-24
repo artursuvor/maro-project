@@ -26,6 +26,14 @@ function Header() {
     setButtonClicked(!buttonClicked);
   };
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [menuOpen]);
+
   const isHomePage = location.pathname === '/';
 
   return (
@@ -78,7 +86,7 @@ function Header() {
               <img 
                 src={isHomePage ? "/img/x-mark.png" : "/img/x-mark-black.png"} 
                 alt="menu-icon" 
-                className={isSticky ? "x-mark-black" : "x-mark" } 
+                className={isSticky ? "x-mark-black" : "x-mark"} 
               />
             ) : (
               <svg className="menu-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">

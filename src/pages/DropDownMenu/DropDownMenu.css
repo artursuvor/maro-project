@@ -27,6 +27,13 @@
   margin: 0;
 }
 
+.drop-down-menu-title-text {
+  transition: transform 0.5s ease;
+}
+
+.drop-down-menu-title-text:hover {
+  transform: translateX(5vw); 
+}
 .drop-down-menu .animated-arrow {
   width: 4vw;
   justify-self: end; 
@@ -51,7 +58,7 @@
   list-style-type: none;
   position: relative;
   padding-left: 1vw;
-
+  padding-bottom: 3vw;
 }
 
 .dropdown-content li {
@@ -85,7 +92,7 @@
   position: absolute;
   top: 3vw;
   left: 0.6vw; 
-  height: 89%;
+  height: 84%;
   width: 1px; 
   background-color: #C4C4C4; 
 }

@@ -217,17 +217,6 @@
   cursor: pointer;
 }
 
-.menu-mobile div li:hover::after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: -2px; 
-    width: 100%;
-    height: 1px; 
-    background-color: #000; 
-    display: block;
-  }
-
 .menu-mobile div li a {
     font-family: 'Gothic A1', sans-serif;
     font-size: 3.5vw;
@@ -237,6 +226,12 @@
     text-decoration: none;
     color: #000;
 }
+
+.menu-mobile div li a:hover {
+    padding-bottom: 1.5vw;
+    border-bottom: 1px solid #000; 
+}
+
 
 .additional-content-mobile {
     display: flex;

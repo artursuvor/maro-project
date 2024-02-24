@@ -165,7 +165,7 @@ const Portfolio: React.FC = () => {
         <div className="portfolio-page-text-overlay">
           <p className='portfolio-page-heading'>{language === 'ru' ? 'ПОРТФОЛИО' : 'Portfolio'}</p>
           <p className='portfolio-page-text'>
-            {language === 'ru' ? 'Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры, а приезжает уже в полностью готовую к проживанию.' : 'We can completely take care of all the client\'s questions regarding real estate arrangement. The client trusts us with the keys to the "bare" apartment, and arrives already in a fully prepared living space.'}
+            {language === 'ru' ? 'Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры,\nа приезжает уже в полностью готовую к проживанию.' : 'We can completely take care of all the client\'s questions regarding real estate arrangement. The client trusts us with the keys to the "bare" apartment, and arrives already in a fully prepared living space.'}
           </p>
         </div>
       </div>

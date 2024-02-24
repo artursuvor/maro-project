@@ -35,8 +35,8 @@
 .x-mark-black{
     cursor: pointer;
     position: relative;
-    width: 2vw;
-    height: 2vw; 
+    width: 12vw;
+    height: 12vw; 
     top: 0.1vw;
 }
 
@@ -83,7 +83,7 @@
     border-radius: 100px;
     color: #FFFFFF;
     font-family: "Gothic A1", sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.1vw;
     font-weight: 400;
     line-height: 2vw;
     letter-spacing: 0;
@@ -242,29 +242,16 @@
 }
 
 .menu ul {
-  list-style-type: none;
-  text-align: center;
-  
-  color: #000;
+    list-style-type: none;
+    text-align: center;
+    color: #000;
 }
 
 .menu ul li {
-  padding: 1.5vw;
-  position: relative;
-  cursor: pointer;
-
+    padding: 1.5vw;
+    position: relative;
+    cursor: pointer;
 }
-
-.menu ul li:hover::after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: -2px; 
-    width: 100%;
-    height: 1px; 
-    background-color: #000; 
-    display: block;
-  }
 
 .menu ul li a {
     font-family: 'Gothic A1', sans-serif;
@@ -274,7 +261,14 @@
     letter-spacing: 0em;
     text-decoration: none;
     color: #000;
+    position: relative;
 }
+
+.menu ul li a:hover {
+    padding-bottom: 0.5vw;
+    border-bottom: 2px solid #000; 
+}
+
 
 .additional-content {
     position: absolute;

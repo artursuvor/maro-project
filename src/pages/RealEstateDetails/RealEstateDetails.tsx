@@ -260,7 +260,7 @@ const RealEstateDetails = () => {
             <img 
                 src="/img/button-supp.png" 
                 alt="real-estate-page-button-next" 
-                className='real-estate-page-button-next' 
+                className='real-estate-page-button-next-1' 
                 onClick={handleNext}
             />
             </div>

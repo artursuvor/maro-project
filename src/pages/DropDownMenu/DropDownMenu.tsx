@@ -7,9 +7,10 @@ interface DropDownMenuProps {
   menuStates: boolean[];
   setMenuStates: React.Dispatch<React.SetStateAction<boolean[]>>;
   price: string;
+  buttonIs: boolean;
 }
 
-const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates, setMenuStates, price }) => {
+const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates, setMenuStates, price , buttonIs }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,7 +22,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates,
   return (
     <div className="drop-down-wrapper">
       <div className={`drop-down-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <p className='para'>{title}</p>
+        <p className='drop-down-menu-title-text'>{title}</p>
         <p className='para'>{price}</p>
         <img src="./img/arrow_down.png" alt="arrow" className='animated-arrow'/>
       </div>
@@ -30,7 +31,7 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates,
           <div className="lines"></div>
           {content.map((item, index) => (
             <li key={index}>
-              {index === content.length - 1 ? (
+              {(buttonIs && index === content.length -1) ? (
                 <>
                   <span>
                     {item}

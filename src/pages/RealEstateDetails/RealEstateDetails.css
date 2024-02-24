@@ -57,6 +57,7 @@
     font-weight: 300;
     line-height: 1.4vw;
     letter-spacing: 0em;
+    padding-left: 0.7vw;
     text-align: left;  
   }
 
@@ -191,6 +192,19 @@
     position: relative;
     overflow: hidden;
   }
+
+  .real-estate-page-button-next-1 {
+    position: absolute;
+    background: #00000033;
+    padding: 1vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    bottom: 50%;
+    right: 3vw;
+    cursor: pointer;
+  }
+
   .real-estate-page-button-next {
     position: absolute;
     background: #00000033;
@@ -198,7 +212,7 @@
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
-    bottom: 14vw;
+    bottom: 8%;
     right: 3vw;
     cursor: pointer;
   }

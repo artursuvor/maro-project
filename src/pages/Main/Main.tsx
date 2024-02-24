@@ -57,7 +57,7 @@ function Main() {
   useEffect(() => {
     const initialTimeout = setTimeout(() => {
       setShowHero(false);
-    }, 1000);
+    }, 2000);
 
     return () => clearTimeout(initialTimeout);
   }, []);
@@ -240,7 +240,7 @@ function Main() {
         </div>  
         <div className="about-image-section">
           <img src="./img/about-us-img.jpg" alt="about-us-img" className="image-animation"/>
-          <h5 className='cover-all-questions para'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ ВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ К НЕДВИЖИМОСТИ' : 'WE COVER ALL REAL ESTATE RELATED QUESTIONS'}</h5>
+          <h5 className='cover-all-questions para'>{language === 'ru' ? 'МЫ ПЕРЕКРЫВАЕМ ВСЕ ВОПРОСЫ, ОТНОСЯЩИЕСЯ \nК НЕДВИЖИМОСТИ' : 'WE COVER ALL REAL ESTATE RELATED QUESTIONS'}</h5>
         </div>
       </div>
       <div className="portfolio-section" id='portfolio'>
@@ -255,7 +255,6 @@ function Main() {
               <p className='rolling-gallery-txt-2 para'>{language === 'ru' ? 'ВИЛЛЫ' : 'VILLAS'}</p>
               <HousingDetails type="villa" data={villaData} />
             </>
-            {/* <HousingDetails type="commercial" data={commercialData} /> */}
           </Slider>
         </div>
         <a href="/portfolio" className="button-container">
@@ -299,6 +298,7 @@ function Main() {
             menuStates={menuStates}
             setMenuStates={setMenuStates}
             price={language === 'ru' ? `От 500 €/М²` : `From 500 €/M²`}
+            buttonIs={false}
           />
           <DropDownMenu
             title={language === 'ru' ? `02  РЕМОНТНО-СТРОИТЕЛЬНЫЕ РАБОТЫ` : `02  CONSTRUCTION AND RENOVATION WORKS`}
@@ -331,6 +331,7 @@ function Main() {
             menuStates={menuStates}
             setMenuStates={setMenuStates}
             price={language === 'ru' ? `От 500 €/М²` : `From 500 €/M²`}
+            buttonIs={false}
           />
           <DropDownMenu
             title={language === 'ru' ? `03  ПОДБОР И ПОСТАВКА МЕБЕЛИ` : `03  FURNITURE SELECTION AND DELIVERY`}
@@ -363,6 +364,7 @@ function Main() {
             menuStates={menuStates}
             setMenuStates={setMenuStates}
             price={language === 'ru' ? `От 500 €/М²` : `From 500 €/M²`}
+            buttonIs={true}
           />
         </>
       </div>

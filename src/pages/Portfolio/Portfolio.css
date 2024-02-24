@@ -8,7 +8,6 @@
 }
 
 .portfolio-page-section{
-    padding-top: 6vw;
     padding-bottom: 1vw;
     background-color: #F6F4F4;
     position: relative;
@@ -60,7 +59,8 @@
     font-weight: 300;
     line-height: 1.4vw;
     letter-spacing: 0em;
-    text-align: left;    
+    text-align: left; 
+    white-space: pre-line;   
   }
   
   .portfolio-page-switcher-container {
