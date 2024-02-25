@@ -145,7 +145,7 @@ function MainMobile() {
         src="./img/contact-us.png" 
         alt="button_circle_up" 
         onClick={handleButtonClick}
-        className={isSticky ? 'button-up-mobile' : "button-up-hide-mobile"}
+        className={isSticky ? 'contact-us-mobile' : "contact-us-hide-mobile"}
       />
       <div className={`hero ${showHero ? '' : 'fade-out'}`}>
         <div className="hero-content">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
@@ -48,6 +49,16 @@ const PortfolioMobile: React.FC = () => {
   
     return selectedItems.map((item, index) => (
       <div key={index} className="portfolio-page-item-mobile">
+        <Link
+          to={`/portfolio/${selectedComponent}/${index}`}
+          state={{
+            type: selectedComponent,
+            id: index,
+            residentialComplex: item.residentialComplex,
+            address: item.address,
+            sizeSquareMeters: item.sizeSquareMeters,
+          }}
+        >
         {item.photoUrl && (
           <>
             <img
@@ -57,11 +68,12 @@ const PortfolioMobile: React.FC = () => {
             />
           </>
         )}
-        <div className='portfolio-page-text-renderComponent-mobile'>
-          <p className='portfolio-page-residentialComplex-mobile'>{item.residentialComplex}</p>
-          <p className='portfolio-page-address-mobile'>{item.address}</p>
-          <p className='portfolio-page-sizeSquareMeters-mobile'>{item.sizeSquareMeters}</p>
-        </div>
+        </Link>
+         <div className='portfolio-page-text-renderComponent-mobile'>
+            <p className='portfolio-page-residentialComplex-mobile' style={{ textDecoration: 'none' }}>{item.residentialComplex}</p>
+            <p className='portfolio-page-address-mobile' style={{ textDecoration: 'none' }}>{item.address}</p>
+            <p className='portfolio-page-sizeSquareMeters-mobile' style={{ textDecoration: 'none' }}>{item.sizeSquareMeters}</p>
+          </div>
       </div>
     ));
   };
@@ -99,7 +111,7 @@ const PortfolioMobile: React.FC = () => {
         <select value={selectedComponent} onChange={handleChange}>
           <option value="apartment">{language === 'ru' ? 'Квартиры' : 'Apartments'}</option>
           <option value="villa">{language === 'ru' ? 'Виллы' : 'Villas'}</option>
-          <option value="commercial">{language === 'ru' ? 'Коммерческая недвижимость' : 'Commercial real estate'}</option>
+          {/* <option value="commercial">{language === 'ru' ? 'Коммерческая недвижимость' : 'Commercial real estate'}</option> */}
         </select>
       </div>
         <div className='portfolio-page-grid-container-mobile'>{renderSelectedComponent()}</div>

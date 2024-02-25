@@ -23,7 +23,7 @@ body, html {
   padding: 0;
 }
 
-.button-up-mobile{
+.contact-us-mobile{
   position: fixed;
   width: 18vw;
   top: 4vw;
@@ -32,7 +32,7 @@ body, html {
   z-index: 100;
 }
 
-.button-up-hide-mobile{
+.contact-us-hide-mobile{
   display: none;
 }
 

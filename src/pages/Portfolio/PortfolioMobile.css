@@ -5,9 +5,24 @@
     background-color: #F6F4F4;
     position: relative;
 }
+
+.button-up-mobile{
+  position: fixed;
+  width: 14vw;
+  bottom: 4vw;
+  right: 2.5vw;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.button-up-hide-mobile{
+  display: none;
+}
+
 .portfolio-page-switcher-container-mobile{
   padding: 4vw 0;
 }
+
 .portfolio-page-switcher-container-mobile select {
   appearance: none;
   -webkit-appearance: none;
@@ -89,8 +104,6 @@
     justify-content: center;
     margin-top: 4vw;
   }
-  
-
   
   .portfolio-page-image-renderComponent-mobile{
     width: 90vw;

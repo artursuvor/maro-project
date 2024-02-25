@@ -17,6 +17,7 @@ import FAQMobile from '../../pages/FAQ/FAQMobile.tsx';
 import Cooperation from '../../pages/Cooperation/Cooperation.tsx';
 import CooperationMobile from '../../pages/Cooperation/CooperationMobile.tsx';
 import RealEstateDetails from '../../pages/RealEstateDetails/RealEstateDetails.tsx'; 
+import RealEstateDetailsMobile from '../../pages/RealEstateDetails/RealEstateDetailsMobile.tsx';
 
 function DesktopApp(): JSX.Element {
   return (
@@ -46,6 +47,7 @@ function MobileApp(): JSX.Element {
           <Route path="/" element={<LayoutMobile />}>
             <Route index element={<MainMobile />} />
             <Route path="portfolio/" element={<PortfolioMobile />} />
+            <Route path="portfolio/:type/:id" element={<RealEstateDetailsMobile />} />
             <Route path="social-responsibility" element={<SocialResponsibilityMobile />} />
             <Route path="guarantees" element={<GuaranteesMobile />} />
             <Route path="FAQ" element={<FAQMobile />} />

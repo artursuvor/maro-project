@@ -1,0 +1,390 @@
+.real-estate-page-mobile{
+  padding-top: 16vw;
+    position: relative;
+}
+
+.real-estate-page-section-mobile{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+
+  .real-estate-page-background-mobile{
+    width: 200%;
+    height: auto;
+    display: block;
+    transform: translate(-25%, 0%);
+    filter: brightness(0.6);
+  }
+  
+  .real-estate-page-overlay-mobile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .real-estate-page-text-overlay-mobile{
+    position: absolute;
+    bottom: -10%;
+    left: 45%;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    color: #F6F4F4;
+    text-align: left;
+    z-index: 1;
+  }
+  
+  .real-estate-page-heading-mobile{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 10vw;
+    font-weight: 400;
+    width: 100%;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0px;
+    white-space: nowrap;
+
+  }
+  
+  .real-estate-page-text-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 3vw;
+    font-weight: 300;
+    line-height: 1.4vw;
+    letter-spacing: 0em;
+    padding-left: 0.7vw;
+    text-align: left;  
+  }
+
+  .real-estate-page-about-design-mobile{
+    position: relative; 
+    padding-left: 4vw;
+    padding-top: 4vw;
+    background-color: #F6F4F4;
+    text-align: center;
+    padding-bottom: 225vw;
+    z-index: 1; 
+  }
+  
+  
+  .real-estate-page-photo-mobile{
+    width: 75vw;
+    padding-left: 12vw;
+  }
+
+  .real-estate-page-about-design-text-1-mobile{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 5vw;
+    font-weight: 400;
+    line-height: 5vw;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .real-estate-page-about-design-text-2-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 3.5vw;
+    font-weight: 400;
+    line-height: 4vw;
+    width: 87vw;
+    letter-spacing: 0em;
+    white-space: pre-line;
+    text-align: left;
+  }
+  
+  .real-estate-page-photo-section-mobile{
+    justify-content: left;
+    margin-top: -4.5vw; 
+    position: absolute; 
+    z-index: 2; 
+  }
+
+  .real-estate-page-photo-section > div{
+    overflow: hidden;
+  }
+  
+  .real-estate-page-photo-section-2-mobile{
+    transform: translate(83%, 0%);
+  }
+  
+  .real-estate-page-photo-1-mobile,
+  .real-estate-page-photo-2-mobile,
+  .real-estate-page-photo-3-mobile{
+    width: 50vw;
+    height: auto;
+  }
+
+  .real-estate-page-photo-section-mobile > div > p{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 4vw;
+    font-weight: 400;
+    letter-spacing: 0em;
+    padding-bottom: 2vw;
+    transform: translate(0%, -50%);
+    text-align: left;
+  }
+
+  .real-estate-page-middle-text-mobile{
+    padding: 8vw 4vw;
+    background-color:#E7E3E3;
+  }
+  
+  .real-estate-page-middle-text-1-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 3.5vw;
+    font-weight: 400;
+    line-height: 5vw;
+    letter-spacing: 0em;
+    white-space: pre-line;
+    text-align: left;
+  }
+
+  .real-estate-page-gallery-mobile{
+    padding-left: 4vw;
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+    background-color: #F6F4F4;
+    display: block;
+  }
+
+  
+
+  .real-estate-page-gallery-head-mobile{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 5vw;
+    font-weight: 400;
+    line-height: 3vw;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .real-estate-page-gallery-ph-mobile{
+    height: 35vw;
+    width: auto;
+  }
+
+  .real-estate-page-slider-mobile{
+    position: relative;
+    overflow: hidden;
+  }
+
+  .real-estate-page-button-next-1-mobile{
+    position: absolute;
+    background: #00000033;
+    padding: 1vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    bottom: 50%;
+    right: 3vw;
+    cursor: pointer;
+  }
+
+  .real-estate-page-button-next-mobile{
+    position: absolute;
+    background: #00000033;
+    padding: 1vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    bottom: 8%;
+    right: 3vw;
+    cursor: pointer;
+  }
+  
+ .real-estate-page-container-mobile{
+    background-color: #E7E3E3;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+    padding-right: 4vw;
+  }
+
+  .real-estate-scnd-mobile{
+    width: 80vw;
+    margin-left: 20vw;
+    overflow: hidden;
+    padding-top: 2vw;
+    height: auto;
+  }
+  
+
+  .button-container-real-estate-text-mobile{
+    font-family: "Ubuntu", sans-serif;
+    padding: 1vw;
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: black;
+  }
+
+  .button-container-real-estate-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 42vw;
+  }
+
+  .button-image-real-estate-mobile{
+    width: 8vw;
+    height: auto;
+  }
+
+
+  .real-estate-page-similar-projects-mobile{
+    padding-left: 4vw;
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+    background-color: #F6F4F4;
+  }
+
+  .real-estate-page-similar-projects-head-mobile{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 6vw;
+    font-weight: 400;
+    line-height: 3vw;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+    
+  .real-estate-page-item-mobile{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .real-estate-page-text-renderComponent-mobile{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .real-estate-page-image-renderComponent-mobile{
+    height: 30vw;
+    width: auto;
+  }
+
+  .real-estate-page-item-mobile:hover .real-estate-page-text-renderComponent-mobile{
+    opacity: 1;
+    width: 25vw;
+    z-index: 1002;
+  }
+
+  .real-estate-page-item-mobile:hover .real-estate-page-image-renderComponent-mobile{
+    filter: brightness(0.6);
+  } 
+  
+  .real-estate-page-residentialComplex-mobile{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 1vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+  
+    
+  .real-estate-page-address-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    line-height: 2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 20vw;
+    color: white;
+  }
+    
+  .real-estate-page-sizeSquareMeters-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.3vw;
+    font-weight: 200;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+  .real-estate-page-read-more-mobile{
+    position: absolute;
+    bottom: 2vw;
+    right: 1vw;
+    padding: 1vw;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+  
+  .real-estate-page-item-mobile:hover .real-estate-page-read-more-mobile{
+    opacity: 1;
+  }
+  
+  .real-estate-page-white-arrow-up-mobile{
+    width: 1vw;
+    height: 1vw;
+    padding: 0.5vw 1vw;
+  }
+
+  .real-estate-page-more-link-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    line-height: 2vw;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+  }
+
+
+  .real-page-residentialComplex-mobile{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 5vw;
+    font-weight: 400;
+    line-height: 2vw;
+    letter-spacing: 0em;
+    text-decoration: none;
+    text-align: left;
+    color: black;
+  }
+  
+    
+  .real-page-address-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 3vw;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: none;
+    width: 80vw;
+    color: black;
+  }
+    
+  .real-page-sizeSquareMeters-mobile{
+    font-family: "Gothic A1", sans-serif;
+    font-size: 3.5vw;
+    font-weight: 300;
+    line-height: 2vw;
+    letter-spacing: 0em;
+    text-decoration: none;
+    text-align: left;
+    color: black;
+  }
+
+  .real-page-image-renderComponent-mobile{
+    width: 92vw;
+    height: auto;
+  }
