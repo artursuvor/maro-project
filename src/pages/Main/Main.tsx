@@ -6,6 +6,7 @@ import villaData from '../Portfolio/Villa/Villa.tsx';
 import Supplier from '../Suppliers.tsx';
 import HousingDetails from '../HousingDetails.tsx';
 import DropDownMenu from '../DropDownMenu/DropDownMenu.tsx';
+import PopupQuiz from './popUpQuiz.tsx';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -19,6 +20,18 @@ function Main() {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [message, setMessage] = useState('');
   const [isSticky, setSticky] = useState(false);
+
+  const [isPopupVisibleQuiz, setPopupVisibleQuiz] = useState(false);
+
+  const handleButtonClickQuiz = () => {
+    // Логика для отображения/скрытия всплывающего окна
+    setPopupVisibleQuiz(!isPopupVisibleQuiz);
+  };
+
+  const handlePopupCloseQuiz = () => {
+    // Логика закрытия всплывающего окна
+    setPopupVisibleQuiz(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -174,7 +187,6 @@ function Main() {
       window.removeEventListener('scroll', updateImagePosition);
     };
   }, []);
-  
 
   return (
     <div>
@@ -191,7 +203,13 @@ function Main() {
           <div className="text-content">
             <p className='interior-text'>{language === 'ru' ? 'ИНТЕРЬЕРЫ ДЛЯ ЖИЗНИ В ЧЕРНОГОРИИ' : 'INTERIORS FOR LIVING IN MONTENEGRO'}</p>
             <p className='interior-description'>{language === 'ru' ? 'Создаем внутренние пространства квартир и вилл. Подбор и доставка мебели из Европы' : 'Creating interior spaces for apartments and villas. Selection and delivery of furniture from Europe'}</p>
-            <button className='calculate-btn'>{language === 'ru' ? 'Рассчитать стоимость' : 'Calculate cost'}</button>
+            <button className='calculate-btn' onClick={handleButtonClickQuiz}>{language === 'ru' ? 'Рассчитать стоимость' : 'Calculate cost'}</button>
+            {isPopupVisibleQuiz && (
+              <PopupQuiz
+                isPopupVisibleQuiz={isPopupVisibleQuiz}
+                handlePopupCloseQuiz={handlePopupCloseQuiz}
+              />
+            )}
           </div>
         </div>
         <div className="right-side">
