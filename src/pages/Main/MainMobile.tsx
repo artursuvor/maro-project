@@ -4,6 +4,7 @@ import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
 import Supplier from '../Suppliers.tsx';
+import PopupQuiz from './popUpQuiz.tsx';
 import HousingDetailsMobile from '../HousingDetailsMobile.tsx';
 import DropDownMenuMobile from '../DropDownMenu/DropDownMenuMobile.tsx';
 import Slider from 'react-slick';
@@ -139,6 +140,18 @@ function MainMobile() {
     };
   }, []);
 
+  const [isPopupVisibleQuiz, setPopupVisibleQuiz] = useState(false);
+
+  const handleButtonClickQuiz = () => {
+    // Логика для отображения/скрытия всплывающего окна
+    setPopupVisibleQuiz(!isPopupVisibleQuiz);
+  };
+
+  const handlePopupCloseQuiz = () => {
+    // Логика закрытия всплывающего окна
+    setPopupVisibleQuiz(false);
+  };
+
   return (
     <div>
       <img 
@@ -158,7 +171,13 @@ function MainMobile() {
           <div className="text-content-mobile">
             <p className='interior-text-mobile'>{language === 'ru' ? 'ИНТЕРЬЕРЫ ДЛЯ ЖИЗНИ \nВ ЧЕРНОГОРИИ' : 'INTERIORS FOR LIVING IN MONTENEGRO'}</p>
             <p className='interior-description-mobile'>{language === 'ru' ? 'Создаем внутренние пространства квартир и вилл. \nПодбор и доставка мебели из Европы' : 'Creating interior spaces for apartments and villas. Selection and delivery of furniture from Europe'}</p>
-            <button className='calculate-btn-mobile'>{language === 'ru' ? 'Рассчитать стоимость' : 'Calculate cost'}</button>
+            <button className='calculate-btn-mobile' onClick={handleButtonClickQuiz}>{language === 'ru' ? 'Рассчитать стоимость' : 'Calculate cost'}</button>
+            {isPopupVisibleQuiz && (
+              <PopupQuiz
+                isPopupVisibleQuiz={isPopupVisibleQuiz}
+                handlePopupCloseQuiz={handlePopupCloseQuiz}
+              />
+            )}
           </div>
         </div>
       </div>

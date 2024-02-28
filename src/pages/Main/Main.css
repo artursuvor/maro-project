@@ -772,6 +772,7 @@ body, html {
 
 .close-button {
   position: absolute;
+  width: 1vw;
   top: 1vw;
   right: 1vw;
   cursor: pointer;

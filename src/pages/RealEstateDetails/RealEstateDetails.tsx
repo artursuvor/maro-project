@@ -5,36 +5,31 @@ import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
 import Slider from 'react-slick';
+import PopupQuiz from '../Main/popUpQuiz.tsx';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './RealEstateDetails.css'
 
 const RealEstateDetails = () => {
-    const [isPopupVisible, setPopupVisible] = useState(false);
     const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
-    const [message, setMessage] = useState('');
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+    const [isPopupVisibleQuiz, setPopupVisibleQuiz] = useState(false);
+
+    const handleButtonClickQuiz = () => {
+      // Логика для отображения/скрытия всплывающего окна
+      setPopupVisibleQuiz(!isPopupVisibleQuiz);
+    };
+  
+    const handlePopupCloseQuiz = () => {
+      // Логика закрытия всплывающего окна
+      setPopupVisibleQuiz(false);
+    };
 
     const { language } = useLanguage();
     const { state } = useLocation();
     const { residentialComplex, address, sizeSquareMeters } = state;
     const { type } = state;
-
-    const handleChange = (e) => {
-        const inputValue = e.target.value;
-        if (inputValue.length <= 500) {
-        setMessage(inputValue);
-        }
-    };
-
-    const handleButtonClick = () => {
-        setPopupVisible(true);
-    };
-
-    const handlePopupClose = () => {
-        setPopupVisible(false);
-    };
-
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -275,7 +270,7 @@ const RealEstateDetails = () => {
           </p>
           <div className='real-estate-right'>
             <img src="/img/real-estate-2.png" alt="furnuture-selection-scnd" className="real-estate-scnd image-animation" />
-            <div className="button-container-real-estate" onClick={handleButtonClick}>
+            <div className="button-container-real-estate" onClick={handleButtonClickQuiz}>
               <p className="button-container-real-estate-text para">{language === 'ru' ? 'ЗАКАЗАТЬ ПОДОБНОЕ' : 'ORDER SIMILAR'}</p>
               <img
                 src="/img/Button_circle.png"
@@ -283,47 +278,11 @@ const RealEstateDetails = () => {
                 className="button-image-real-estate"
               />
             </div>
-            {isPopupVisible && (
-                <div className="popup-overlay" onClick={handlePopupClose}>
-                <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                    <p className="popup-overlay-text para">{language === 'ru' ? 'СВЯЖИТЕСЬ С НАМИ' : 'CONTACT US'}</p>
-                    <img
-                    src="/img/close-button.png"
-                    alt="close-button-overlay"
-                    className="close-button"
-                    onClick={handlePopupClose}
-                    />
-                    <form>
-                    <div className='popup-mail-phone'>
-                        <div>
-                        <p className='para'>{language === 'ru' ? 'Ваша почта' : 'Your email'}</p>
-                        <label>
-                            <input type="mail" name="email" placeholder={language === 'ru' ? 'На эту почту придет ответ' : 'You will receive a response to this email'} className='input-mail'/>
-                        </label>
-                        </div>
-                        <div>
-                        <p className='para'>{language === 'ru' ? 'Ваш телефон' : 'Your phone number'}</p>
-                        <label>
-                            <input type="tel" name="phone" className='input-phone'/>
-                        </label>
-                        </div>
-                    </div>
-                    <p className='para'>{language === 'ru' ? 'Ваше сообщение' : 'Your message'}</p>
-                    <label className='label-container'>
-                        <textarea
-                            name="message"
-                            value={message}
-                            onChange={handleChange}
-                            maxLength={500}
-                            placeholder={language === 'ru' ? 'Опишите в нескольких предложениях ваш вопрос..' : 'Describe your question in a few sentences..'}
-                            className='input-message'
-                        />
-                        <span className="char-count">{message.length}/500</span>
-                    </label>
-                    <button type="submit">{language === 'ru' ? 'Отправить' : 'Send'}</button>
-                    </form>
-                </div>
-                </div>
+            {isPopupVisibleQuiz && (
+              <PopupQuiz
+                isPopupVisibleQuiz={isPopupVisibleQuiz}
+                handlePopupCloseQuiz={handlePopupCloseQuiz}
+              />
             )}
           </div>
         </div>
