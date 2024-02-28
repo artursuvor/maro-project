@@ -925,7 +925,7 @@ textarea {
 .popup-content-quiz {
   background:#F6F4F4;
   width: 76vw;
-  padding-top: 2vw;
+  padding-top: 1vw;
   padding-left: 2vw;
   padding-bottom: 8vw;
   position: relative; 
@@ -960,6 +960,7 @@ textarea {
   letter-spacing: 0em;
   text-align: left;
   color: #828282;
+  margin-top: 2vw;
 }
 
 input[type="text"] {
@@ -968,6 +969,9 @@ input[type="text"] {
   border: none;
   border-bottom: 1px solid #828282;
   padding: 1vw 0;
+  font-family: "Gothic A1",sans-serif;
+  font-size: 1vw;
+  font-weight: 400;
 }
 
 input[type="text"]::placeholder{
@@ -997,9 +1001,10 @@ input[type="text"]::placeholder{
 .quiz-button-back{
   position: absolute;
   bottom: 3vw;
-  right: 13vw;
-  background-color: black;
-  color: white;
+  right: 11vw;
+  background-color: transparent;
+  border: transparent;
+  color: black;
   padding: 0.7vw 2.5vw; 
   border: none;
   cursor: pointer;
@@ -1012,9 +1017,9 @@ input[type="text"]::placeholder{
 .quiz-button-back-1{
   position: absolute;
   bottom: 3vw;
-  right: 16vw;
-  background-color: black;
-  color: white;
+  right: 14vw;
+  background-color: transparent;
+  color: black;
   padding: 0.7vw 2.5vw; 
   border: none;
   cursor: pointer;
@@ -1023,3 +1028,117 @@ input[type="text"]::placeholder{
   font-size: 1.6vw;
   font-weight: 400;
 }
+
+.popup-overlay-quiz-heading{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 3vw;
+  margin: 0;
+  margin-bottom: 2vw;
+}
+
+
+.popup-overlay-quiz-heading-1{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 3vw;
+  margin: 0;
+  margin-bottom: 5vw;
+}
+
+.popup-overlay-quiz-heading-2{
+  font-family: "Gothic A1",sans-serif;
+  font-size: 1.5vw;
+  font-weight: 400;
+  line-height: 3vw;
+}
+
+label > input[type="checkbox"]{
+  appearance: none; 
+  background-color: #fff;
+  width: 1.3vw; 
+  height: 1.3vw;
+  border: 2px solid #dbdbdb; 
+  border-radius: 5px; 
+  outline: none; 
+  cursor: pointer; 
+  margin-right: 1vw; 
+}
+
+label > input[type="radio"]{
+  appearance: none; 
+  width: 1.3vw; 
+  height: 1.3vw;
+  border: 1px solid #dbdbdb; 
+  background-color: #fff;
+  border-radius: 50px; 
+  outline: none; 
+  cursor: pointer; 
+  margin-right: 1vw; 
+  margin-bottom: 0.2vw; 
+  position: relative; 
+}
+
+input[type="radio"]:checked {
+  border-color: #000000; 
+}
+
+input[type="radio"]:checked::before {
+  content: ''; 
+  display: block; 
+  width: 0.4vw; 
+  height: 0.4vw;
+  border-radius: 50%; 
+  background-color: #000000; 
+  transform: scale(0.6); 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.popup-content-quiz > div > label {
+  margin-bottom: 1vw;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.popup-overlay-quiz-heading-inputs > div{
+  padding-right: 1vw;
+}
+
+.popup-overlay-quiz-heading-inputs > div > input {
+  width: 33vw;
+  padding: 1vw;
+  background: linear-gradient(0deg, #F6F4F4, #F6F4F4),
+    linear-gradient(0deg, #828282, #828282);
+  border: 1px solid #828282;
+  word-wrap: break-word; 
+}
+
+.popup-overlay-quiz-input-text{
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1vw;
+  font-weight: 300;
+  line-height: 1vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+  padding-top: 1vw;
+}
+
+
+.popup-overlay-quiz-heading-inputs {
+  display: flex; 
+  flex-wrap: wrap; 
+}
+
+
+

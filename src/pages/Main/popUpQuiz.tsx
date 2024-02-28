@@ -65,8 +65,12 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             <p className='popup-overlay-quiz-steps'>{currentStep} шаг из 9</p>
             {currentStep === 1 && (
                 <div>
-                    <p>Какова общая площадь помещения, которое требуется обустроить?</p>
-                    <p>(в квадратных метрах)</p>
+                  <div className='popup-overlay-quiz-heading-num'>
+                    <p className='popup-overlay-quiz-heading-1'>
+                      Какова общая площадь помещения, которое требуется обустроить? 
+                      <span className='popup-overlay-quiz-heading-2'>(в квадратных метрах)</span>
+                    </p>
+                  </div>
                     <input
                         type="text"
                         name="question1"
@@ -78,7 +82,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 2 && (
               <div>
-                <p>Какие стили интерьера вам ближе всего? (Выберите несколько вариантов)</p>
+                <p className='popup-overlay-quiz-heading'>КАКОЙ СТИЛЬ ИНТЕРЬЕРА ВАМ БЛИЖЕ ВСЕГО?</p>
                 {/* Checkbox для выбора стилей интерьера */}
                 <label>
                   <input
@@ -161,7 +165,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 3 && (
               <div>
-                <p>ЧТО ВАС БОЛЬШЕ ВСЕГО ИНТЕРЕСУЕТ ПРИ ОБУСТРОЙСТВЕ ИНТЕРЬЕРА?</p>
+                <p className='popup-overlay-quiz-heading'>ЧТО ВАС БОЛЬШЕ ВСЕГО ИНТЕРЕСУЕТ ПРИ ОБУСТРОЙСТВЕ ИНТЕРЬЕРА?</p>
                 <label>
                   <input
                     type="checkbox"
@@ -233,7 +237,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 4 && (
               <div>
-                <p>КАКИЕ МАТЕРИАЛЫ ПРЕДПОЧТИТЕЛЬНЕЕ ВСЕГО ДЛЯ ВАС?</p>
+                <p className='popup-overlay-quiz-heading'>КАКИЕ МАТЕРИАЛЫ ПРЕДПОЧТИТЕЛЬНЕЕ ВСЕГО ДЛЯ ВАС?</p>
                 {/* Checkbox для выбора стилей интерьера */}
                 <label>
                   <input
@@ -306,7 +310,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 5 && (
               <div>
-                <p>ПРИБЛИЗИТЕЛЬНЫЙ БЮДЖЕТ НА ОБУСТРОЙСТВО ИНТЕРЬЕРА?</p>
+                <p className='popup-overlay-quiz-heading'>ПРИБЛИЗИТЕЛЬНЫЙ БЮДЖЕТ НА ОБУСТРОЙСТВО ИНТЕРЬЕРА?</p>
                 {/* Checkbox для выбора стилей интерьера */}
                 <label>
                   <input
@@ -362,7 +366,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 6 && (
               <div>
-                <p>В КАКОМ ТИПЕ ПОМЕЩЕНИЯ ВАМ НУЖЕН ДИЗАЙН?</p>
+                <p className='popup-overlay-quiz-heading'>В КАКОМ ТИПЕ ПОМЕЩЕНИЯ ВАМ НУЖЕН ДИЗАЙН?</p>
                 {/* Checkbox для выбора стилей интерьера */}
                 <label>
                   <input
@@ -398,7 +402,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 7 && (
               <div>
-                <p>НА КАКОМ ЭТАПЕ НАХОДИТСЯ ВАШ ПРОЕКТ?</p>
+                <p className='popup-overlay-quiz-heading'>НА КАКОМ ЭТАПЕ НАХОДИТСЯ ВАШ ПРОЕКТ?</p>
                 {/* Checkbox для выбора стилей интерьера */}
                 <label>
                   <input
@@ -451,7 +455,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 8 && (
               <div>
-                <p>КОГДА ПЛАНИРУЕТЕ НАЧАТЬ РАБОТЫ ПО ОБУСТРОЙСТВУ ИНТЕРЬЕРА?</p>
+                <p className='popup-overlay-quiz-heading'>КОГДА ПЛАНИРУЕТЕ НАЧАТЬ РАБОТЫ ПО ОБУСТРОЙСТВУ ИНТЕРЬЕРА?</p>
                 <label>
                   <input
                     type="radio"
@@ -496,31 +500,37 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 9 && (
               <div>
-                <p>ОСТАВЬТЕ СВОИ КОНТАКТНЫЕ ДАННЫЕ ДЛЯ ПОЛУЧЕНИЯ БЕСПЛАТНОЙ КОНСУЛЬТАЦИИ И ПРЕДВАРИТЕЛЬНОГО РАСЧЁТА:</p>
-                <div>
-                    <p>Ваше имя</p>
-                    <input
-                        type="name"
-                        name="question9"
-                        value={answers['question9'] || ''}
-                        onChange={(e) => setAnswers({ ...answers, question9: e.target.value })}
-                    />
-                    <p>Ваша почта</p>
-                    <input
-                        type="email"
-                        name="question10"
-                        placeholder='' 
-                        value={answers['question10'] || ''}
-                        onChange={(e) => setAnswers({ ...answers, question10: e.target.value })} 
-                    />
+                <p className='popup-overlay-quiz-heading'>ОСТАВЬТЕ СВОИ КОНТАКТНЫЕ ДАННЫЕ ДЛЯ ПОЛУЧЕНИЯ БЕСПЛАТНОЙ КОНСУЛЬТАЦИИ И ПРЕДВАРИТЕЛЬНОГО РАСЧЁТА:</p>
+                <div className='popup-overlay-quiz-heading-inputs'>
+                    <div>
+                      <p className='popup-overlay-quiz-input-text'>Ваше имя</p>
+                      <input
+                          type="name"
+                          name="question9"
+                          value={answers['question9'] || ''}
+                          onChange={(e) => setAnswers({ ...answers, question9: e.target.value })}
+                      />
+                    </div>
+                    <div>
+                      <p className='popup-overlay-quiz-input-text'>Ваша почта</p>
+                      <input
+                          type="email"
+                          name="question10"
+                          placeholder='' 
+                          value={answers['question10'] || ''}
+                          onChange={(e) => setAnswers({ ...answers, question10: e.target.value })} 
+                      />
+                    </div>
+                    <div>
+                      <p className='popup-overlay-quiz-input-text'>Ваш телефон</p>
+                      <input
+                          type="number"
+                          name="question11" 
+                          value={answers['question11'] || ''} 
+                          onChange={(e) => setAnswers({ ...answers, question11: e.target.value })} 
+                      />
+                    </div>
                 </div>
-                <p>Ваш телефон</p>
-                <input
-                    type="number"
-                    name="question11" 
-                    value={answers['question11'] || ''} 
-                    onChange={(e) => setAnswers({ ...answers, question11: e.target.value })} 
-                />
             </div>
             )}
             {currentStep === 9 ? (
