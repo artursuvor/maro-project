@@ -172,12 +172,6 @@ function MainMobile() {
             <p className='interior-text-mobile'>{language === 'ru' ? 'ИНТЕРЬЕРЫ ДЛЯ ЖИЗНИ \nВ ЧЕРНОГОРИИ' : 'INTERIORS FOR LIVING IN MONTENEGRO'}</p>
             <p className='interior-description-mobile'>{language === 'ru' ? 'Создаем внутренние пространства квартир и вилл. \nПодбор и доставка мебели из Европы' : 'Creating interior spaces for apartments and villas. Selection and delivery of furniture from Europe'}</p>
             <button className='calculate-btn-mobile' onClick={handleButtonClickQuiz}>{language === 'ru' ? 'Рассчитать стоимость' : 'Calculate cost'}</button>
-            {isPopupVisibleQuiz && (
-              <PopupQuiz
-                isPopupVisibleQuiz={isPopupVisibleQuiz}
-                handlePopupCloseQuiz={handlePopupCloseQuiz}
-              />
-            )}
           </div>
         </div>
       </div>

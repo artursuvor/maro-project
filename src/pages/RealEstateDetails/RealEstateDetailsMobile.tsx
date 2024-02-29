@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, NavLink } from 'react-router-dom';
 import { useLanguage } from '../../components/Language.tsx';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
@@ -334,8 +334,7 @@ const RealEstateDetailsMobile = () => {
             <Slider {...settingsSimilarProjects}>
             {data.map((item, index) => (
                 <div key={index} className="portfolio-page-item-mobile">
-                <Link
-                    to={`/portfolio/${selectedComponent}/${index}`}
+                <NavLink
                     state={{
                     type: selectedComponent,
                     id: index,
@@ -344,6 +343,7 @@ const RealEstateDetailsMobile = () => {
                     sizeSquareMeters: item.sizeSquareMeters,
                     }}
                     style={{ textDecoration: 'none' }}
+                    to={`/portfolio/${selectedComponent}/${index}`}
                 >
                 {item.photoUrl && (
                     <>
@@ -359,7 +359,7 @@ const RealEstateDetailsMobile = () => {
                     </div>
                     </>
                 )}
-                </Link>
+                </NavLink>
                     
                 </div>
                 ))}

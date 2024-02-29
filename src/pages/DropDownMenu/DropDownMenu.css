@@ -73,6 +73,7 @@
   text-align: left;
   width: 30vw;
   padding: 1vw;
+  white-space: pre-line;
 }
 
 .dropdown-content li::before {

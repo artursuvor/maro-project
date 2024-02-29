@@ -29,7 +29,7 @@ body, html {
   top: 4vw;
   right: 2.5vw;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1002;
 }
 
 .contact-us-hide-mobile{
@@ -68,6 +68,10 @@ body, html {
   display: flex;
   background-color: #fff;
   height: 100%;
+}
+
+.main-section-mobile{
+  background-color: #E7E3E3;
 }
 
 .main-section-mobile img{
@@ -368,6 +372,7 @@ body, html {
 .selection-head-mobile {
   font-family: "Ubuntu", sans-serif;
   font-size: 6vw;
+  padding-left: 4vw;
   font-weight: 400;
   line-height: 3vw;
   letter-spacing: 0em;
@@ -587,6 +592,7 @@ body, html {
   top: 1vw;
   right: 1vw;
   cursor: pointer;
+  user-select: none;
 }
 
 .popup-overlay-text-mobile{

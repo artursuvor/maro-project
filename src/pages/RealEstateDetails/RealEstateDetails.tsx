@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, NavLink } from 'react-router-dom';
 import { useLanguage } from '../../components/Language.tsx';
 import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
@@ -13,7 +13,6 @@ import './RealEstateDetails.css'
 const RealEstateDetails = () => {
     const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
     const [isPopupVisibleQuiz, setPopupVisibleQuiz] = useState(false);
 
     const handleButtonClickQuiz = () => {
@@ -36,7 +35,7 @@ const RealEstateDetails = () => {
     }, []); 
 
     const settingsRealEstate = {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
     };
@@ -47,19 +46,19 @@ const RealEstateDetails = () => {
         arrows: false,
     };
 
+    const sliderRef1 = useRef<Slider>(null);
+    const handleNext1 = () => {
+        if (sliderRef1.current) {
+        sliderRef1.current.slickNext();
+        }
+    };
+
+
     const sliderRef = useRef<Slider>(null);
     const handleNext = () => {
         if (sliderRef.current) {
         sliderRef.current.slickNext();
         }
-    };
-
-    const handleMouseEnter = (index: number) => {
-      setHoveredIndex(index);
-    };
-  
-    const handleMouseLeave = () => {
-      setHoveredIndex(null);
     };
   
     let data;
@@ -165,6 +164,7 @@ const RealEstateDetails = () => {
           window.removeEventListener('scroll', updateTextColor);
         };
       }, []);
+
   return (
     <div className="real-estate-page-section">
         <div className="real-estate-page">
@@ -222,10 +222,10 @@ const RealEstateDetails = () => {
         <div className='real-estate-page-gallery'>
             <p className='real-estate-page-gallery-head para'>{language === 'ru' ? 'ГАЛЛЕРЕЯ ПРОЕКТА' : 'Project Gallery'}</p>
             <div className='real-estate-page-slider'>
-            <Slider {...settingsRealEstate} ref={sliderRef}>
+            <Slider {...settingsRealEstate} ref={sliderRef1}>
                 <div className="real-estate-page-slide-wrapper">
                     <img 
-                        src="/img/real-estate-page-photo.png" 
+                        src="/img/real-estate.png" 
                         alt="real-estate-page-gallery-ph-1" 
                         className='real-estate-page-gallery-ph' 
                     />
@@ -256,7 +256,7 @@ const RealEstateDetails = () => {
                 src="/img/button-supp.png" 
                 alt="real-estate-page-button-next" 
                 className='real-estate-page-button-next-1' 
-                onClick={handleNext}
+                onClick={handleNext1}
             />
             </div>
         </div>
@@ -291,7 +291,7 @@ const RealEstateDetails = () => {
         <Slider {...settingsSimilarProjects} ref={sliderRef}>
             {data.map((item, index) => (
                 <div key={index} className="real-estate-page-item">
-                    <Link
+                    <NavLink
                         to={`/portfolio/${selectedComponent}/${index}`}
                         state={{
                             type: selectedComponent,
@@ -303,8 +303,6 @@ const RealEstateDetails = () => {
                     >
                     <div
                         className={`real-estate-page-text-renderComponent ${hoveredIndex === index ? 'hovered' : ''}`}
-                        onMouseEnter={() => handleMouseEnter(index)}
-                        onMouseLeave={handleMouseLeave}
                     >
                         <p className='real-estate-page-residentialComplex'>{item.residentialComplex}</p>
                         <p className='real-estate-page-address'>{item.address}</p>
@@ -318,14 +316,24 @@ const RealEstateDetails = () => {
                                 className={`real-estate-page-image-renderComponent real-estate-image-${index}`}
                             />
                             <div className="real-estate-page-read-more">
-                                <Link to={`/portfolio/${selectedComponent}/${index}`} className="real-estate-page-more-link">
+                                <Link 
+                                to={`/portfolio/${selectedComponent}/${index}`} 
+                                state={{
+                                    type: selectedComponent,
+                                    id: index,
+                                    residentialComplex: item.residentialComplex,
+                                    address: item.address,
+                                    sizeSquareMeters: item.sizeSquareMeters,
+                                }}
+                                className="real-estate-page-more-link"
+                                >
                                     {language === 'ru' ? 'Подробнее' : 'More details'}
                                 </Link>
                                 <img src='/img/white-arrow-up.png' alt='white-arrow-up' className= "real-estate-page-white-arrow-up"/>
                             </div>
                         </>
                     )}
-                    </Link>
+                    </NavLink>
                 </div>
             ))}
         </Slider>

@@ -119,7 +119,6 @@ const Portfolio: React.FC = () => {
         </div>
         {item.photoUrl && (
           <>
-            
               <img
                 src={item.photoUrl}
                 alt={`real-estate-${index}`}

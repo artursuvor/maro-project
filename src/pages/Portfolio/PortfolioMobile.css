@@ -9,7 +9,7 @@
 .button-up-mobile{
   position: fixed;
   width: 14vw;
-  bottom: 4vw;
+  bottom: 50%;
   right: 2.5vw;
   cursor: pointer;
   z-index: 100;

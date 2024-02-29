@@ -292,7 +292,7 @@ function Main() {
               "Встреча с клиентом. Получение исходной информации" :
               "Meeting with the client. Obtaining initial information",
               language === 'ru' ?
-              "Предоставление клиенту информации об услугах и их ценах" :
+              "Предоставление клиенту информации\n об услугах и их ценах" :
               "Providing the client with information about services and their prices",
               language === 'ru' ?
               "Заключение договора на дизайн-проект" :
@@ -307,7 +307,7 @@ function Main() {
               "Составление сметы проекта с учетом подключенных подрядчиков" :
               "Preparing an estimate of the project considering the involved contractors",
               language === 'ru' ?
-              "Закрытие этапа Проектирование и переход в этап Реализации организация и контроль работ по проекту, заказ отделочных материалов, мебели и пр." :
+              "Закрытие этапа Проектирование \nи переход в этап Реализации организация и контроль работ по проекту, заказ отделочных материалов, мебели и пр." :
               "Closing the Design stage and transitioning to the Implementation stage organizing and controlling work on the project, ordering finishing materials, furniture, etc.",
               language === 'ru' ?
               "Сдача полностью готового объекта" :
