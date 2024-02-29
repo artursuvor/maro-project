@@ -287,7 +287,7 @@ const RealEstateDetails = () => {
           </div>
         </div>
         <div className='real-estate-page-similar-projects'>
-        <p className='real-estate-page-similar-projects-head-mobile para'>{language === 'ru' ? 'ПОХОЖИЕ ПРОЕКТЫ' : 'Similar Projects'}</p>
+        <p className='real-estate-page-similar-projects-head para'>{language === 'ru' ? 'ПОХОЖИЕ ПРОЕКТЫ' : 'Similar Projects'}</p>
         <Slider {...settingsSimilarProjects} ref={sliderRef}>
             {data.map((item, index) => (
                 <div key={index} className="real-estate-page-item">

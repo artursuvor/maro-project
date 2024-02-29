@@ -151,14 +151,29 @@ const Portfolio: React.FC = () => {
         return null;
     }
   };
+  const [showHero, setShowHero] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowHero(false);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, [showHero]);
+
   return (
     <div className="portfolio-page-section">
+      <div className={`hero ${showHero ? '' : 'fade-out'}`}>
+        <div className="hero-content">
+          <img src="./img/logo.svg" alt="Main-Logo" />
+        </div>
+      </div>
       <img 
         src="./img/buttuon_up.png" 
         alt="button_circle_up" 
         onClick={scrollToTop} 
         className={isSticky ? 'button-up' : "button-up-hide"}
       />
+      <div className={`content ${showHero ? 'content-faded' : ''}`}></div>
       <div className="portfolio-page-container">
         <img src="/img/portfolio-page-1.png" alt="page-background" className='portfolio-page-background' />
         <div className="portfolio-page-text-overlay">

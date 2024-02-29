@@ -275,8 +275,8 @@
 
   .button-container-real-estate-text{
     font-family: "Ubuntu", sans-serif;
-    padding: 1vw;
     font-size: 1.6vw;
+    padding: 1vw 1vw 1vw 0vw;
     font-weight: 400;
     line-height: 2vw;
     letter-spacing: 0em;
@@ -286,9 +286,9 @@
 
   .button-container-real-estate {
     display: flex;
-    justify-content: center;
     align-items: center;
     cursor: pointer;
+    justify-content: left;
     width: 25vw;
   }
 

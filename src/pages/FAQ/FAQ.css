@@ -37,7 +37,11 @@
 .animated-arrow-to-up.rotate {
     transform: rotate(-90deg); 
 }
+
 .faq-answer{
+    position: absolute;
+    right: 0;
+    top: 36%;
     width: 26vw;
     height: 2vw;
     padding-right: 20vw;
@@ -47,5 +51,7 @@
     line-height: 1.3;
     text-align: left;
 }
+
+
 
 

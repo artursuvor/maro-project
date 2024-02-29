@@ -55,7 +55,7 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
         <div className="popup-overlay-quiz">
           <div className="popup-content-quiz">
             <img
-                src="./img/close-button.png"
+                src="/img/close-button.png"
                 alt="close-button-overlay"
                 className="close-button"
                 onClick={handlePopupCloseQuiz}
@@ -84,16 +84,6 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
               <div>
                 <p className='popup-overlay-quiz-heading'>КАКОЙ СТИЛЬ ИНТЕРЬЕРА ВАМ БЛИЖЕ ВСЕГО?</p>
                 {/* Checkbox для выбора стилей интерьера */}
-                <label>
-                  <input
-                    type="checkbox"
-                    name="interiorStyles"
-                    value="минимализм"
-                    checked={(answers['interiorStyles'] as string[])?.includes('минимализм') || false}
-                    onChange={handleCheckboxChange}
-                  />
-                  Минимализм
-                </label>
                 <label>
                   <input
                     type="checkbox"

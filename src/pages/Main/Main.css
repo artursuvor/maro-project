@@ -55,10 +55,14 @@ body, html {
 
 .portfolio-page-heading, .portfolio-page-text{
   opacity: 0;
-  animation: fadeInUp 2.5s ease forwards;
+  animation: fadeInUp 1.5s ease forwards;
   animation-delay: 0.6s;
 }
-
+.portfolio-page-switcher-container{
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 1.2s;
+}
 .para {
   opacity: 0; /* Исходный серый цвет */
   transition: opacity 0.5s ease; /* Плавный переход цвета в течение 0.3 секунды */
@@ -238,7 +242,8 @@ body, html {
 }
 
 .about-us{
-  padding: 3vw 4vw;
+  padding: 0vw 4vw;
+  padding-bottom: 4vw;
   display: grid;
   place-items: center; 
   text-align: center;
@@ -302,7 +307,6 @@ body, html {
 .about-us-text-container-scnd {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: left;
 }
 
@@ -312,7 +316,11 @@ body, html {
   align-items: center;
   text-align: left;
   padding-left: 3vw;
-  
+}
+
+.about-us-text-container div{
+  padding-bottom: 6.8vw;
+
 }
 
 .about-us-text-container-scnd div{
@@ -588,6 +596,7 @@ body, html {
 }
 
 .selection-suppliers {
+  padding-top: 3vw;
   position: relative;
   overflow: hidden;
 }
@@ -623,6 +632,7 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 4vw;
 }
 
 .logo-container {
@@ -635,7 +645,6 @@ body, html {
 
 .studio-toggle {
   display: flex;
-  margin-bottom: 1vw;
 }
 
 .studio-toggle button {
@@ -664,6 +673,15 @@ body, html {
   font-size: 1.3vw;
   font-weight: 400;
   letter-spacing: 0em;
+}
+
+.first-string{
+  height: 3vw;
+}
+
+.second-string{
+  height: 3vw;
+  padding-bottom: 3vw;
 }
 
 .first-string,
@@ -1056,17 +1074,23 @@ input[type="text"]::placeholder{
   line-height: 3vw;
 }
 
-label > input[type="checkbox"]{
+label > input[type="checkbox"] {
   appearance: none; 
-  background-color: #fff;
   width: 1.3vw; 
   height: 1.3vw;
   border: 2px solid #dbdbdb; 
   border-radius: 5px; 
   outline: none; 
   cursor: pointer; 
-  margin-right: 1vw; 
+  margin-right: 1vw;
+  background: url('/public/img/Check.png') no-repeat center center; 
+  background-size: cover; 
 }
+
+label > input[type="checkbox"]:checked {
+  background-color: black;
+}
+
 
 label > input[type="radio"]{
   appearance: none; 

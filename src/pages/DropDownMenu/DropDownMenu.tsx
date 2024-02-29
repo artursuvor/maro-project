@@ -36,10 +36,6 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ title, content, menuStates,
                   <span>
                     {item}
                   </span>
-                  <a href="/portfolio" className="drop-down-menu-button-container">
-                    <p className="drop-down-menu-button-text para">ПОДРОБНЕЙ</p>
-                    <img src="./img/Button_circle.png" alt="button_circle" />
-                  </a>
                 </>
               ) : (
                 item
