@@ -34,6 +34,28 @@ function Header() {
     }
   }, [menuOpen]);
 
+  useEffect(() => {
+    const mainElement = document.querySelector('main') as HTMLElement | null;
+
+    if (mainElement) {
+      if (menuOpen) {
+        mainElement.style.filter = 'brightness(0.7)';
+      } else {
+        mainElement.style.filter = 'brightness(1)';
+      }
+    } else {
+      console.error('Main element not found');
+    }
+
+    // Cleanup styles on component unmount or menuOpen change
+    return () => {
+      if (mainElement) {
+        mainElement.style.filter = 'brightness(1)';
+      }
+    };
+  }, [menuOpen]);
+
+ 
   const isHomePage = location.pathname === '/';
 
   return (
