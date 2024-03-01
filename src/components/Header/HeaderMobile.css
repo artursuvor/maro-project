@@ -58,13 +58,12 @@
   }
 
 .main-logo-mobile {
-    max-width: 10vw;
     height: auto;
     padding: 3vw;
 }
 
 .main-logo-mobile img{
-    width: 20vw;
+    width: 25vw;
     height: auto;
 }
 

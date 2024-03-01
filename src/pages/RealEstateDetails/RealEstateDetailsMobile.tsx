@@ -42,7 +42,7 @@ const RealEstateDetailsMobile = () => {
 
     const settingsRealEstate = {
         infinite: true,
-        slidesToShow: 2 ,
+        slidesToShow: 3 ,
         slidesToScroll: 1,
         arrows: false,
         speed: 6000,
@@ -56,7 +56,7 @@ const RealEstateDetailsMobile = () => {
         slidesToScroll: 1,
         arrows: false,
         speed: 4000,
-        autoplaySpeed: 1,
+        autoplaySpeed: 1000,
         cssEase: "linear"
     };
 
@@ -89,6 +89,12 @@ const RealEstateDetailsMobile = () => {
     default:
         data = [];
     }
+
+    const handleClick = () => {
+        window.scrollTo({
+          top: 0,
+        });
+      };
 
     useEffect(() => {
         const updateTextColor = () => {
@@ -212,15 +218,27 @@ const RealEstateDetailsMobile = () => {
             </div>
             <div className='real-estate-page-photo-section-mobile'>
                 <div className='real-estate-page-photo-section-1-mobile'>
-                    <img src="/img/real-estate-page-1.png" alt="real-estate-page-ph-1" className='real-estate-page-photo-1-mobile' />
+                    <img 
+                        src="/img/real-estate-page-1.png" 
+                        alt="real-estate-page-ph-1" 
+                        className='real-estate-page-photo-1-mobile image-animation-2' 
+                    />
                     <p className='para'>{language === 'ru' ? 'Гостиная' : 'Living Room'}</p>
                 </div>
                 <div className='real-estate-page-photo-section-2-mobile'>
-                    <img src="/img/real-estate-page-2.png" alt="real-estate-page-ph-2" className='real-estate-page-photo-2-mobile' />
+                    <img 
+                    src="/img/real-estate-page-2.png" 
+                        alt="real-estate-page-ph-2" 
+                        className='real-estate-page-photo-2-mobile image-animation' 
+                    />
                     <p className='para'>{language === 'ru' ? 'Вид на лестницу' : 'Staircase View'}</p>
                 </div>
                 <div className='real-estate-page-photo-section-3-mobile'>
-                    <img src="/img/real-estate-page-3.png" alt="real-estate-page-ph-3" className='real-estate-page-photo-3-mobile' />
+                    <img 
+                        src="/img/real-estate-page-3.png" 
+                        alt="real-estate-page-ph-3" 
+                        className='real-estate-page-photo-3-mobile image-animation-2' 
+                    />
                     <p className='para'>{language === 'ru' ? 'Вид на лестницу' : 'Staircase View'}</p>
                 </div>
             </div>
@@ -236,8 +254,8 @@ const RealEstateDetailsMobile = () => {
             <Slider {...settingsRealEstate} ref={sliderRef}>
                 <div className="real-estate-page-slide-wrapper-mobile">
                     <img 
-                        src="/img/real-estate-page-photo.png" 
-                        alt="real-estate-page-gallery-ph-1" 
+                        src="/img/real-estate-page-1.png" 
+                        alt="real-estate-page-gallery-ph" 
                         className='real-estate-page-gallery-ph-mobile' 
                     />
                 </div>
@@ -344,6 +362,7 @@ const RealEstateDetailsMobile = () => {
                     }}
                     style={{ textDecoration: 'none' }}
                     to={`/portfolio/${selectedComponent}/${index}`}
+                    onClick={handleClick}
                 >
                 {item.photoUrl && (
                     <>

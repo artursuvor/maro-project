@@ -74,7 +74,8 @@ function HeaderMobile() {
       <div className={isHomePage ? 'header-mobile' : (isSticky ? 'sticky-header-mobile' : 'header-not-main-mobile')}>
         <a href="/">
           <div className="main-logo-mobile">
-            <img src="/img/logo.svg" alt="logo-on-main-page-mobile" />
+          
+            <img src={isHomePage ? (menuOpen ? '/img/logo.svg' : '/img/logo-white.png') : "/img/logo.svg"} alt="logo-on-main-page-mobile" className='main-logo-mobile'/>
           </div>
         </a>
         <div className={isSticky ? "sticky-menu-controls-mobile" : "menu-controls-mobile"}>

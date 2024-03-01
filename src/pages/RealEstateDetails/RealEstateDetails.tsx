@@ -11,7 +11,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import './RealEstateDetails.css'
 
 const RealEstateDetails = () => {
-    const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
+      // const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
+    const [selectedComponent, setSelectedComponent] = useState<'apartment' | 'villa'>('apartment');
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [isPopupVisibleQuiz, setPopupVisibleQuiz] = useState(false);
 
@@ -75,6 +76,13 @@ const RealEstateDetails = () => {
     default:
         data = [];
     }
+
+
+    const handleClick = () => {
+        window.scrollTo({
+          top: 0,
+        });
+      };
 
     useEffect(() => {
         const updateTextColor = () => {
@@ -300,6 +308,7 @@ const RealEstateDetails = () => {
                             address: item.address,
                             sizeSquareMeters: item.sizeSquareMeters,
                         }}
+                        onClick={handleClick}
                     >
                     <div
                         className={`real-estate-page-text-renderComponent ${hoveredIndex === index ? 'hovered' : ''}`}
