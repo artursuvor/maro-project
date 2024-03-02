@@ -147,7 +147,7 @@
   .real-estate-page-gallery-mobile{
     padding-left: 4vw;
     padding-top: 8vw;
-    padding-bottom: 8vw;
+    padding-bottom: 14vw;
     background-color: #F6F4F4;
     display: block;
   }
@@ -199,7 +199,7 @@
   
  .real-estate-page-container-mobile{
     background-color: #E7E3E3;
-    padding-top: 4vw;
+    padding-top: 12vw;
     padding-bottom: 4vw;
     padding-right: 4vw;
   }
@@ -386,5 +386,7 @@
 
   .real-page-image-renderComponent-mobile{
     width: 92vw;
-    height: auto;
+    height: 120vw;
+    object-fit: cover; 
+    object-position: center center; 
   }

@@ -34,7 +34,7 @@ const FAQMobile: React.FC = () => {
                     <div key={index} className={`faq-item-mobile ${openIndex === index ? 'open' : ''}`}>
                         <div className='faq-question-mobile' onClick={() => toggleFAQ(index)}>
                             {faq.question}
-                            <img src="./img/arrow_down.png" alt="arrow-down" className={`animated-arrow-to-up ${openIndex === index ? 'rotate' : ''}`} />
+                            <img src="./img/arrow_down.png" alt="arrow-down" className={`animated-arrow-to-up-mobile ${openIndex === index ? 'rotate' : ''}`} />
                         </div>
                         {openIndex === index && (
                             <div className='faq-answer-mobile' dangerouslySetInnerHTML={{ __html: faq.answer }} />

@@ -114,13 +114,15 @@
   justify-self: end;
   height: auto;
   position: relative;
+  padding-bottom: 8vw;
+  padding-left: 4vw;
 }
 
 .drop-down-menu-picture-2 {
   position: absolute;
   width: 30vw;
   height: auto;
-  bottom: 10%;
+  bottom: 12%;
   left: 65%;
   z-index: 100;
 }

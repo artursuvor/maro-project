@@ -228,12 +228,12 @@ const RealEstateDetails = () => {
             </p>
         </div>
         <div className='real-estate-page-gallery'>
-            <p className='real-estate-page-gallery-head para'>{language === 'ru' ? 'ГАЛЛЕРЕЯ ПРОЕКТА' : 'Project Gallery'}</p>
+            <p className='real-estate-page-gallery-head para'>{language === 'ru' ? 'ГАЛЕРЕЯ ПРОЕКТА' : 'Project Gallery'}</p>
             <div className='real-estate-page-slider'>
             <Slider {...settingsRealEstate} ref={sliderRef1}>
                 <div className="real-estate-page-slide-wrapper">
                     <img 
-                        src="/img/real-estate.png" 
+                        src="/img/real-estate-page-1.png" 
                         alt="real-estate-page-gallery-ph-1" 
                         className='real-estate-page-gallery-ph' 
                     />

@@ -11,6 +11,19 @@
     align-items: flex-start; 
 }
 
+.faq-head-mobile{
+    font-family: "Ubuntu", sans-serif;
+    padding-top: 12vw;
+    font-size: 6vw;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 1vw;
+}
+
+.faq-drop-menu-mobile{
+    margin-top: 1vw;
+}
+
 .faq-question-mobile {
     cursor: pointer;
     display: flex;
@@ -20,10 +33,13 @@
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
-    padding: 1vw;
+    height: 15vw;
+
 }
 
-.animated-arrow-to-up {
+.animated-arrow-to-up-mobile {
+    width: 14vw;
+    padding-left: 15vw;
     transition: transform 0.3s ease;
 }
 

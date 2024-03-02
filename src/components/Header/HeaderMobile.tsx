@@ -80,7 +80,7 @@ function HeaderMobile() {
         </a>
         <div className={isSticky ? "sticky-menu-controls-mobile" : "menu-controls-mobile"}>
         <button 
-          className={buttonClicked ? "" : (isHomePage ? 'menu-button-mobile' : 'menu-button-mobile-not')} 
+          className={buttonClicked ? "menu-button-mobile-clicked" : (isHomePage ? 'menu-button-mobile' : 'menu-button-mobile-not')} 
           onClick={toggleMenu}
         >
             {buttonClicked ? (

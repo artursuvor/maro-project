@@ -45,9 +45,6 @@ const RealEstateDetailsMobile = () => {
         slidesToShow: 3 ,
         slidesToScroll: 1,
         arrows: false,
-        speed: 6000,
-        autoplaySpeed: 1,
-        cssEase: "linear"
     };
 
     const settingsSimilarProjects = {
@@ -55,9 +52,6 @@ const RealEstateDetailsMobile = () => {
         slidesToShow: 1 ,
         slidesToScroll: 1,
         arrows: false,
-        speed: 4000,
-        autoplaySpeed: 1000,
-        cssEase: "linear"
     };
 
     const sliderRef = useRef<Slider>(null);
@@ -249,7 +243,7 @@ const RealEstateDetailsMobile = () => {
             </p>
         </div>
         <div className='real-estate-page-gallery-mobile'>
-            <p className='real-estate-page-gallery-head-mobile para'>{language === 'ru' ? 'ГАЛЛЕРЕЯ ПРОЕКТА' : 'Project Gallery'}</p>
+            <p className='real-estate-page-gallery-head-mobile para'>{language === 'ru' ? 'ГАЛЕРЕЯ ПРОЕКТА' : 'Project Gallery'}</p>
             <div className='real-estate-page-slider-mobile'>
             <Slider {...settingsRealEstate} ref={sliderRef}>
                 <div className="real-estate-page-slide-wrapper-mobile">

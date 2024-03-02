@@ -20,7 +20,7 @@ function FooterMobile() {
       </div>
       <span className='footer-developer-text-mobile'>
         <p>{language === 'ru' ? 'РАЗРАБОТКА САЙТА: ' : 'WEBSITE DEVELOPMENT BY: '}</p>
-        <a href="#">SOFTOCEAN</a>
+        <a href="https://www.softocean.com/" target="_blank" rel="noopener noreferrer">SOFTOCEAN</a>
       </span>
     </footer>
   );

@@ -238,7 +238,7 @@ function MainMobile() {
         </div>
         <>
           <DropDownMenuMobile
-            digit="03"
+            digit="01"
             title={language === 'ru' ? 'ДИЗАЙН-ПРОЕКТИРОВАНИЕ' : 'DESIGN AND PLANNING'}
             content={[
               language === 'ru' ? 

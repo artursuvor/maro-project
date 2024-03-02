@@ -98,10 +98,11 @@ body, html {
   white-space: pre-line;
   text-align: left;
   color: #F6F4F4;
-  padding-bottom: 1vw;
+  margin-bottom: 4vw;
 }
 
 .interior-description-mobile {
+  margin-top: 4vw;
   font-family: "Gothic A1", sans-serif;
   font-size: 4.5vw;
   font-weight: 400;
@@ -214,8 +215,12 @@ body, html {
   padding-left: 3vw;
 }
 
-.about-us-text-container-scnd-mobile div{
-  padding-bottom: 30vw;
+.about-us-text-container-scnd-mobile div:first-child{
+  padding-right: 5vw;
+}
+
+.about-us-text-container-scnd-mobile div:last-child{
+  margin-bottom: 60vw;
   padding-right: 5vw;
 }
 
@@ -341,7 +346,7 @@ body, html {
 }
 
 .services-section-mobile{
-  padding: 2vw 4vw;
+  padding: 2vw 4vw 12vw 4vw;
   background-color: #F6F4F4;
 }
 
@@ -365,7 +370,7 @@ body, html {
 
 .selection-section-mobile {
   padding-top: 8vw;
-  padding-bottom: 5vw;
+  padding-bottom: 12vw;
   background-color: #E7E3E3;
 }
 
