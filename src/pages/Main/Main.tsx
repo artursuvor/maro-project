@@ -414,8 +414,8 @@ function Main() {
             <Supplier id={10} photoUrl="/img/supplier.png" />
             <Supplier id={11} photoUrl="/img/supplier.png" />
           </Slider>
-          <img src="./img/button-supp.png" alt="button-supp" className='button-supp' onClick={handleNext}/>
         </div>
+        <img src="/img/button-supp.png" alt="button-supp" className='button-supp' onClick={handleNext}/>
       </div>
       <div className='contacts-section' id='contacts'>
         <p className='contacts-head para'>{language === 'ru' ? 'КОНТАКТЫ' : 'CONTACTS'}</p>

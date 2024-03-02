@@ -601,6 +601,10 @@ body, html {
   overflow: hidden;
 }
 
+.selection-suppliers img{
+  width: 14vw;
+}
+
 .button-supp {
   position: absolute;
   background: #00000033;
@@ -608,10 +612,13 @@ body, html {
   width: 2vw;
   height: 2vw;
   border-radius: 100%;
-  bottom: 2.5vw; 
+  transform: translateY(-6.6vw);
   right: 4vw;
   cursor: pointer;
 }
+
+
+
 
 .contacts-section{
   padding: 2vw 4vw;
