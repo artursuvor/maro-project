@@ -10,10 +10,6 @@ Maro Design
 
 [Project Demo](https://maro-project.vercel.app/)
 
-## Description
-
-Brief description of your project.
-
 ## Technologies Used
 
 - React
