@@ -4,7 +4,7 @@ Maro Design
 
 ## Design
 
-[Link to Figma]([figma_link](https://www.figma.com/file/g3nfH9TEsUXUOOlzDgVfgn/E-commerce_-sm?type=design&node-id=0-1&mode=design&t=6zWbcjv9nMlsZ5N9-0))
+[Link to Figma](https://www.figma.com/file/g3nfH9TEsUXUOOlzDgVfgn/E-commerce_-sm?type=design&node-id=0-1&mode=design&t=6zWbcjv9nMlsZ5N9-0)
 
 ## Demo
 
