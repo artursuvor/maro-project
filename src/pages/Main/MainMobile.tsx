@@ -4,7 +4,7 @@ import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
 import Supplier from '../Suppliers.tsx';
-import PopupQuiz from './popUpQuiz.tsx';
+import PopupQuizMobile from './popUpQuizMobile.tsx';
 import HousingDetailsMobile from '../HousingDetailsMobile.tsx';
 import DropDownMenuMobile from '../DropDownMenu/DropDownMenuMobile.tsx';
 import Slider from 'react-slick';
@@ -173,6 +173,12 @@ function MainMobile() {
             <p className='interior-description-mobile'>{language === 'ru' ? 'Создаем внутренние пространства квартир и вилл. \nПодбор и доставка мебели из Европы' : 'Creating interior spaces for apartments and villas. Selection and delivery of furniture from Europe'}</p>
             <button className='calculate-btn-mobile' onClick={handleButtonClickQuiz}>{language === 'ru' ? 'Рассчитать стоимость' : 'Calculate cost'}</button>
           </div>
+          {isPopupVisibleQuiz && (
+              <PopupQuizMobile
+                isPopupVisibleQuiz={isPopupVisibleQuiz}
+                handlePopupCloseQuiz={handlePopupCloseQuiz}
+              />
+            )}
         </div>
       </div>
       <div className='about-us-mobile' id="about">

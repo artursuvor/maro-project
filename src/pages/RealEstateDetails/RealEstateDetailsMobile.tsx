@@ -325,12 +325,12 @@ const RealEstateDetailsMobile = () => {
                         <p>{language === 'ru' ? 'Ваше сообщение' : 'Your message'}</p>
                         <label className='label-container-mobile'>
                             <textarea
-                            name="message"
-                            value={message}
-                            onChange={handleChange}
-                            maxLength={225}
-                            placeholder={language === 'ru' ? 'Опишите в нескольких предложениях ваш вопрос..' : 'Describe your question in a few sentences..'} 
-                            className='input-message-mobile'
+                                name="message"
+                                value={message}
+                                onChange={handleChange}
+                                maxLength={225}
+                                placeholder={language === 'ru' ? 'Опишите в нескольких предложениях ваш вопрос..' : 'Describe your question in a few sentences..'} 
+                                className='input-message-mobile'
                             />
                             <span className="char-count-mobile">{message.length}/225</span>
                         </label>

@@ -4,7 +4,7 @@ interface Answers {
     [key: string]: string | string[] | undefined;
 }
 
-const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
+const PopupQuizMobile = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [answers, setAnswers] = useState<Answers>({});
 
@@ -52,22 +52,22 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
   return (
     <>
       {isPopupVisibleQuiz && (
-        <div className="popup-overlay-quiz">
-          <div className="popup-content-quiz">
+        <div className="popup-overlay-quiz-mobile">
+          <div className="popup-content-quiz-mobile">
             <img
-                src="/img/close-button.png"
-                alt="close-button-overlay"
-                className="close-button"
+                src="/img/close-mobile.svg"
+                alt="close-button-overlay-1"
+                className="close-button-mobile-1"
                 onClick={handlePopupCloseQuiz}
             />
-            <p className='popup-overlay-quiz-head'>ПРОЙДИТЕ НАШ ОПРОС</p>
-            <p className='popup-overlay-quiz-head-2'>чтобы вы получить бесплатную консультацию и скидку на дизайн-проект</p>
-            <p className='popup-overlay-quiz-steps'>{currentStep} шаг из 5</p>
+            <p className='popup-overlay-quiz-head-mobile'>ПРОЙДИТЕ НАШ ОПРОС</p>
+            <p className='popup-overlay-quiz-head-2-mobile'>чтобы вы получить бесплатную консультацию <br/>и скидку на дизайн-проект</p>
+            <p className='popup-overlay-quiz-steps-mobile'>{currentStep} шаг из 5</p>
             {currentStep === 1 && (
                 <div>
-                <p className='popup-overlay-quiz-heading'>ПО КАКОМУ ВОПРОСУ ВАМ НУЖНА КОНСУЛЬТАЦИЯ?</p>
+                <p className='popup-overlay-quiz-heading-mobile'>ПО КАКОМУ ВОПРОСУ ВАМ НУЖНА КОНСУЛЬТАЦИЯ?</p>
                 {/* Checkbox для выбора стилей интерьера */}
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="question"
@@ -75,9 +75,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['question'] as string[])?.includes('Дизайн-проект') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Дизайн-проект
+                  <p>Дизайн-проект</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="question"
@@ -85,9 +85,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['question'] as string[])?.includes('Подбор мебели и предметов интерьера') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Подбор мебели и предметов интерьера
+                  <p>Подбор мебели и предметов интерьера</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="question"
@@ -95,9 +95,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['question'] as string[])?.includes('Кухни') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Кухни
+                  <p>Кухни</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="question"
@@ -105,10 +105,11 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['question'] as string[])?.includes('Другой') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Другой
+                  <p>Другой</p>
                 </label>
                 <input
-                  type="text"
+                  className='input-type-text-mobile'
+                  type="text-mobile"
                   name="question1"
                   placeholder='Ваш ответ'
                   value={answers['question1'] as string || ''}
@@ -118,8 +119,8 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 2 && (
               <div>
-                <p className='popup-overlay-quiz-heading'>ТИП ОБЪЕКТА</p>
-                <label>
+                <p className='popup-overlay-quiz-heading-mobile'>ТИП ОБЪЕКТА</p>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="type"
@@ -127,9 +128,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['type'] as string[])?.includes('Квартира') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Квартира
+                  <p>Квартира</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="type"
@@ -137,9 +138,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['type'] as string[])?.includes('Дом') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Дом
+                  <p>Дом</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="type"
@@ -147,15 +148,15 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['type'] as string[])?.includes('type') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Коммерческое (ресторан, магазин, офис и пр.)
+                  <p>Коммерческое (ресторан, магазин, офис и пр.)</p>
                 </label>
               </div>
             )}
             {currentStep === 3 && (
               <div>
-                <p className='popup-overlay-quiz-heading'>НА КАКОМ ЭТАПЕ НАХОДИТСЯ ВАШ ПРОЕКТ?</p>
+                <p className='popup-overlay-quiz-heading-mobile'>НА КАКОМ ЭТАПЕ НАХОДИТСЯ ВАШ ПРОЕКТ?</p>
                 {/* Checkbox для выбора стилей интерьера */}
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="step"
@@ -163,9 +164,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['step'] as string[])?.includes('Строится') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Строится
+                  <p>Строится</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="step"
@@ -173,9 +174,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['step'] as string[])?.includes('Готов, но без отделки') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Готов, но без отделки
+                  <p>Готов, но без отделки</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="step"
@@ -183,9 +184,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['step'] as string[])?.includes('Полностью готов (с отделкой)') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Полностью готов (с отделкой)
+                  <p>Полностью готов (с отделкой)</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="step"
@@ -193,9 +194,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['step'] as string[])?.includes('Готов, отделка есть, нужны небольшие изменения') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Готов, отделка есть, нужны небольшие изменения
+                  <p>Готов, отделка есть, нужны небольшие изменения</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="step"
@@ -203,10 +204,11 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['step'] as string[])?.includes('Другое') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Другое (указать)
+                  <p>Другое (указать)</p>
                 </label>
                 <input
-                    type="text"
+                    className='input-type-text-mobile'
+                    type="text-mobile"
                     name="question3"
                     placeholder='Ваш ответ'
                     value={answers['question3'] || ''}
@@ -216,9 +218,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 4 && (
               <div>
-                <p className='popup-overlay-quiz-heading'>КАКИЕ РАБОТЫ ПО ДИЗАЙН-ПРОЕКТУ ВАС ИНТЕРЕСУЮТ?</p>
+                <p className='popup-overlay-quiz-heading-mobile'>КАКИЕ РАБОТЫ ПО ДИЗАЙН-ПРОЕКТУ ВАС ИНТЕРЕСУЮТ?</p>
                 {/* Checkbox для выбора стилей интерьера */}
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="work"
@@ -226,9 +228,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['work'] as string[])?.includes('Разработка полного проекта и его реализация (чертежами, 3D-визуализация, подбором всего необходимого, надзор за ходом ремонтных работ по проекту)') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Разработка полного проекта и его реализация <br/>(чертежами, 3D-визуализация, подбором всего необходимого, <br/>надзор за ходом ремонтных работ по проекту)
+                  <p>Разработка полного проекта и его реализация <br/>(чертежами, 3D-визуализация, подбором всего необходимого, <br/>надзор за ходом ремонтных работ по проекту)</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="work"
@@ -236,9 +238,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['work'] as string[])?.includes('Разработка концепции интерьера и подбор мебели и предметов интерьера под концепцию из ассортимента студии;') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Разработка концепции интерьера и подбор мебели и предметов<br/> интерьера под концепцию из ассортимента студии;
+                  <p>Разработка концепции интерьера и подбор мебели и предметов<br/> интерьера под концепцию из ассортимента студии;</p>
                 </label>
-                <label>
+                <label className='radio-mobile'>
                   <input
                     type="radio"
                     name="work"
@@ -246,10 +248,11 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                     checked={(answers['work'] as string[])?.includes('Другое') || false}
                     onChange={handleCheckboxChange}
                   />
-                  Другое (указать)
+                  <p>Другое (указать)</p>
                 </label>
                 <input
-                    type="text"
+                    className='input-type-text-mobile'
+                    type="text-mobile"
                     name="question4"
                     placeholder='Ваш ответ'
                     value={answers['question4'] || ''}
@@ -259,21 +262,21 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 5 && (
               <div>
-                <p className='popup-overlay-quiz-heading'>ОСТАВЬТЕ СВОИ КОНТАКТНЫЕ ДАННЫЕ ДЛЯ ПОЛУЧЕНИЯ БЕСПЛАТНОЙ КОНСУЛЬТАЦИИ И ПРЕДВАРИТЕЛЬНОГО РАСЧЁТА:</p>
-                <div className='popup-overlay-quiz-heading-inputs'>
+                <p className='popup-overlay-quiz-heading-mobile'>ОСТАВЬТЕ СВОИ КОНТАКТНЫЕ ДАННЫЕ ДЛЯ ПОЛУЧЕНИЯ БЕСПЛАТНОЙ КОНСУЛЬТАЦИИ<br/> И ПРЕДВАРИТЕЛЬНОГО РАСЧЁТА:</p>
+                <div className='popup-overlay-quiz-heading-inputs-mobile'>
                     <div>
-                      <p className='popup-overlay-quiz-input-text'>Ваше имя</p>
+                      <p className='popup-overlay-quiz-input-text-mobile'>Ваше имя</p>
                       <input
-                          type="name"
+                          type="text-mobile"
                           name="question9"
                           value={answers['question9'] || ''}
                           onChange={(e) => setAnswers({ ...answers, question9: e.target.value })}
                       />
                     </div>
                     <div>
-                      <p className='popup-overlay-quiz-input-text'>Ваша почта</p>
+                      <p className='popup-overlay-quiz-input-text-mobile'>Ваша почта</p>
                       <input
-                          type="email"
+                          type="text-mobile"
                           name="question10"
                           placeholder='' 
                           value={answers['question10'] || ''}
@@ -281,9 +284,9 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
                       />
                     </div>
                     <div>
-                      <p className='popup-overlay-quiz-input-text'>Ваш телефон</p>
+                      <p className='popup-overlay-quiz-input-text-mobile'>Ваш телефон</p>
                       <input
-                          type="number"
+                          type="text-mobile"
                           name="question11" 
                           value={answers['question11'] || ''} 
                           onChange={(e) => setAnswers({ ...answers, question11: e.target.value })} 
@@ -294,27 +297,31 @@ const PopupQuiz = ({ isPopupVisibleQuiz, handlePopupCloseQuiz }) => {
             )}
             {currentStep === 5 ? (
                 <>
-                    <button onClick={handlePrevStep} className='quiz-button-back-1'>
+                    <button onClick={handlePrevStep} className='quiz-button-back-1-mobile'>
                             Назад
                     </button>
-                    <button onClick={handleSubmit} className='quiz-button-send'>Отправить</button>
+                    <button onClick={handleSubmit} className='quiz-button-send-mobile'>Отправить</button>
                 </>
                 ) : (
                 <>
-                    <button onClick={handlePrevStep} disabled={currentStep === 1} className='quiz-button-back'>
+                    <button 
+                      onClick={handlePrevStep} 
+                      disabled={currentStep === 1} 
+                      className={`quiz-button-back-mobile mobile${currentStep}`}
+                    >
                         Назад
                     </button>
-                    <button onClick={handleNextStep} disabled={currentStep === 5} className='quiz-button'>
+                    <button onClick={handleNextStep} disabled={currentStep === 5} className='quiz-button-mobile'>
                         Далее
                     </button>
                 </>
             )}
           </div>
-          <div className="popup-overlay" onClick={handlePopupCloseQuiz}></div>
+          <div className="popup-overlay-mobile" onClick={handlePopupCloseQuiz}></div>
         </div>
       )}
     </>
   );
 };
 
-export default PopupQuiz;
+export default PopupQuizMobile;

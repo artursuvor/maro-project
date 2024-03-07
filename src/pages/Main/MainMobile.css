@@ -739,6 +739,234 @@ textarea {
   font-weight: 400;
 }
 
-.popup-content-button-mobile :hover {
+.popup-content-button-mobile:hover {
   background-color: #333; 
 }
+
+
+
+
+
+
+
+.popup-content-quiz-mobile img{
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  width: 5vw;
+  height: 5vw;
+}
+
+.popup-overlay-quiz-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+}
+
+.popup-content-quiz-mobile {
+  background:#F6F4F4;
+  width: 76vw;
+  padding-top: 2vw;
+  padding-left: 4vw;
+  padding-bottom: 19vw;
+  position: relative; 
+  z-index: 1004;
+}
+
+.popup-overlay-quiz-head-mobile{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.5vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0B0A09;
+  margin-bottom: 0.7vw;
+}
+
+.popup-overlay-quiz-head-2-mobile{
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: #828282;
+  text-align: left;
+  padding-bottom: 2vw
+}
+
+.popup-overlay-quiz-steps-mobile{
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+  padding-bottom: 2vw;
+}
+
+input[type="text-mobile"] {
+  width: 97%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #828282;
+  padding: 3vw 0;
+  font-family: "Gothic A1",sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+}
+
+input[type="text-mobile"]::placeholder{
+  font-family: "Gothic A1", sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;  
+}
+
+.quiz-button-mobile, .quiz-button-send-mobile{
+  position: absolute;
+  bottom: 3vw;
+  right: 2vw;
+  background-color: black;
+  color: white;
+  padding: 2.5vw 5vw; 
+  border: none;
+  cursor: pointer;
+  border-radius: 50px; 
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 300;
+}
+
+.quiz-button-back-mobile{
+  position: absolute;
+  bottom: 3vw;
+  right: 26vw;
+  background-color: transparent;
+  border: transparent;
+  color: black;
+  padding: 2.5vw 5vw; 
+  border: none;
+  cursor: pointer;
+  border-radius: 50px; 
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+}
+
+.quiz-button-back-1-mobile{
+  position: absolute;
+  bottom: 3vw;
+  right: 35vw;
+  background-color: transparent;
+  color: black;
+  padding: 2.5vw 5vw; 
+  border: none;
+  cursor: pointer;
+  border-radius: 50px; 
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+}
+
+.mobile1{
+  display: none;
+}
+
+.popup-overlay-quiz-heading-mobile{
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.5vw;
+  font-weight: 400;
+  line-height: 4.5vw;
+  margin: 0;
+  margin-bottom: 4vw;
+}
+
+.radio-mobile > input[type="radio"]{
+  appearance: none; 
+  width: 4vw; 
+  height: 4vw;
+  border: 1px solid #dbdbdb; 
+  background-color: #fff;
+  border-radius: 50px; 
+  outline: none; 
+  cursor: pointer; 
+  margin-right: 3vw;  
+  position: relative; 
+}
+
+input[type="radio"]:checked {
+  border: 1px solid #000000;
+  box-shadow: 0 0 0 3px #C8C9C9;
+}
+
+.radio-mobile > input[type="radio"]:checked::before {
+  content: ''; 
+  display: block; 
+  width: 2vw; 
+  height: 2vw;
+  border-radius: 100%; 
+  background-color: #000000; 
+  transform: scale(0.6); 
+  position: absolute; 
+  top: 50%; 
+  left: 49.9%; 
+  transform: translate(-50%, -50%);
+}
+
+.popup-content-quiz-mobile > div > label {
+  transform: translateX(-1vw);
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+  letter-spacing: 0em;
+  cursor: pointer;
+  margin-bottom: 4vw;
+}
+
+
+.popup-content-quiz-mobile > div > label > p {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  width: 90%;
+}
+
+.popup-overlay-quiz-heading-inputs-mobile > div{
+  padding-right: 1vw;
+}
+
+.popup-overlay-quiz-heading-inputs-mobile > div > input {
+  width: 68vw;
+  padding: 2vw;
+  background: linear-gradient(0deg, #F6F4F4, #F6F4F4),
+    linear-gradient(0deg, #828282, #828282);
+  border: 1px solid #828282;
+  word-wrap: break-word; 
+}
+
+.popup-overlay-quiz-input-text-mobile{
+  font-family: "Gothic A1", sans-serif;
+  font-size: 3vw;
+  font-weight: 300;
+  line-height: 1vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+  padding-top: 1vw;
+}
+
+.popup-overlay-quiz-heading-inputs-mobile > div{
+  padding-bottom: 4vw;
+}
+
+
+
