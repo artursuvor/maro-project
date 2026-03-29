@@ -1,41 +1,41 @@
-.socialresponsibility-section{
-    padding-top: 6vw;
-    padding-left: 4vw;
-    padding-bottom: 5vw;
-    background-color: #F6F4F4;
+.socialresponsibility-section {
+  padding-top: 6vw;
+  padding-left: 4vw;
+  padding-bottom: 5vw;
+  background-color: #f6f4f4;
 }
 
-.socialresponsibility-head{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 3vw;
-    font-weight: 400;
-    line-height: 4vw;
-    text-align: left;
+.socialresponsibility-head {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 4vw;
+  text-align: left;
 }
 
 .socialresponsibility-text-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 48vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 48vw;
 }
 
-.socialresponsibility-digit{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 2vw;
-    font-weight: 400;
-    padding: 1vw;
-    line-height: 2.4vw;
-    letter-spacing: 0em;
-    text-align: left;
+.socialresponsibility-digit {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  padding: 1vw;
+  line-height: 2.4vw;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
-.socialresponsibility-text{
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.4vw;
-    font-weight: 400;
-    line-height: 1.7vw;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #0B0A09;
+.socialresponsibility-text {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.4vw;
+  font-weight: 400;
+  line-height: 1.7vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0b0a09;
 }

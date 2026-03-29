@@ -1,0 +1,8 @@
+{
+  "short_name": "MÁRO DESIGN STUDIO",
+  "name": "MÁRO DESIGN STUDIO",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

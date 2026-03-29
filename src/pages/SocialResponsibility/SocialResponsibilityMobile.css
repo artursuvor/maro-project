@@ -1,42 +1,41 @@
-
-.socialresponsibility-section-mobile{
-    padding-top: 16vw;
-    padding-left: 4vw;
-    padding-bottom: 5vw;
-    background-color: #F6F4F4;
+.socialresponsibility-section-mobile {
+  padding-top: 16vw;
+  padding-left: 4vw;
+  padding-bottom: 5vw;
+  background-color: #f6f4f4;
 }
 
-.socialresponsibility-head-mobile{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 5vw;
-    font-weight: 400;
-    line-height: 4vw;
-    text-align: left;
+.socialresponsibility-head-mobile {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 5vw;
+  font-weight: 400;
+  line-height: 4vw;
+  text-align: left;
 }
 
 .socialresponsibility-text-container-mobile {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 88vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 88vw;
 }
 
-.socialresponsibility-digit-mobile{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 5vw;
-    font-weight: 400;
-    padding-right: 4vw;
-    line-height: 4vw;
-    letter-spacing: 0em;
-    text-align: left;
+.socialresponsibility-digit-mobile {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 5vw;
+  font-weight: 400;
+  padding-right: 4vw;
+  line-height: 4vw;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
-.socialresponsibility-text-mobile{
-    font-family: "Gothic A1", sans-serif;
-    font-size: 4vw;
-    font-weight: 400;
-    line-height: 4vw;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #0B0A09;
+.socialresponsibility-text-mobile {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+  line-height: 4vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0b0a09;
 }

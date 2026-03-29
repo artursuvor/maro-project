@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import commercialData from '../Portfolio/Commercial/Commercial.tsx';
-import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
-import villaData from '../Portfolio/Villa/Villa.tsx';
-import { useLanguage } from '../../components/Language.tsx'; 
-import './Portfolio.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import apartmentData from "../Portfolio/Apartment/Apartment.tsx";
+import villaData from "../Portfolio/Villa/Villa.tsx";
+import { useLanguage } from "../../components/Language.tsx";
+import "./Portfolio.css";
 
 interface RealEstateItem {
   residentialComplex: string;
@@ -14,12 +13,13 @@ interface RealEstateItem {
 }
 
 const Portfolio: React.FC = () => {
-  const { language } = useLanguage(); 
+  const { language } = useLanguage();
   // const [selectedComponent, setSelectedComponent] = useState<'commercial' | 'apartment' | 'villa'>('apartment');
-  const [selectedComponent, setSelectedComponent] = useState<'apartment' | 'villa'>('apartment');
+  const [selectedComponent, setSelectedComponent] = useState<
+    "apartment" | "villa"
+  >("apartment");
   const [apartmentDataState] = useState<RealEstateItem[]>(apartmentData);
   const [villaDataState] = useState<RealEstateItem[]>(villaData);
-  const [commercialDataState] = useState<RealEstateItem[]>(commercialData);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isSticky, setSticky] = useState(false);
 
@@ -28,19 +28,19 @@ const Portfolio: React.FC = () => {
       setSticky(window.scrollY > 1000);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
-  
+
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
   };
@@ -51,52 +51,50 @@ const Portfolio: React.FC = () => {
 
   useEffect(() => {
     const updateTextColor = () => {
-        const elements = document.querySelectorAll('.para');
-        elements.forEach((element: Element) => {
-          const rect = (element as HTMLElement).getBoundingClientRect();
-            const isElementVisible = rect.bottom <= 720;
-            
-            if (isElementVisible) {
-              element.classList.add('visible');
-            } else {
-              element.classList.remove('visible');
-            }
-        });
+      const elements = document.querySelectorAll(".para");
+      elements.forEach((element: Element) => {
+        const rect = (element as HTMLElement).getBoundingClientRect();
+        const isElementVisible = rect.bottom <= 720;
+
+        if (isElementVisible) {
+          element.classList.add("visible");
+        } else {
+          element.classList.remove("visible");
+        }
+      });
     };
 
-    window.addEventListener('scroll', updateTextColor);
+    window.addEventListener("scroll", updateTextColor);
 
-      return () => {
-          window.removeEventListener('scroll', updateTextColor);
-      };
+    return () => {
+      window.removeEventListener("scroll", updateTextColor);
+    };
   }, []);
 
   useEffect(() => {
     const updateTextColor = () => {
-      const elements = document.querySelectorAll('.portfolio-page-item'); 
+      const elements = document.querySelectorAll(".portfolio-page-item");
       elements.forEach((element: Element) => {
         const rect = (element as HTMLElement).getBoundingClientRect();
         const isElementVisible = rect.bottom <= 1120;
 
         if (isElementVisible) {
-          element.classList.add('visible');
+          element.classList.add("visible");
         } else {
-          element.classList.remove('visible');
+          element.classList.remove("visible");
         }
       });
     };
 
-    window.addEventListener('scroll', updateTextColor);
+    window.addEventListener("scroll", updateTextColor);
 
     return () => {
-      window.removeEventListener('scroll', updateTextColor);
+      window.removeEventListener("scroll", updateTextColor);
     };
   }, []);
 
-
   const renderComponent = (data: RealEstateItem[]) => {
     return data.map((item, index) => (
-      
       <div key={index} className="portfolio-page-item">
         <Link
           to={`/portfolio/${selectedComponent}/${index}`}
@@ -108,42 +106,49 @@ const Portfolio: React.FC = () => {
             sizeSquareMeters: item.sizeSquareMeters,
           }}
         >
-        <div
-          className={`portfolio-page-text-renderComponent ${hoveredIndex === index ? 'hovered' : ''}`}
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={handleMouseLeave}
-        >
-          <p className='portfolio-page-residentialComplex'>{item.residentialComplex}</p>
-          <p className='portfolio-page-address'>{item.address}</p>
-          <p className='portfolio-page-sizeSquareMeters'>{item.sizeSquareMeters}</p>
-        </div>
-        {item.photoUrl && (
-          <>
+          <div
+            className={`portfolio-page-text-renderComponent ${hoveredIndex === index ? "hovered" : ""}`}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <p className="portfolio-page-residentialComplex">
+              {item.residentialComplex}
+            </p>
+            <p className="portfolio-page-address">{item.address}</p>
+            <p className="portfolio-page-sizeSquareMeters">
+              {item.sizeSquareMeters}
+            </p>
+          </div>
+          {item.photoUrl && (
+            <>
               <img
                 src={item.photoUrl}
                 alt={`real-estate-${index}`}
                 className={`portfolio-page-image-renderComponent portfolio-image-${index}`}
               />
-            
-            <div className="portfolio-page-read-more">
-              <Link to={``} className="read-more-link">
-                {language === 'ru' ? 'Подробнее' : 'Details'} 
-              </Link>
-              <img src='/img/white-arrow-up.png' alt='white-arrow-up' className= "portfolio-page-white-arrow-up"/>
-            </div>
-          </>
-        )}
+
+              <div className="portfolio-page-read-more">
+                <Link to={``} className="read-more-link">
+                  {language === "ru" ? "Подробнее" : "Details"}
+                </Link>
+                <img
+                  src="/img/white-arrow-up.png"
+                  alt="white-arrow-up"
+                  className="portfolio-page-white-arrow-up"
+                />
+              </div>
+            </>
+          )}
         </Link>
       </div>
-      
     ));
   };
 
   const renderSelectedComponent = () => {
     switch (selectedComponent) {
-      case 'apartment':
+      case "apartment":
         return renderComponent(apartmentDataState);
-      case 'villa':
+      case "villa":
         return renderComponent(villaDataState);
       // case 'commercial':
       //   return renderComponent(commercialDataState);
@@ -162,39 +167,47 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="portfolio-page-section">
-      <div className={`hero ${showHero ? '' : 'fade-out'}`}>
+      <div className={`hero ${showHero ? "" : "fade-out"}`}>
         <div className="hero-content">
           <img src="./img/logo.svg" alt="Main-Logo" />
         </div>
       </div>
-      <img 
-        src="./img/buttuon_up.png" 
-        alt="button_circle_up" 
-        onClick={scrollToTop} 
-        className={isSticky ? 'button-up' : "button-up-hide"}
+      <img
+        src="./img/buttuon_up.png"
+        alt="button_circle_up"
+        onClick={scrollToTop}
+        className={isSticky ? "button-up" : "button-up-hide"}
       />
-      <div className={`content ${showHero ? 'content-faded' : ''}`}></div>
+      <div className={`content ${showHero ? "content-faded" : ""}`}></div>
       <div className="portfolio-page-container">
-        <img src="/img/portfolio-page-1.png" alt="page-background" className='portfolio-page-background' />
+        <img
+          src="/img/portfolio-page-1.png"
+          alt="page-background"
+          className="portfolio-page-background"
+        />
         <div className="portfolio-page-text-overlay">
-          <p className='portfolio-page-heading'>{language === 'ru' ? 'ПОРТФОЛИО' : 'Portfolio'}</p>
-          <p className='portfolio-page-text'>
-            {language === 'ru' ? 'Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры,\nа приезжает уже в полностью готовую к проживанию.' : 'We can completely take care of all the client\'s questions regarding real estate arrangement. The client trusts us with the keys to the "bare" apartment, and arrives already in a fully prepared living space.'}
+          <p className="portfolio-page-heading">
+            {language === "ru" ? "ПОРТФОЛИО" : "Portfolio"}
+          </p>
+          <p className="portfolio-page-text">
+            {language === "ru"
+              ? "Мы можем полностью снять с клиента все вопросы по обустройству недвижимости. Клиент доверяет нам ключи от «голой» квартиры,\nа приезжает уже в полностью готовую к проживанию."
+              : 'We can completely take care of all the client\'s questions regarding real estate arrangement. The client trusts us with the keys to the "bare" apartment, and arrives already in a fully prepared living space.'}
           </p>
         </div>
       </div>
       <div className="portfolio-page-switcher-container">
         <button
-          onClick={() => setSelectedComponent('apartment')}
-          className={selectedComponent === 'apartment' ? 'selected' : ''}
+          onClick={() => setSelectedComponent("apartment")}
+          className={selectedComponent === "apartment" ? "selected" : ""}
         >
-          {language === 'ru' ? 'Квартиры' : 'Apartments'}
+          {language === "ru" ? "Квартиры" : "Apartments"}
         </button>
         <button
-          onClick={() => setSelectedComponent('villa')}
-          className={selectedComponent === 'villa' ? 'selected' : ''}
+          onClick={() => setSelectedComponent("villa")}
+          className={selectedComponent === "villa" ? "selected" : ""}
         >
-          {language === 'ru' ? 'Виллы' : 'Villas'}
+          {language === "ru" ? "Виллы" : "Villas"}
         </button>
         {/* <button
           onClick={() => setSelectedComponent('commercial')}
@@ -203,7 +216,9 @@ const Portfolio: React.FC = () => {
           {language === 'ru' ? 'Коммерческая недвижимость' : 'Commercial real estate'}
         </button> */}
       </div>
-        <div className='portfolio-page-grid-container'>{renderSelectedComponent()}</div>
+      <div className="portfolio-page-grid-container">
+        {renderSelectedComponent()}
+      </div>
     </div>
   );
 };

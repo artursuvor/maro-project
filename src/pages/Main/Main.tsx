@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../../components/Language.tsx';
-import commercialData from '../Portfolio/Commercial/Commercial.tsx';
 import apartmentData from '../Portfolio/Apartment/Apartment.tsx';
 import villaData from '../Portfolio/Villa/Villa.tsx';
 import Supplier from '../Suppliers.tsx';

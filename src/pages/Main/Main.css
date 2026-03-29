@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
@@ -35,7 +36,6 @@ body, html {
   animation-delay: 0.3s;
 }
 
-
 .right-to-left-animation {
   animation: revealRightToLeft 1s ease-out forwards;
   animation-delay: 0.3s;
@@ -47,18 +47,19 @@ body, html {
   animation-delay: 0.6s;
 }
 
-.menu-controls{
+.menu-controls {
   opacity: 0;
   animation: fadeInUp 2.5s ease forwards;
   animation-delay: 0.6s;
 }
 
-.portfolio-page-heading, .portfolio-page-text{
+.portfolio-page-heading,
+.portfolio-page-text {
   opacity: 0;
   animation: fadeInUp 1.5s ease forwards;
   animation-delay: 0.6s;
 }
-.portfolio-page-switcher-container{
+.portfolio-page-switcher-container {
   opacity: 0;
   animation: fadeInUp 1.5s ease forwards;
   animation-delay: 1.2s;
@@ -74,20 +75,20 @@ body, html {
 
 /* ................................................................. */
 
-.button-up{
+.button-up {
   position: fixed;
   width: 4vw;
   bottom: 1vw;
   right: 1.5vw;
   cursor: pointer;
   z-index: 1030;
-  transition: opacity 0.5s ease; 
+  transition: opacity 0.5s ease;
 }
 
-.button-up-hide{
+.button-up-hide {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease; 
+  transition: opacity 0.5s ease;
 }
 
 .hero {
@@ -157,7 +158,7 @@ body, html {
 }
 
 .language-switch div {
-  color: #F6F4F4;
+  color: #f6f4f4;
   margin: 0.5vw 0.4vw;
   font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
@@ -168,7 +169,7 @@ body, html {
 }
 
 .language-switch .active {
-  border-color: #F6F4F4;
+  border-color: #f6f4f4;
 }
 
 .left-side {
@@ -217,7 +218,7 @@ body, html {
   width: 40vw;
   letter-spacing: 0em;
   text-align: left;
-  margin-top: 0.5vw; 
+  margin-top: 0.5vw;
   margin-bottom: 3vw;
 }
 
@@ -229,7 +230,7 @@ body, html {
   line-height: 1.5vw;
   letter-spacing: 0em;
   padding: 1vw 2vw;
-  background-color: #0B0A09;
+  background-color: #0b0a09;
   color: white;
   border: none;
   border-radius: 100px;
@@ -241,16 +242,16 @@ body, html {
   background-color: #3c3c3c;
 }
 
-.about-us{
+.about-us {
   padding: 0vw 4vw;
   padding-bottom: 4vw;
   display: grid;
-  place-items: center; 
+  place-items: center;
   text-align: center;
-  background-color: #E7E3E3;
+  background-color: #e7e3e3;
 }
 
-.about-us-text{
+.about-us-text {
   font-family: "Gothic A1", sans-serif;
   font-size: 1.5vw;
   font-weight: 400;
@@ -271,21 +272,29 @@ body, html {
   margin-bottom: 3vw;
 }
 
-.about-us-heading { grid-area: about; }
-.about-us-text-container { grid-area: first; }
-.about-us-text-container-scnd { grid-area: main; }
-.about-image-section { grid-area: right; }
+.about-us-heading {
+  grid-area: about;
+}
+.about-us-text-container {
+  grid-area: first;
+}
+.about-us-text-container-scnd {
+  grid-area: main;
+}
+.about-image-section {
+  grid-area: right;
+}
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'about about about about right'
-    'first first main main right'
-    'first first main main right';
+    "about about about about right"
+    "first first main main right"
+    "first first main main right";
   padding: 1vw;
   flex-wrap: wrap;
   gap: 10px;
-  background-color: #F6F4F4;
+  background-color: #f6f4f4;
   padding-bottom: 5vw;
 }
 
@@ -293,7 +302,7 @@ body, html {
   gap: 10px;
 }
 
-.about-us-heading{
+.about-us-heading {
   font-family: "Ubuntu", sans-serif;
   font-size: 3vw;
   font-weight: 400;
@@ -319,17 +328,16 @@ body, html {
   padding-left: 3vw;
 }
 
-.about-us-text-container div{
+.about-us-text-container div {
   padding-bottom: 6.8vw;
-
 }
 
-.about-us-text-container-scnd div{
+.about-us-text-container-scnd div {
   margin-bottom: 6.5vw;
   padding-right: 5vw;
 }
 
-.large-digit-in-about-section{
+.large-digit-in-about-section {
   font-family: "Ubuntu", sans-serif;
   font-size: 7vw;
   font-weight: 400;
@@ -337,7 +345,7 @@ body, html {
   letter-spacing: 0em;
 }
 
-.grid-container div p{
+.grid-container div p {
   font-family: "Gothic A1", sans-serif;
   font-size: 1.3vw;
   font-weight: 400;
@@ -346,11 +354,11 @@ body, html {
   padding-left: 1vw;
 }
 
-.about-image-section{
+.about-image-section {
   padding-left: 2vw;
 }
 
-.about-image-section img{
+.about-image-section img {
   margin-top: 5vw;
   width: 26vw;
   height: 36vw;
@@ -363,14 +371,14 @@ body, html {
   white-space: pre-line;
 }
 
-.portfolio-section{
+.portfolio-section {
   padding-top: 1vw;
   padding-left: 4vw;
   padding-bottom: 4vw;
-  background-color: #E7E3E3;
+  background-color: #e7e3e3;
 }
 
-.portfolio-heading{
+.portfolio-heading {
   font-family: "Ubuntu", sans-serif;
   font-size: 3vw;
   font-weight: 400;
@@ -400,9 +408,9 @@ body, html {
   text-align: left;
   position: absolute;
   z-index: 2;
-  transition:transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
   transform: translate(60%, 0%);
-  animation: moveAnimation2 6s ease-in-out 2s infinite alternate; 
+  animation: moveAnimation2 6s ease-in-out 2s infinite alternate;
 }
 
 @keyframes moveAnimation2 {
@@ -423,9 +431,9 @@ body, html {
   position: absolute;
   z-index: 2;
   opacity: 1;
-  transition:transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
   transform: translate(10%, 0%);
-  animation: moveAnimation 6s ease-in-out 2s infinite alternate; 
+  animation: moveAnimation 6s ease-in-out 2s infinite alternate;
 }
 
 @keyframes moveAnimation {
@@ -439,7 +447,7 @@ body, html {
   transition: transform 5s ease-in-out;
 }
 
-.portfolio-section-image-container img{
+.portfolio-section-image-container img {
   width: 36vw;
   height: auto;
 }
@@ -449,7 +457,7 @@ body, html {
   top: 85%;
   left: 14%;
   transform: translate(-50%, -50%);
-  color: #F6F4F4;
+  color: #f6f4f4;
   z-index: 5;
 }
 
@@ -462,10 +470,9 @@ body, html {
   text-align: left;
 }
 
-
 .apartment-details,
 .villa-details,
-.commercial-details{
+.commercial-details {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -479,17 +486,17 @@ body, html {
 
 .button-container {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: flex-end;
   margin-right: 4vw;
   text-decoration: none;
 }
 
-.button-image-portfolio{
+.button-image-portfolio {
   width: 4vw;
 }
 
-.watch-all-text{
+.watch-all-text {
   padding: 1vw;
   font-family: "Ubuntu", sans-serif;
   font-size: 1.6vw;
@@ -500,9 +507,9 @@ body, html {
   color: black;
 }
 
-.services-section{
+.services-section {
   padding: 2vw 4vw 5vw;
-  background-color: #F6F4F4;
+  background-color: #f6f4f4;
 }
 
 .services-header {
@@ -527,7 +534,7 @@ body, html {
   padding-top: 1vw;
   padding-left: 4vw;
   padding-bottom: 5vw;
-  background-color: #E7E3E3;
+  background-color: #e7e3e3;
 }
 
 .selection-head {
@@ -543,12 +550,12 @@ body, html {
   position: relative;
 }
 
-.furnuture-selection-image{
+.furnuture-selection-image {
   width: 30vw;
   height: auto;
 }
 
-.furnuture-selection-scnd{
+.furnuture-selection-scnd {
   width: 30vw;
   height: auto;
 }
@@ -578,12 +585,12 @@ body, html {
   text-align: left;
   width: 25vw;
   padding-left: 2vw;
-  align-self: flex-end; 
+  align-self: flex-end;
 }
 
 .selection-right {
   overflow: hidden;
-  margin-left: auto; 
+  margin-left: auto;
   padding-left: 5vw;
 }
 
@@ -602,7 +609,7 @@ body, html {
   overflow: hidden;
 }
 
-.selection-suppliers img{
+.selection-suppliers img {
   width: 14vw;
 }
 
@@ -618,13 +625,13 @@ body, html {
   cursor: pointer;
 }
 
-.contacts-section{
+.contacts-section {
   padding: 2vw 4vw;
-  background-color: #F6F4F4;
+  background-color: #f6f4f4;
   padding-bottom: 15vw;
 }
 
-.contacts-head{
+.contacts-head {
   font-family: "Ubuntu", sans-serif;
   font-size: 2vw;
   font-weight: 400;
@@ -641,7 +648,7 @@ body, html {
 }
 
 .logo-container {
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .logo-contacts {
@@ -666,7 +673,7 @@ body, html {
 }
 
 .studio-toggle button.active {
-  border-bottom: 2px solid black; 
+  border-bottom: 2px solid black;
 }
 
 .contacts-budva,
@@ -680,11 +687,11 @@ body, html {
   letter-spacing: 0em;
 }
 
-.first-string{
+.first-string {
   height: 3vw;
 }
 
-.second-string{
+.second-string {
   height: 3vw;
   padding-bottom: 3vw;
 }
@@ -699,26 +706,25 @@ body, html {
 .second-string div {
   display: flex;
   align-items: center;
-  margin-right: 1vw; 
+  margin-right: 1vw;
 }
 
-.img-contacts-svg{
+.img-contacts-svg {
   width: 1vw;
   padding: 0.5vw;
 }
 
 .map-container {
-  width: 100%; 
+  width: 100%;
   height: 10vw;
 }
-
 
 .map-container iframe {
-  width: 100%; 
+  width: 100%;
   height: 10vw;
 }
 
-.contacts-container-button-and-links{
+.contacts-container-button-and-links {
   padding: 1vw;
 }
 
@@ -729,11 +735,11 @@ body, html {
   width: 23vw;
 }
 
-.button-image-contacts{
+.button-image-contacts {
   width: 4vw;
 }
 
-.button-container-contacts-text{
+.button-container-contacts-text {
   font-family: "Ubuntu", sans-serif;
   padding: 1vw;
   font-size: 1.6vw;
@@ -753,16 +759,16 @@ body, html {
   align-items: center;
 }
 
-.contacts-a-links > a{
+.contacts-a-links > a {
   text-decoration: none;
   padding: 1.3vw;
   font-family: "Gothic A1", sans-serif;
   font-size: 1.3vw;
   font-weight: 400;
-  color: #0B0A09;
+  color: #0b0a09;
 }
 
-.contacts-a-links > a:hover{
+.contacts-a-links > a:hover {
   text-decoration: none;
   padding: 1vw;
   font-family: "Gothic A1", sans-serif;
@@ -785,11 +791,11 @@ body, html {
 }
 
 .popup-content {
-  background:#F6F4F4;
+  background: #f6f4f4;
   padding-top: 2vw;
   padding-left: 2vw;
   padding-bottom: 8vw;
-  position: relative; 
+  position: relative;
   z-index: 1004;
 }
 
@@ -801,7 +807,7 @@ body, html {
   cursor: pointer;
 }
 
-.popup-overlay-text{
+.popup-overlay-text {
   font-family: "Ubuntu", sans-serif;
   font-size: 1.6vw;
   font-weight: 400;
@@ -813,10 +819,10 @@ body, html {
 
 .popup-mail-phone {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
 }
 
-form > p{
+form > p {
   font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 300;
@@ -826,7 +832,7 @@ form > p{
   color: #828282;
   padding-top: 1vw;
 }
-.popup-mail-phone > div{
+.popup-mail-phone > div {
   font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 300;
@@ -838,18 +844,19 @@ form > p{
 }
 
 .input-phone,
-.input-mail{
+.input-mail {
   width: 25vw;
   height: 2vw;
   padding: 0.3vw;
   padding-left: 1vw;
-  background: linear-gradient(0deg, #F6F4F4, #F6F4F4),
+  background:
+    linear-gradient(0deg, #f6f4f4, #f6f4f4),
     linear-gradient(0deg, #828282, #828282);
   border: 1px solid #828282;
 }
 
 .input-mail::placeholder,
-.input-message::placeholder{
+.input-message::placeholder {
   font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 400;
@@ -857,7 +864,7 @@ form > p{
   line-height: 25px;
   letter-spacing: 0em;
   text-align: left;
-  color: #C4C4C4;
+  color: #c4c4c4;
 }
 
 .input-phone:valid,
@@ -884,10 +891,11 @@ label {
   width: 52.7vw;
   padding: 1vw;
   padding-bottom: 10vw;
-  background: linear-gradient(0deg, #F6F4F4, #F6F4F4),
+  background:
+    linear-gradient(0deg, #f6f4f4, #f6f4f4),
     linear-gradient(0deg, #828282, #828282);
   border: 1px solid #828282;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
 
 .char-count {
@@ -895,7 +903,7 @@ label {
   top: 0.8vw;
   right: 3vw;
   font-size: 1vw;
-  color:#828282;
+  color: #828282;
   font-family: "Gothic A1", sans-serif;
   font-weight: 300;
   letter-spacing: 0em;
@@ -907,8 +915,8 @@ input:focus {
 }
 
 textarea {
-  resize: none; 
-  overflow: hidden; 
+  resize: none;
+  overflow: hidden;
   outline: none;
 }
 
@@ -918,20 +926,18 @@ textarea {
   right: 2vw;
   background-color: black;
   color: white;
-  padding: 0.7vw 2.5vw; 
+  padding: 0.7vw 2.5vw;
   border: none;
   cursor: pointer;
-  border-radius: 50px; 
+  border-radius: 50px;
   font-family: "Gothic A1", sans-serif;
   font-size: 1.6vw;
   font-weight: 400;
 }
 
 .popup-content-button:hover {
-  background-color: #333; 
+  background-color: #333;
 }
-
-
 
 .popup-overlay-quiz {
   position: fixed;
@@ -947,28 +953,28 @@ textarea {
 }
 
 .popup-content-quiz {
-  background:#F6F4F4;
+  background: #f6f4f4;
   width: 76vw;
   padding-top: 1vw;
   padding-left: 2vw;
   padding-bottom: 8vw;
-  position: relative; 
+  position: relative;
   z-index: 1004;
 }
 
-.popup-overlay-quiz-head{
+.popup-overlay-quiz-head {
   font-family: "Ubuntu", sans-serif;
   font-size: 2vw;
   font-weight: 400;
   line-height: 2vw;
   letter-spacing: 0em;
   text-align: left;
-  color: #0B0A09;
+  color: #0b0a09;
   margin-bottom: 0.7vw;
 }
 
-.popup-overlay-quiz-head-2{
-  font-family: 'Gothic A1', sans-serif;
+.popup-overlay-quiz-head-2 {
+  font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 400;
   letter-spacing: 0em;
@@ -977,8 +983,8 @@ textarea {
   color: #828282;
 }
 
-.popup-overlay-quiz-steps{
-  font-family: 'Gothic A1', sans-serif;
+.popup-overlay-quiz-steps {
+  font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 400;
   line-height: 2vw;
@@ -994,67 +1000,68 @@ input[type="text"] {
   border: none;
   border-bottom: 1px solid #828282;
   padding: 1vw 0;
-  font-family: "Gothic A1",sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 400;
 }
 
-input[type="text"]::placeholder{
+input[type="text"]::placeholder {
   font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 400;
   line-height: 25px;
   letter-spacing: 0em;
-  text-align: left;  
+  text-align: left;
 }
 
-.quiz-button, .quiz-button-send{
+.quiz-button,
+.quiz-button-send {
   position: absolute;
   bottom: 3vw;
   right: 2vw;
   background-color: black;
   color: white;
-  padding: 0.7vw 2.5vw; 
+  padding: 0.7vw 2.5vw;
   border: none;
   cursor: pointer;
-  border-radius: 50px; 
+  border-radius: 50px;
   font-family: "Gothic A1", sans-serif;
   font-size: 1.6vw;
   font-weight: 400;
 }
 
-.quiz-button-back{
+.quiz-button-back {
   position: absolute;
   bottom: 3vw;
   right: 11vw;
   background-color: transparent;
   border: transparent;
   color: black;
-  padding: 0.7vw 2.5vw; 
+  padding: 0.7vw 2.5vw;
   border: none;
   cursor: pointer;
-  border-radius: 50px; 
+  border-radius: 50px;
   font-family: "Gothic A1", sans-serif;
   font-size: 1.6vw;
   font-weight: 400;
 }
 
-.quiz-button-back-1{
+.quiz-button-back-1 {
   position: absolute;
   bottom: 3vw;
   right: 14vw;
   background-color: transparent;
   color: black;
-  padding: 0.7vw 2.5vw; 
+  padding: 0.7vw 2.5vw;
   border: none;
   cursor: pointer;
-  border-radius: 50px; 
+  border-radius: 50px;
   font-family: "Gothic A1", sans-serif;
   font-size: 1.6vw;
   font-weight: 400;
 }
 
-.popup-overlay-quiz-heading{
+.popup-overlay-quiz-heading {
   font-family: "Ubuntu", sans-serif;
   font-size: 3vw;
   font-weight: 400;
@@ -1063,8 +1070,7 @@ input[type="text"]::placeholder{
   margin-bottom: 2vw;
 }
 
-
-.popup-overlay-quiz-heading-1{
+.popup-overlay-quiz-heading-1 {
   font-family: "Ubuntu", sans-serif;
   font-size: 3vw;
   font-weight: 400;
@@ -1073,60 +1079,59 @@ input[type="text"]::placeholder{
   margin-bottom: 5vw;
 }
 
-.popup-overlay-quiz-heading-2{
-  font-family: "Gothic A1",sans-serif;
+.popup-overlay-quiz-heading-2 {
+  font-family: "Gothic A1", sans-serif;
   font-size: 1.5vw;
   font-weight: 400;
   line-height: 3vw;
 }
 
 label > input[type="checkbox"] {
-  appearance: none; 
-  width: 1.3vw; 
+  appearance: none;
+  width: 1.3vw;
   height: 1.3vw;
-  border: 2px solid #dbdbdb; 
-  border-radius: 5px; 
-  outline: none; 
-  cursor: pointer; 
+  border: 2px solid #dbdbdb;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
   margin-right: 1vw;
-  background: url('/public/img/Check.png') no-repeat center center; 
-  background-size: cover; 
+  background: url("/public/img/Check.png") no-repeat center center;
+  background-size: cover;
 }
 
 label > input[type="checkbox"]:checked {
   background-color: black;
 }
 
-
-label > input[type="radio"]{
-  appearance: none; 
-  width: 1.3vw; 
+label > input[type="radio"] {
+  appearance: none;
+  width: 1.3vw;
   height: 1.3vw;
-  border: 1px solid #dbdbdb; 
+  border: 1px solid #dbdbdb;
   background-color: #fff;
-  border-radius: 50px; 
-  outline: none; 
-  cursor: pointer; 
-  margin-right: 1vw; 
-  margin-bottom: 0.2vw; 
-  position: relative; 
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 1vw;
+  margin-bottom: 0.2vw;
+  position: relative;
 }
 
 input[type="radio"]:checked {
-  border-color: #000000; 
+  border-color: #000000;
 }
 
 input[type="radio"]:checked::before {
-  content: ''; 
-  display: block; 
-  width: 0.7vw; 
+  content: "";
+  display: block;
+  width: 0.7vw;
   height: 0.7vw;
-  border-radius: 50%; 
-  background-color: #000000; 
-  transform: scale(0.6); 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
+  border-radius: 50%;
+  background-color: #000000;
+  transform: scale(0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -1141,20 +1146,21 @@ input[type="radio"]:checked::before {
   cursor: pointer;
 }
 
-.popup-overlay-quiz-heading-inputs > div{
+.popup-overlay-quiz-heading-inputs > div {
   padding-right: 1vw;
 }
 
 .popup-overlay-quiz-heading-inputs > div > input {
   width: 33vw;
   padding: 1vw;
-  background: linear-gradient(0deg, #F6F4F4, #F6F4F4),
+  background:
+    linear-gradient(0deg, #f6f4f4, #f6f4f4),
     linear-gradient(0deg, #828282, #828282);
   border: 1px solid #828282;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
 
-.popup-overlay-quiz-input-text{
+.popup-overlay-quiz-input-text {
   font-family: "Gothic A1", sans-serif;
   font-size: 1vw;
   font-weight: 300;
@@ -1165,11 +1171,7 @@ input[type="radio"]:checked::before {
   padding-top: 1vw;
 }
 
-
 .popup-overlay-quiz-heading-inputs {
-  display: flex; 
-  flex-wrap: wrap; 
+  display: flex;
+  flex-wrap: wrap;
 }
-
-
-

@@ -4,15 +4,15 @@ import Header from "../Header/Header.tsx";
 import Footer from "../Footer/Footer.tsx";
 
 const Layout: React.FC = () => {
-    return (
-        <div className="site-wrapper">
-            <Header />
-            <main>
-                <Outlet />
-            </main>
-            <Footer />
-        </div>
-    );
+  return (
+    <div className="site-wrapper">
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default Layout;

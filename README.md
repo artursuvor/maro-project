@@ -14,26 +14,22 @@ Maro Design
 
 - React
 - TypeScipt
-- Libraries: 
-  - `@testing-library/jest-dom`: "^5.17.0"
-  - `@testing-library/react`: "^13.4.0"
-  - `@testing-library/user-event`: "^13.5.0"
-  - `react`: "^18.2.0"
-  - `react-dom`: "^18.2.0"
-  - `react-responsive`: "^9.0.2"
-  - `react-router-dom`: "^6.22.0"
-  - `react-scripts`: "5.0.1"
-  - `react-slick`: "^0.30.1"
-  - `slick-carousel`: "^1.8.1"
-  - `web-vitals`: "^2.1.4"
+- Libraries:
+  - `react`
+  - `react-dom`
+- `react-responsive`
+- `react-router-dom`
+- `react-slick`
+- `slick-carousel`
+- `vite`
+
 ## Installation and Running
 
-1. Clone the repository: `git clone repository_link`
-2. Navigate to the project directory: `cd your_project`
+1. Clone the repository: `git clone https://github.com/artursuvor/maro-project`
+2. Navigate to the project directory: `cd maro-project`
 3. Install dependencies: `npm install` or `yarn install`
 4. Run the project: `npm start` or `yarn start`
 
 ## Author
 
-[Artur Suvorkin](github.com/artursuvor)
-
+[Artur Suvorkin](https://github.com/artursuvor/)

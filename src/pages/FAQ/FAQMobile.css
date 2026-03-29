@@ -1,64 +1,63 @@
-.faq-section-mobile{
-    padding-top: 16vw;
-    padding-left: 4vw;
-    padding-bottom: 5vw;
-    background-color: #F6F4F4;
+.faq-section-mobile {
+  padding-top: 16vw;
+  padding-left: 4vw;
+  padding-bottom: 5vw;
+  background-color: #f6f4f4;
 }
 
 .faq-item-mobile {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.faq-head-mobile{
-    font-family: "Ubuntu", sans-serif;
-    padding-top: 12vw;
-    font-size: 6vw;
-    font-weight: 400;
-    text-align: left;
-    margin-bottom: 1vw;
+.faq-head-mobile {
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 12vw;
+  font-size: 6vw;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1vw;
 }
 
-.faq-drop-menu-mobile{
-    margin-top: 1vw;
+.faq-drop-menu-mobile {
+  margin-top: 1vw;
 }
 
 .faq-question-mobile {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 4vw;
-    font-weight: 400;
-    letter-spacing: 0em;
-    text-align: left;
-    height: 15vw;
-
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 15vw;
 }
 
 .animated-arrow-to-up-mobile {
-    width: 14vw;
-    padding-left: 15vw;
-    transition: transform 0.3s ease;
+  width: 14vw;
+  padding-left: 15vw;
+  transition: transform 0.3s ease;
 }
 
 .animated-arrow-to-up.rotate {
-    transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 .faq-answer-mobile {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease; /* Add transition for max-height */
-    width: 86vw;
-    font-family: "Gothic A1", sans-serif;
-    font-size: 4vw;
-    font-weight: 400;
-    line-height: 1.3;
-    text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* Add transition for max-height */
+  width: 86vw;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 4vw;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: left;
 }
 
 .faq-item-mobile.open .faq-answer-mobile {
-    max-height: 1000px; /* Set a sufficiently large max-height value */
+  max-height: 1000px; /* Set a sufficiently large max-height value */
 }

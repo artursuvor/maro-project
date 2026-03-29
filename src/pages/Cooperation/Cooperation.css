@@ -1,54 +1,54 @@
-.cooperation-section{
-    padding-top: 6vw;
-    padding-left: 4vw;
-    padding-bottom: 8vw;
-    background-color: #F6F4F4;
+.cooperation-section {
+  padding-top: 6vw;
+  padding-left: 4vw;
+  padding-bottom: 8vw;
+  background-color: #f6f4f4;
 }
 
 .cooperation-container-text-btn {
-    display: flex;
-    justify-content: space-between; 
-    align-items:baseline;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .cooperation-container-text {
-    width: 43vw;
-    text-align: left;
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.4vw;
-    font-weight: 400;
-    line-height: 1.5vw;
-    letter-spacing: 0em;
-    text-align: left;
+  width: 43vw;
+  text-align: left;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.4vw;
+  font-weight: 400;
+  line-height: 1.5vw;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
-.cooperation-head{
-    margin-bottom: 1vw;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 3vw;
-    font-weight: 400;
-    line-height: 41px;
-    text-align: left;
+.cooperation-head {
+  margin-bottom: 1vw;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 41px;
+  text-align: left;
 }
 
 .button-container-cooperation {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    width: 23vw;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 23vw;
 }
 
-.button-image-cooperation{
-    width: 4vw; 
+.button-image-cooperation {
+  width: 4vw;
 }
 
-.button-container-cooperation-text{
-    font-family: "Ubuntu", sans-serif;
-    padding-right: 1vw;
-    font-size: 1.6vw;
-    font-weight: 400;
-    line-height: 2vw;
-    letter-spacing: 0em;
-    text-align: left;
-    color: black;
+.button-container-cooperation-text {
+  font-family: "Ubuntu", sans-serif;
+  padding-right: 1vw;
+  font-size: 1.6vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
 }

@@ -1,427 +1,421 @@
-.real-estate-page{
-    position: relative;
+.real-estate-page {
+  position: relative;
 }
 
-.real-estate-page-section{
-    padding-top: 6vw;
-    padding-bottom: 1vw;
-    background-color: #F6F4F4;
-    position: relative;
+.real-estate-page-section {
+  padding-top: 6vw;
+  padding-bottom: 1vw;
+  background-color: #f6f4f4;
+  position: relative;
 }
-  
-  .real-estate-page-container {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .real-estate-page-background {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: brightness(0.6);
-  }
-  
-  .real-estate-page-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .real-estate-page-text-overlay {
-    position: absolute;
-    top: 65%;
-    left: 39%;
-    transform: translate(-50%, -50%);
-    color: #F6F4F4;
-    text-align: left;
-    z-index: 1;
-  }
-  
-  .real-estate-page-heading {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 10vw;
-    font-weight: 400;
-    width: 100%;
-    letter-spacing: 0em;
-    text-align: left;
-    margin: 0px;
-    white-space: nowrap;
 
-  }
-  
-  .real-estate-page-text {
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.4vw;
-    font-weight: 300;
-    line-height: 1.4vw;
-    letter-spacing: 0em;
-    padding-left: 0.7vw;
-    text-align: left;  
-  }
+.real-estate-page-container {
+  position: relative;
+  overflow: hidden;
+}
 
-  .real-estate-page-about-design {
-    position: relative; 
-    padding-left: 4vw;
-    padding-top: 4vw;
-    background-color: #F6F4F4;
-    text-align: center;
-    padding-bottom: 40vw;
-    z-index: 1; 
-  }
+.real-estate-page-background {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.6);
+}
 
-  .real-estate-page-about-design-text-img {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .real-estate-page-about-design-text {
-    flex: 1; 
-    padding-right: 18vw;
-  }
-  
-  .real-estate-page-photo {
-    width: 40vw;
-  }
+.real-estate-page-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  .real-estate-page-about-design-text-1{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 2vw;
-    font-weight: 400;
-    line-height: 2vw;
-    letter-spacing: 0em;
-    text-align: left;
-  }
+.real-estate-page-text-overlay {
+  position: absolute;
+  top: 65%;
+  left: 39%;
+  transform: translate(-50%, -50%);
+  color: #f6f4f4;
+  text-align: left;
+  z-index: 1;
+}
 
-  .real-estate-page-about-design-text-2{
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.3vw;
-    font-weight: 400;
-    line-height: 1.4vw;
-    letter-spacing: 0em;
-    text-align: left;
-  }
-  
-  .real-estate-page-about-design-text-img {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .real-estate-page-about-design-text {
-    flex: 1;
-    padding-right: 18vw;
-  }
-  
-  
-  .real-estate-page-photo-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-top: -4.5vw; 
-    position: absolute; 
-    z-index: 2; 
-  }
+.real-estate-page-heading {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 10vw;
+  font-weight: 400;
+  width: 100%;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0px;
+  white-space: nowrap;
+}
 
-  .real-estate-page-photo-section > div{
-    margin-right: 9vw;
-    overflow: hidden;
-  }
-  
-  .real-estate-page-photo-section-2 {
-    margin-top: 8vw;
-  }
-  
-  .real-estate-page-photo-1,
-  .real-estate-page-photo-2,
-  .real-estate-page-photo-3 {
-    width: 22vw;
-    height: auto;
-  }
+.real-estate-page-text {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.4vw;
+  font-weight: 300;
+  line-height: 1.4vw;
+  letter-spacing: 0em;
+  padding-left: 0.7vw;
+  text-align: left;
+}
 
-  .real-estate-page-photo-section > div > p{
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.3vw;
-    font-weight: 400;
-    letter-spacing: 0em;
-    text-align: left;
-  }
+.real-estate-page-about-design {
+  position: relative;
+  padding-left: 4vw;
+  padding-top: 4vw;
+  background-color: #f6f4f4;
+  text-align: center;
+  padding-bottom: 40vw;
+  z-index: 1;
+}
 
-  .real-estate-page-middle-text {
-    display: flex;
-    justify-content: space-between;
-    padding: 4vw;
-    background-color:#E7E3E3;
-  }
-  
-  .real-estate-page-middle-text-1,
-  .real-estate-page-middle-text-2 {
-    flex: 1;
-    max-width: 44%;
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.4vw;
-    font-weight: 400;
-    line-height: 1.6vw;
-    letter-spacing: 0em;
-    text-align: left;
-    
-  }
+.real-estate-page-about-design-text-img {
+  display: flex;
+  justify-content: space-around;
+}
 
-  .real-estate-page-gallery{
-    padding-left: 4vw;
-    padding-top: 4vw;
-    padding-bottom: 4vw;
-    background-color: #F6F4F4;
-    display: block;
-  }
+.real-estate-page-about-design-text {
+  flex: 1;
+  padding-right: 18vw;
+}
 
-  .real-estate-page-gallery-head{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 2vw;
-    font-weight: 400;
-    line-height: 3vw;
-    letter-spacing: 0em;
-    text-align: left;
-  }
+.real-estate-page-photo {
+  width: 40vw;
+}
 
-  .real-estate-page-gallery-ph {
-    height: 33vw;
-    width: auto;
-    object-fit: cover; 
-    object-position: center center; 
-  }
+.real-estate-page-about-design-text-1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+}
 
-  .real-estate-page-slider{
-    position: relative;
-    overflow: hidden;
-  }
+.real-estate-page-about-design-text-2 {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  line-height: 1.4vw;
+  letter-spacing: 0em;
+  text-align: left;
+}
 
-  .real-estate-page-button-next-1 {
-    position: absolute;
-    background: #00000033;
-    padding: 1vw;
-    width: 2vw;
-    height: 2vw;
-    border-radius: 50%;
-    bottom: 50%;
-    right: 3vw;
-    cursor: pointer;
-  }
+.real-estate-page-about-design-text-img {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
-  .real-estate-page-button-next {
-    position: absolute;
-    background: #00000033;
-    padding: 1vw;
-    width: 2vw;
-    height: 2vw;
-    border-radius: 50%;
-    bottom: 8%;
-    right: 3vw;
-    cursor: pointer;
-  }
-  
- .real-estate-page-container{
-    background-color: #E7E3E3;
-    display: flex;
-    padding-top: 4vw;
-    padding-bottom: 4vw;
-    padding-right: 4vw;
-  }
-  
-  .real-estate-image {
-    position: relative;
-  }
-  
-  .real-estate-image{
-    height: 35vw;
-    width: auto;
-  }
-  
-  .real-estate-scnd{
-    width: 35vw;
-    height: auto;
-  }
-  
-  .real-estate-image p {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1.5vw;
-    font-weight: 400;
-    line-height: 1.5vw;
-    position: absolute;
-    width: 23vw;
-    top: 21%;
-    left: 72%;
-    text-align: left;
-  }
-  
-  .real-estate-container {
-    display: flex;
-  }
-  
-  .real-estate-text-after-image {
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.2vw;
-    font-weight: 400;
-    line-height: 2vw;
-    letter-spacing: 0em;
-    text-align: left;
-    width: 25vw;
-    padding-left: 2vw;
-    align-self: flex-end; 
-  }
-  
-  .real-estate-right {
-    overflow: hidden;
-    margin-left: auto; 
-    padding-left: 5vw;
-  }
+.real-estate-page-about-design-text {
+  flex: 1;
+  padding-right: 18vw;
+}
 
-  .button-container-real-estate-text{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1.6vw;
-    padding: 1vw 1vw 1vw 0vw;
-    font-weight: 400;
-    line-height: 2vw;
-    letter-spacing: 0em;
-    text-align: left;
-    color: black;
-  }
+.real-estate-page-photo-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: -4.5vw;
+  position: absolute;
+  z-index: 2;
+}
 
-  .button-container-real-estate {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    justify-content: left;
-    width: 25vw;
-  }
+.real-estate-page-photo-section > div {
+  margin-right: 9vw;
+  overflow: hidden;
+}
 
-  .button-image-real-estate{
-    width: 4vw;
-  }
+.real-estate-page-photo-section-2 {
+  margin-top: 8vw;
+}
 
+.real-estate-page-photo-1,
+.real-estate-page-photo-2,
+.real-estate-page-photo-3 {
+  width: 22vw;
+  height: auto;
+}
 
-  .real-estate-page-similar-projects {
-    padding-left: 4vw;
-    padding-top: 2vw;
-    padding-bottom: 8vw;
-    background-color: #F6F4F4;
-  }
+.real-estate-page-photo-section > div > p {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+}
 
-  .real-estate-page-similar-projects-head {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 2vw;
-    font-weight: 400;
-    line-height: 3vw;
-    letter-spacing: 0em;
-    text-align: left;
-  }
+.real-estate-page-middle-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 4vw;
+  background-color: #e7e3e3;
+}
 
-    
-  .real-estate-page-item {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .real-estate-page-text-renderComponent {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    width: 100%;
-  }
-  
-  .real-estate-page-image-renderComponent{
-    height: 40vw;
-    width: 30vw;
-    object-fit: cover; 
-    object-position: center center; 
-  }
+.real-estate-page-middle-text-1,
+.real-estate-page-middle-text-2 {
+  flex: 1;
+  max-width: 44%;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.4vw;
+  font-weight: 400;
+  line-height: 1.6vw;
+  letter-spacing: 0em;
+  text-align: left;
+}
 
-  .real-estate-page-item:hover .real-estate-page-text-renderComponent {
-    opacity: 1;
-    width: 25vw;
-    z-index: 1002;
-  }
+.real-estate-page-gallery {
+  padding-left: 4vw;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  background-color: #f6f4f4;
+  display: block;
+}
 
-  .real-estate-page-item:hover .real-estate-page-image-renderComponent {
-    filter: brightness(0.6);
-  } 
-  
-  .real-estate-page-residentialComplex{
-    font-family: "Ubuntu", sans-serif;
-    font-size: 2vw;
-    font-weight: 400;
-    line-height: 1vw;
-    letter-spacing: 0em;
-    text-align: left;
-    color: white;
-  }
-  
-    
-  .real-estate-page-address{
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.5vw;
-    font-weight: 300;
-    line-height: 2vw;
-    letter-spacing: 0em;
-    text-align: left;
-    width: 20vw;
-    color: white;
-  }
-    
-  .real-estate-page-sizeSquareMeters{
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.3vw;
-    font-weight: 200;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: white;
-  }
-  .real-estate-page-read-more {
-    position: absolute;
-    bottom: 2vw;
-    right: 1vw;
-    padding: 1vw;
-    opacity: 0; 
-    transition: opacity 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-  }
-  
-  .real-estate-page-item:hover .real-estate-page-read-more {
-    opacity: 1;
-  }
-  
-  .real-estate-page-white-arrow-up{
-    width: 1vw;
-    height: 1vw;
-    padding: 0.5vw 1vw;
-  }
+.real-estate-page-gallery-head {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 3vw;
+  letter-spacing: 0em;
+  text-align: left;
+}
 
-  .real-estate-page-more-link {
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.5vw;
-    font-weight: 300;
-    line-height: 2vw;
-    text-align: left;
-    text-decoration: none;
-    color: white;
-  }
-  
-  .real-estate-page-photo-1,
-  .real-estate-page-photo-2,
-  .real-estate-page-photo-3 {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .real-estate-page-photo-1.visible,
-  .real-estate-page-photo-2.visible,
-  .real-estate-page-photo-3.visible {
-    opacity: 1;
-  }
+.real-estate-page-gallery-ph {
+  height: 33vw;
+  width: auto;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.real-estate-page-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.real-estate-page-button-next-1 {
+  position: absolute;
+  background: #00000033;
+  padding: 1vw;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  bottom: 50%;
+  right: 3vw;
+  cursor: pointer;
+}
+
+.real-estate-page-button-next {
+  position: absolute;
+  background: #00000033;
+  padding: 1vw;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  bottom: 8%;
+  right: 3vw;
+  cursor: pointer;
+}
+
+.real-estate-page-container {
+  background-color: #e7e3e3;
+  display: flex;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  padding-right: 4vw;
+}
+
+.real-estate-image {
+  position: relative;
+}
+
+.real-estate-image {
+  height: 35vw;
+  width: auto;
+}
+
+.real-estate-scnd {
+  width: 35vw;
+  height: auto;
+}
+
+.real-estate-image p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 400;
+  line-height: 1.5vw;
+  position: absolute;
+  width: 23vw;
+  top: 21%;
+  left: 72%;
+  text-align: left;
+}
+
+.real-estate-container {
+  display: flex;
+}
+
+.real-estate-text-after-image {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 25vw;
+  padding-left: 2vw;
+  align-self: flex-end;
+}
+
+.real-estate-right {
+  overflow: hidden;
+  margin-left: auto;
+  padding-left: 5vw;
+}
+
+.button-container-real-estate-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.6vw;
+  padding: 1vw 1vw 1vw 0vw;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.button-container-real-estate {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: left;
+  width: 25vw;
+}
+
+.button-image-real-estate {
+  width: 4vw;
+}
+
+.real-estate-page-similar-projects {
+  padding-left: 4vw;
+  padding-top: 2vw;
+  padding-bottom: 8vw;
+  background-color: #f6f4f4;
+}
+
+.real-estate-page-similar-projects-head {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 3vw;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.real-estate-page-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.real-estate-page-text-renderComponent {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+}
+
+.real-estate-page-image-renderComponent {
+  height: 40vw;
+  width: 30vw;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.real-estate-page-item:hover .real-estate-page-text-renderComponent {
+  opacity: 1;
+  width: 25vw;
+  z-index: 1002;
+}
+
+.real-estate-page-item:hover .real-estate-page-image-renderComponent {
+  filter: brightness(0.6);
+}
+
+.real-estate-page-residentialComplex {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 1vw;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+
+.real-estate-page-address {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 300;
+  line-height: 2vw;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 20vw;
+  color: white;
+}
+
+.real-estate-page-sizeSquareMeters {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+.real-estate-page-read-more {
+  position: absolute;
+  bottom: 2vw;
+  right: 1vw;
+  padding: 1vw;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.real-estate-page-item:hover .real-estate-page-read-more {
+  opacity: 1;
+}
+
+.real-estate-page-white-arrow-up {
+  width: 1vw;
+  height: 1vw;
+  padding: 0.5vw 1vw;
+}
+
+.real-estate-page-more-link {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 300;
+  line-height: 2vw;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+}
+
+.real-estate-page-photo-1,
+.real-estate-page-photo-2,
+.real-estate-page-photo-3 {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.real-estate-page-photo-1.visible,
+.real-estate-page-photo-2.visible,
+.real-estate-page-photo-3.visible {
+  opacity: 1;
+}
