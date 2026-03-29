@@ -29,7 +29,7 @@ Maro Design
 ## Installation and Running
 
 1. Clone the repository: `git clone repository_link`
-2. Navigate to the project directory: `cd your_project`
+2. Navigate to the project directory: `cd maro-project`
 3. Install dependencies: `npm install` or `yarn install`
 4. Run the project: `npm start` or `yarn start`
 
